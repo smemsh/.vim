@@ -1,0 +1,149 @@
+"
+" scott@smemsh.net
+" http://smemsh.net/src/.vim/
+" http://spdx.org/licenses/GPL-2.0.html
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" options affecting Vi compatibility
+set	nocompatible
+set	cpoptions	-=ae
+set	cpoptions	+=Er$
+
+" default format settings
+set	nocindent
+set	smartindent
+set	autoindent
+set	textwidth	=78
+
+" generic settings
+set	backspace	=2
+set	complete	=t,.,i,w,b,k
+set	digraph
+set	errorfile	=&directory
+set	noesckeys
+set	fileformats	=unix,dos,mac
+set	hlsearch
+set	hidden
+set	history		=10000
+set	incsearch
+set	ignorecase
+set	laststatus	=2
+set	lazyredraw
+set	listchars	+=tab:.\ ,trail:$,extends:>
+set	listchars	-=eol:$
+set	list
+set	matchtime	=15
+set	report		=1
+set	norestorescreen
+set	ruler
+set	scrolloff	=999
+set	selection	=old
+set	shortmess	+=aI
+set	showbreak	=<
+set	showcmd
+set	showfulltag
+set	showmatch
+set	sidescroll	=1
+set	smartcase
+set	splitbelow
+set	swapsync	=
+set	ttyfast
+set	ttyscroll	=999
+set	nostartofline
+set	viminfo		='999,f1,%
+set	visualbell
+set	whichwrap	=b,s,h,l,<,>,[,]
+set	wildmenu
+set	wildmode	=list,full
+
+" too many times lose stuff
+set	writebackup
+set	backup
+set	backupdir	=~/var/vim/backups
+set	backupskip	=
+set	patchmode	= " patchmode always saves in pwd; if empty don't use
+set	backupext	=.bak " we'd prefer empty but $patchmode cannot be same
+autocmd BufWritePre * let &backupext = '-' . strftime("%Y%m%d%H%M%S")
+
+" put all swap files in once place so easier to find on crash
+"set	directory	=~/var/vim/swaps//,.
+set	directory	=~/var/vim/swaps,.
+
+if exists('&fsync')
+set nofsync
+endif
+
+if ! &compatible
+set dictionary =
+	\/usr/dict/words,
+	\$HOME/.ispell_english,
+	\$HOME/.aspell.en.pws
+endif
+
+set	statusline	=%-5.50f%m%r%w%y
+			 \\ b%n%=%b
+			 \\ 0x%B,
+			 \\ %o
+			 \\ 0x%O,
+			 \\ L%l/%L
+			 \\ C%c%V
+			 \\ %P
+
+let mapleader = ","
+source	~/.vim/functions
+source	~/.vim/maps
+source	~/.vim/cscope
+
+" this hack gets around vim using termcap instead of terminfo
+" XXX TODO why was this first case necessary? a builtin
+" termcap perhaps that no longer needs overriding? or maybe
+" remotes not usually having rxvt-unicode? but don't we
+" distribute that now in var/skel/ ?
+"
+"if &term == "rxvt-unicode"
+"	let &term = "xterm-color"
+"elseif &term == "linux"
+"	set t_ve+=[?17;0;64c
+"endif
+
+if has("persistent_undo")
+	set undodir=~/var/vim/undo
+	set undofile
+endif
+
+syntax on
+filetype plugin indent on
+colorscheme default
+
+" this seems dangerous and rarely results in desirable
+" settings anyways, useful as a hint just like any other
+" comment, and should be treated as such, not as embedded
+" commands which will do who knows what, under control of
+" arbitrary people we do not know
+"
+set nomodeline
+
+" eof
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" for buffertabs plugin
+"
+"let g:buftabs_only_basename = 1
+"let g:buftabs_in_statusline = 1
+"let g:buftabs_active_highlight_group = "StatusLine"
+"let g:buftabs_inactive_highlight_group = "StatusLineNC"
+"let g:buftabs_separator		= "."
+"let g:buftabs_marker_start	= "("
+"let g:buftabs_marker_end	= ")"
+"let g:buftabs_marker_modified	= "*"
+
+" defaults:
+"
+"g:buftabs_marker_start    [
+"g:buftabs_marker_end      ]
+"g:buftabs_separator       -
+"g:buftabs_marker_modified !
+"
+" plugins accidentally erased:
+" DrawIt AnsiEscPlugin cecutil 
