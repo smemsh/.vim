@@ -1,0 +1,8 @@
+#
+# this dir contains only personal wordlists and their compiled counterparts
+# (latter *.spl, we put in .gitignore)
+#
+
+* filter=git-crypt diff=git-crypt
+.gitattributes !filter !diff
+.gitignore !filter !diff

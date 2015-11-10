@@ -1,0 +1,6 @@
+#
+
+# state file for vim netrw plugin
+# TODO move this file elsewhere, perhaps ~/var/vim/
+#
+.netrwhist
