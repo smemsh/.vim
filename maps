@@ -1,0 +1,167 @@
+
+
+let mapleader = ","
+
+" change fold levels
+"
+nmap <leader><leader>f :set foldlevel+=1<return>
+nmap         <leader>f :set foldlevel-=1<return>
+
+" auto-format +/-
+"
+nmap <leader><leader>a :set formatoptions+=a<return>
+nmap         <leader>a :set formatoptions-=a<return>
+
+" wrap toggles
+"
+nmap         <leader>w :set wrap<return>
+nmap <leader><leader>w :set nowrap<return>
+nmap         <leader>L :set list<return>
+nmap <leader><leader>L :set nolist<return>
+nmap         <leader>R :set wrap nolist showbreak=
+			\breakindent linebreak<return>
+nmap <leader><leader>R :set nowrap list showbreak="> "
+			\nobreakindent nolinebreak<return>
+
+" buffer manipulations
+"
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-y> <c-w>p
+nmap <c-n> :bn<return>
+nmap <c-p> :bp<return>
+nnoremap <leader>. :b#<return>
+
+" bufexplorer plugin
+" todo: this should go somewhere else
+"nnoremap <leader>l :ls<return>
+nmap <leader>l <leader>be
+
+" quickfix prev-next maps to vi left-right but one row down
+"
+nmap <c-m> :cp<return>
+nmap <c-/> :cn<return> 
+
+" quickfix-next workaround for osx, which cannot seem seem
+" to map <c-/> for some reason: Terminal.app will not
+" generate this keycode, so we use KeyRemap4Macbook on that
+" platform to have keyscan <c-/> emit keycode <c-_>
+"
+" TODO: why does this key work fine on Linux terminals?
+"
+nmap <c-_> :cn<return>
+
+" temporal undo maps
+" (note: '=' map replaces "filter through 'equalprog' or cindent")
+"
+nmap - g-
+nmap + g+
+nmap = g+
+
+" temporary solution to having nonfunctioning F-keys
+noremap <f1> <c-^>
+noremap <c-^> <f1>
+
+" for editing raw text/flowed style microsoft one-line paragraphs
+nmap <leader>v :set fo-=a tw=0 nolist wrap lbr sbr=<return>
+	\:match WarningMsg ''<return> :24vspl /dev/null<return>
+
+" clear settings
+nmap <leader>c :set noai nosi nocin tw=0 fo-=a indentexpr=<return>
+nmap <leader>5 :set tw=55<return>
+nmap <leader>6 :set tw=60<return>
+nmap <leader>7 :set tw=72<return>
+nmap <leader>0 :set tw=0<return>
+
+" screen redraw
+"
+nmap <leader><leader>l :redraw!<return>
+nmap <c-l> :redraw!<return>
+
+" sometimes use these settings to edit outlines
+"
+nmap <leader>o
+	\:set ts=4 sw=4 noexpandtab indentexpr=<return>
+
+""" BUNDLES """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" todo: the background isn't a solarized-specific thing
+"
+nmap <leader>sc :call Solarized_cycle_contrast()<return>
+nmap <leader>sb :call Solarized_cycle_background()<return>
+
+""" APPLICATIONS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" for editing Trac wiki RST
+"
+map <leader><leader>r
+	\:set fo-=a<return>
+	\a{{{<return>#!rst<return><return><return><return>}}}
+	\<esc>kka<esc>
+	\:set ft=rst<return>
+	\:set nospell<return>
+	\:set tw=72<return>
+	\:set fo-=a<return>
+	\i
+
+map <leader>r
+	\:set nospell<return>
+	\:set ft=rst<return>
+
+map <leader>q m`WBi``<esc>Ea``<esc>`` | " quote
+nmap <leader><leader>9 a`#99999`:trac:<esc>
+
+" mutt signatures with and without the horiz underline
+" TODO remove personalizations into separate file and git-crypt it,
+"      these are safe for the time being
+"
+nmap <leader><leader>s ,c0o--<space><return>Scott<esc>
+nmap <leader><leader>S ,,sa<return><return><esc>78i_<esc>A<return><esc>
+nmap <leader><leader>o ,c0o--<space><esc>:read<space>~/.mutt/crypt/signature.smemsh<return><esc>
+nmap <leader><leader>O ,c0,,o}A<return><esc>78i_<esc>A<return><esc>
+
+
+""" TRICKS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" awesome history window, editable same as a buffer!
+" sometimes messages do not show up; use q: in that case
+"
+if ! &compatible
+	nnoremap q: :
+	nnoremap : q:
+	autocmd CmdwinEnter [:/?] startinsert
+endif
+
+" diff this buffer against the pristine version and use
+" split screen to show differences, of course will look
+" better on larger screen
+"
+if ! exists(":DiffOrig")
+command DiffOrig
+	\ vert new		|
+	\ set bt=nofile		|
+	\ r #			|
+	\ 0d_			|
+	\ diffthis		|
+	\ wincmd p		|
+	\ diffthis
+nmap <leader>d :DiffOrig<return>
+endif
+
+" type while inserting, inputs the date, and then continues
+" appending in insert mode after going to the end of the new
+" date
+"
+map! <leader><leader>d <ESC>:call Read_shell_histtimeformat()<CR>Ea 
+
+" to tabs (T), to spaces (t)
+"
+nmap <leader>t :set expandtab<return> :retab!<return>
+nmap <leader>T :set noexpandtab<return> :retab!<return>
+
+" toggle understanding of numerics to auto-formatting
+"
+nmap <leader>N :set fo+=n<return>
+nmap <leader>n :set fo-=n<return>
+
+"
