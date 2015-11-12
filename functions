@@ -1,0 +1,9 @@
+"
+
+" use register `a' to store 14 characters of date output, paste it,
+"
+function! Read_shell_histtimeformat()
+	let nowdate = system("date +$HISTTIMEFORMAT")
+	call setreg('a', nowdate, 'b14')
+	normal "ap
+endfunction
