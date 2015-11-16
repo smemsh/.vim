@@ -1,7 +1,7 @@
 let	is_bash				=1
 let	sh_minlines			=256
+let	g:sh_minlines			=512
 
-"source	$VIM/syntax/sh.vim
 set	autoindent
 set	smartindent
 set	cindent

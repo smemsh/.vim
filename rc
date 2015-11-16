@@ -1,4 +1,9 @@
 "
+" scott@smemsh.net
+" http://smemsh.net/src/.vim/
+" http://spdx.org/licenses/GPL-2.0
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " options affecting Vi compatibility
 set	nocompatible
@@ -111,6 +116,16 @@ syntax on
 filetype plugin indent on
 colorscheme default
 
+" this seems dangerous and rarely results in desirable
+" settings anyways, useful as a hint just like any other
+" comment, and should be treated as such, not as embedded
+" commands which will do who knows what, under control of
+" arbitrary people we do not know
+"
+set nomodeline
+
+" eof
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " for buffertabs plugin
 "

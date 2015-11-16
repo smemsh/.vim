@@ -1,4 +1,9 @@
 "
+" scott@smemsh.net
+" http://smemsh.net/src/.vim/
+" http://spdx.org/licenses/GPL-2.0
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " use register `a' to store 14 characters of date output, paste it,
 "

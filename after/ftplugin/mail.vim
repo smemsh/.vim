@@ -17,3 +17,8 @@ set spell
 " goes to either us or the parent or both!
 "
 map <C-Z>		:shell<CR>
+
+" TODO not sure where this got removed?
+" it's not in the mail vim 
+"
+set comments		+=n:>
