@@ -1,0 +1,76 @@
+"
+
+" vundle manages itself
+Bundle 'gmarik/vundle'
+
+" colorscheme solarized
+" keys: cycle through (,sc)ontrast and (,sb)ackground
+" todo: keys hints should go in ~/.vim/maps
+Bundle 'altercation/vim-colors-solarized'
+
+" todo: testing...
+Bundle 'junegunn/vim-easy-align'
+
+" todo: testing this language out
+" todo: put somewhere else in the file if end up using
+Bundle 'jnwhiteh/vim-golang'
+
+" todo: this does not seem to work
+" the plugin in the bundle dir does not seem to activate
+" should give command: ":compiler clang"
+"
+Bundle 'clang'
+
+" todo: obsoleted by YouCompleteMe?
+" todo: is this same: http://github.com/Rip-Rip/clang_complete
+"
+Bundle 'clang-complete'
+
+
+" https://github.com/garybernhardt/dotfiles/blob/master/.vim/colors/grb256.vim
+" http://www.vim.org/scripts/script.php?script_id240
+" http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/
+" https://github.com/Lokaltog/vim-distinguished
+" http://www.vim.org/scripts/script.php?script_id855
+" https://github.com/nanotech/jellybeans.vim
+" https://github.com/ryanb/dotfiles/blob/master/vim/colors/railscasts.vim
+" http://www.vim.org/scripts/script.php?script_id677
+" https://github.com/tpope/vim-vividchalk
+" http://www.vim.org/scripts/script.php?script_id82
+" https://github.com/altercation/vim-colors-solarized
+
+" these are original that came from example rcfile in vundle readme
+" XXX TODO: cannot be enabled if comment on same line; breaks parsing
+"
+"Bundle 'tpope/vim-fugitive'			"git wrapper(?)
+"Bundle 'Lokaltog/vim-easymotion'		"like vimium keys for vim(?)
+"Bundle 'tpope/vim-rails.git'			"try this if using rails?
+"Bundle 'majutsushi/tagbar'			"navigate reflinks from ctags
+"Bundle 'airblade/vim-gitgutter'		"puts diff symbols in the gutter
+"Bundle 'mhinz/vim-signify'			"like gitgutter, says better?
+"Bundle 'scrooloose/syntastic'			"integrate quickfix with syn (?)
+"Bundle 'something/look/up/eclim.org'		"access eclipse engine from vim
+"Bundle 'edkolev/tmuxline.vim'			"integrate tmux with vim-airline
+"Bundle 'something/look/up/js/ide/thing'	"todo: name in pocket somewhere
+
+" not sure which of these is the right variant to use, seem to be competitors
+
+"Bundle 'itchyny/lightline.vim'			"alt to airline, has less deps
+"Bundle 'bling/vim-airline'			"something about status lines
+"Bundle 'something/powerline'			"original(?)
+
+" huh? what is this strange syntax?
+" and what is this strange bundle? says 'edit html like css?'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}	
+
+"""
+
+" non-GitHub repos
+"Bundle 'git://git.wincent.com/command-t.git'
+
+" Git repos on your local machine (i.e. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+
+" http://majutsushi.github.io/tagbar/ " navigate ctags tree-style
+
+""" EOF

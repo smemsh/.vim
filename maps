@@ -5,6 +5,8 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let mapleader = ","
+
 " change fold levels
 "
 nmap <leader><leader>f :set foldlevel+=1<return>
@@ -15,10 +17,16 @@ nmap         <leader>f :set foldlevel-=1<return>
 nmap <leader><leader>a :set formatoptions+=a<return>
 nmap         <leader>a :set formatoptions-=a<return>
 
-" wrap toggle
+" wrap toggles
 "
-nmap         <leader>w :set wrap nolist showbreak=""<return>
-nmap <leader><leader>w :set nowrap list showbreak="> "<return>
+nmap         <leader>w :set wrap<return>
+nmap <leader><leader>w :set nowrap<return>
+nmap         <leader>L :set list<return>
+nmap <leader><leader>L :set nolist<return>
+nmap         <leader>R :set wrap nolist showbreak=
+			\breakindent linebreak<return>
+nmap <leader><leader>R :set nowrap list showbreak="> "
+			\nobreakindent nolinebreak<return>
 
 " buffer manipulations
 "
@@ -27,24 +35,26 @@ nmap <c-k> <c-w>k
 nmap <c-y> <c-w>p
 nmap <c-n> :bn<return>
 nmap <c-p> :bp<return>
-"nnoremap <leader>l :ls<return>
-nmap <leader>l <leader>be
 nnoremap <leader>. :b#<return>
 
-" c-l has to be redraw; it is a commandment from the unix
-" god (sharing the prominance of c-z or c-c).  this means
-" that the we cannot complete the desired mapping: 'control'
-" key grid reserves is missing a right (key 'l', ie "advance
-" to next whatever") in teh one dimension of the two
-" available in the vi interface paradigm (the corresponding
-" remaining one being "analogous
+" bufexplorer plugin
+" todo: this should go somewhere else
+"nnoremap <leader>l :ls<return>
+nmap <leader>l <leader>be
+
+" quickfix prev-next maps to vi left-right but one row down
 "
-" see if having commented this out causes great pain and
-" frustration, and fix/replace with some other key combo if
-" needed
+nmap <c-m> :cp<return>
+nmap <c-/> :cn<return> 
+
+" quickfix-next workaround for osx, which cannot seem seem
+" to map <c-/> for some reason: Terminal.app will not
+" generate this keycode, so we use KeyRemap4Macbook on that
+" platform to have keyscan <c-/> emit keycode <c-_>
 "
-" XXX TODO think fixed using c-[np] and then moving c-w,p to c-y
-" erase this comment block once confirmed
+" TODO: why does this key work fine on Linux terminals?
+"
+nmap <c-_> :cn<return>
 
 " temporal undo maps
 " (note: '=' map replaces "filter through 'equalprog' or cindent")
@@ -78,6 +88,13 @@ nmap <c-l> :redraw!<return>
 nmap <leader>o
 	\:set ts=4 sw=4 noexpandtab indentexpr=<return>
 
+""" BUNDLES """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" todo: the background isn't a solarized-specific thing
+"
+nmap <leader>sc :call Solarized_cycle_contrast()<return>
+nmap <leader>sb :call Solarized_cycle_background()<return>
+
 """ APPLICATIONS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " for editing Trac wiki RST
@@ -100,11 +117,13 @@ map <leader>q m`WBi``<esc>Ea``<esc>`` | " quote
 nmap <leader><leader>9 a`#99999`:trac:<esc>
 
 " mutt signatures with and without the horiz underline
+" TODO remove personalizations into separate file and git-crypt it,
+"      these are safe for the time being
 "
-nmap ,,s ,c0o--<space><return>Scott<esc>
-nmap ,,S ,,sa<return><return><esc>78i_<esc>A<return><esc>
-nmap ,,o ,c0o--<space><esc>:read<space>~/.mutt/crypt/signature.smemsh<return><esc>
-nmap ,,O ,c0,,o}A<return><esc>78i_<esc>A<return><esc>
+nmap <leader><leader>s ,c0o--<space><return>Scott<esc>
+nmap <leader><leader>S ,,sa<return><return><esc>78i_<esc>A<return><esc>
+nmap <leader><leader>o ,c0o--<space><esc>:read<space>~/.mutt/crypt/signature.smemsh<return><esc>
+nmap <leader><leader>O ,c0,,o}A<return><esc>78i_<esc>A<return><esc>
 
 
 """ TRICKS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -149,3 +168,5 @@ nmap <leader>T :set noexpandtab<return> :retab!<return>
 "
 nmap <leader>N :set fo+=n<return>
 nmap <leader>n :set fo-=n<return>
+
+"

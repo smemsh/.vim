@@ -5,22 +5,17 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" options affecting Vi compatibility
 set	nocompatible
 set	cpoptions	-=ae
 set	cpoptions	+=Er$
 
-" default format settings
 set	nocindent
 set	smartindent
 set	autoindent
 set	textwidth	=78
 
-" generic settings
 set	backspace	=2
 set	complete	=t,.,i,w,b,k
-set	digraph
-set	errorfile	=&directory
 set	noesckeys
 set	fileformats	=unix,dos,mac
 set	hlsearch
@@ -47,7 +42,6 @@ set	showmatch
 set	sidescroll	=1
 set	smartcase
 set	splitbelow
-set	swapsync	=
 set	ttyfast
 set	ttyscroll	=999
 set	nostartofline
@@ -57,43 +51,125 @@ set	whichwrap	=b,s,h,l,<,>,[,]
 set	wildmenu
 set	wildmode	=list,full
 
-" too many times lose stuff
+
+" irritating menace
+set nodigraph
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let datadirs =[
+    \['backupdir',  'backups',   '',       ],
+    \['directory',  'swaps',     '//,.',   ],
+    \['undodir',    'undo',      '',       ],
+\]
+
+for dir in datadirs
+	let vimvar = dir[0]
+	let subdir = dir[1]
+	let append = dir[2]
+	let path = $HOME . "/var/vim/" . subdir
+	if (exists('&' . vimvar) && exists("*mkdir"))
+		if ! isdirectory(path)
+			mkdir(path)
+		endif
+		execute "set " . vimvar . '=' . path . append
+	endif
+endfor
+
+" TODO this duplicates set above, but that set does not have a test
+" for capability (nor do any of the dir sets)
+"
+if has("persistent_undo")
+	set undodir=~/var/vim/undo
+	set undofile
+endif
+
+" lost edits too many times... this is before persistent undo
+"
 set	writebackup
 set	backup
-set	backupdir	=~/var/vim/backups
 set	backupskip	=
-set	patchmode	= " patchmode always saves in pwd; if empty don't use
-set	backupext	=.bak " we'd prefer empty but $patchmode cannot be same
+set patchmode		= " patchmode always saves in pwd; if empty do not use
+set backupext		=.bak " would prefer empty but $patchmode cant be same
+
+" we have to do this before the write because if it's just
+" backupext, it has a permanent static value set at vim start
+"
 autocmd BufWritePre * let &backupext = '-' . strftime("%Y%m%d%H%M%S")
 
-" put all swap files in once place so easier to find on crash
-"set	directory	=~/var/vim/swaps//,.
-set	directory	=~/var/vim/swaps,.
-
+" write swapfile asynchronously but more frequently
+"
 if exists('&fsync')
 set nofsync
+set swapsync		=
+set updatecount		=20 " chars between swapfile writes
+set updatetime		=1000 " msecs idle before swapfile writes
 endif
 
 if ! &compatible
 set dictionary =
-	\/usr/dict/words,
+	\/usr/share/dict/words,
 	\$HOME/.ispell_english,
 	\$HOME/.aspell.en.pws
 endif
 
-set	statusline	=%-5.50f%m%r%w%y
-			 \\ b%n%=%b
-			 \\ 0x%B,
-			 \\ %o
-			 \\ 0x%O,
-			 \\ L%l/%L
-			 \\ C%c%V
-			 \\ %P
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = ","
-source	~/.vim/functions
-source	~/.vim/maps
-source	~/.vim/cscope
+set statusline =%-5.50f%m%r%w%y
+	\\ b%n%=%b
+	\\ 0x%B,
+	\\ %o
+	\\ 0x%O,
+	\\ L%l/%L
+	\\ C%c%V
+	\\ %P
+
+
+"""
+
+filetype off
+set runtimepath+=~/.vim/bundle/vundle/
+call vundle#rc()
+source ~/.vim/bundlerc
+" todo: is this the source of the strange indents?
+"filetype plugin indent on
+filetype plugin on
+syntax enable
+
+"""
+
+source ~/.vim/globals
+source ~/.vim/functions
+source ~/.vim/maps
+source ~/.vim/cscope
+
+"filetype plugin indent on
+
+" default is 16; upstream wants us to change the terminal pallette... um, no.
+"
+let g:solarized_termcolors=256
+
+" todo: while these are set on, and that is also the default, do not see any
+" bold or italic displayed (in particular, want italic comments, but none seen)
+"
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+
+" this has also 'high' and 'low' solarized author says unwise
+" todo: make this available with keypress
+"
+"let g:solarized_contrast="normal"
+
+" this is for some whitespace and :set list type stuff, has high and low
+let g:solarized_visibility="normal"
+
+set background=dark
+colorscheme solarized
+
+" EOF
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " this hack gets around vim using termcap instead of terminfo
 " XXX TODO why was this first case necessary? a builtin
@@ -106,15 +182,6 @@ source	~/.vim/cscope
 "elseif &term == "linux"
 "	set t_ve+=[?17;0;64c
 "endif
-
-if has("persistent_undo")
-	set undodir=~/var/vim/undo
-	set undofile
-endif
-
-syntax on
-filetype plugin indent on
-colorscheme default
 
 " this seems dangerous and rarely results in desirable
 " settings anyways, useful as a hint just like any other

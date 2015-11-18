@@ -1,0 +1,4 @@
+#
+
+# this is how vundle keeps track of its available plugins (?)
+.vundle/
