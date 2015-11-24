@@ -5,11 +5,11 @@
 #
 ##############################################################################
 
-# only one loaded explicitly in vimrc; loads all others in bundle/
+# first one loaded explicitly in vimrc, bootstraps rest in bundle/
 #
 [submodule "bundle/vim-pathogen"]
-	path = bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
+path = bundle/vim-pathogen
+url = https://github.com/tpope/vim-pathogen
 
 ### TODO #####################################################################
 #
@@ -49,25 +49,25 @@
 # should give command: ":compiler clang"
 #
 [submodule "bundle/clang"]
-	path = bundle/clang
-	url = https://github.com/vim-scripts/clang.git
+path = bundle/clang
+url = https://github.com/vim-scripts/clang.git
 
 # todo: obsoleted by YouCompleteMe?
 # todo: is this same: http://github.com/Rip-Rip/clang_complete
 #
 [submodule "bundle/clang-complete"]
-	path = bundle/clang-complete
-	url = https://github.com/vim-scripts/clang-complete.git
+path = bundle/clang-complete
+url = https://github.com/vim-scripts/clang-complete.git
 
 ### EDITING ##################################################################
 
 [submodule "bundle/vim-easy-align"]
-	path = bundle/vim-easy-align
-	url = https://github.com/junegunn/vim-easy-align.git
+path = bundle/vim-easy-align
+url = https://github.com/junegunn/vim-easy-align.git
 
 ### COLORSCHEMES #############################################################
 
 [submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
+path = bundle/vim-colors-solarized
+url = https://github.com/altercation/vim-colors-solarized.git
 
