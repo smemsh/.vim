@@ -128,9 +128,8 @@ set statusline =%-5.50f%m%r%w%y
 """
 
 filetype off
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
-source ~/.vim/bundlerc
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 " todo: is this the source of the strange indents?
 "filetype plugin indent on
 filetype plugin on
