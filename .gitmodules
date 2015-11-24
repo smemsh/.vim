@@ -59,13 +59,6 @@
 	path = bundle/clang-complete
 	url = https://github.com/vim-scripts/clang-complete.git
 
-# todo: testing this language out
-# todo: put somewhere else in the file if end up using
-#
-[submodule "bundle/vim-golang"]
-	path = bundle/vim-golang
-	url = https://github.com/jnwhiteh/vim-golang.git
-
 ### EDITING ##################################################################
 
 [submodule "bundle/vim-easy-align"]
