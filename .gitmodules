@@ -1,18 +1,80 @@
-[submodule "bundle/clang"]
-	path = bundle/clang
-	url = https://github.com/vim-scripts/clang.git
-[submodule "bundle/clang-complete"]
-	path = bundle/clang-complete
-	url = https://github.com/vim-scripts/clang-complete.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-easy-align"]
-	path = bundle/vim-easy-align
-	url = https://github.com/junegunn/vim-easy-align.git
-[submodule "bundle/vim-golang"]
-	path = bundle/vim-golang
-	url = https://github.com/jnwhiteh/vim-golang.git
+#
+# scott@smemsh.net
+# http://smemsh.net/src/.vim/
+# http://spdx.org/licenses/GPL-2.0
+#
+##############################################################################
+
+# only one loaded explicitly in vimrc; loads all others in bundle/
+#
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
+
+### TODO #####################################################################
+#
+## colorschemes
+# https://github.com/quanganhdo/grb256
+# https://github.com/Lokaltog/vim-distinguished
+# https://github.com/nanotech/jellybeans.vim
+# https://github.com/jpo/vim-railscasts-theme
+#
+## editing
+# https://github.com/Lokaltog/vim-easymotion
+# https://github.com/tomtom/tcomment_vim
+#
+## git
+# https://github.com/airblade/vim-gitgutter
+# https://github.com/mhinz/vim-signify
+#
+## statline
+# https://github.com/bling/vim-airline
+# https://github.com/itchyny/lightline.vim
+# https://github.com/something/powerline
+#
+## syntax
+# https://github.com/artoj/pgn-syntax-vim
+#
+### LATER ####################################################################
+#
+# https://github.com/majutsushi/tagbar
+# https://github.com/tpope/vim-fugitive
+# https://github.com/scrooloose/syntastic
+#
+
+### LANG #####################################################################
+
+# todo: this does not seem to work
+# the plugin in the bundle dir does not seem to activate
+# should give command: ":compiler clang"
+#
+[submodule "bundle/clang"]
+	path = bundle/clang
+	url = https://github.com/vim-scripts/clang.git
+
+# todo: obsoleted by YouCompleteMe?
+# todo: is this same: http://github.com/Rip-Rip/clang_complete
+#
+[submodule "bundle/clang-complete"]
+	path = bundle/clang-complete
+	url = https://github.com/vim-scripts/clang-complete.git
+
+# todo: testing this language out
+# todo: put somewhere else in the file if end up using
+#
+[submodule "bundle/vim-golang"]
+	path = bundle/vim-golang
+	url = https://github.com/jnwhiteh/vim-golang.git
+
+### EDITING ##################################################################
+
+[submodule "bundle/vim-easy-align"]
+	path = bundle/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
+
+### COLORSCHEMES #############################################################
+
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+
