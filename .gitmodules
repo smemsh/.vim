@@ -67,6 +67,14 @@ url = https://github.com/junegunn/vim-easy-align.git
 
 ### COLORSCHEMES #############################################################
 
+# this causes vim to approximate gui colors for
+# limited-palatte (256-color) curses terminal sessions
+# (most colorschemes are written for gvim, and need this)
+#
+[submodule "bundle/csapprox"]
+path = bundle/csapprox
+url = https://github.com/godlygeek/csapprox
+
 [submodule "bundle/vim-colors-solarized"]
 path = bundle/vim-colors-solarized
 url = https://github.com/altercation/vim-colors-solarized.git
