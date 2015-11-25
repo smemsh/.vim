@@ -128,6 +128,10 @@ set statusline =%-5.50f%m%r%w%y
 
 """
 
+" plugin-specific variables initialized in their own files
+runtime! plugrc/*
+
+" add all ~/.vim/bundle/* to runtime paths
 filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()

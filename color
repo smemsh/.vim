@@ -2,8 +2,6 @@
 
 "filetype plugin indent on
 
-source ~/.vim/solarized
-
 set background=dark
 colorscheme solarized
 
