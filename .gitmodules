@@ -69,7 +69,7 @@
 # (for alignment) will use spaces
 #
 [submodule "bundle/Smart-Tabs"]
-	path = bundle/Smart-Tabs
+	path = bundle/ctabs
 	url = http://github.com/vim-scripts/Smart-Tabs
 
 ### COLORSCHEMES #############################################################
@@ -89,4 +89,3 @@
 [submodule "bundle/colorsbox"]
 	path = bundle/colorsbox
 	url = https://github.com/mkarmona/colorsbox
-
