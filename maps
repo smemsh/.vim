@@ -5,8 +5,6 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader           = ","
-
 " change fold levels
 "
 nmap <leader><leader>f  :set foldlevel+=1<return>

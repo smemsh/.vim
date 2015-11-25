@@ -126,7 +126,11 @@ set statusline =%-5.50f%m%r%w%y
 	\\ C%c%V
 	\\ %P
 
-"""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" plugins may establish mappings, set leader early
+"
+let mapleader = ","
 
 " plugin-specific variables initialized in their own files
 "

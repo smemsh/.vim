@@ -69,16 +69,6 @@
 # leading shifts (for indent level) use tabs, later ones
 # (for alignment) will use spaces
 #
-[submodule "bundle/ctab"]
-	path = bundle/ctab
-	url = http://github.com/vim-scripts/Smart-Tabs
-
-### COLORSCHEMES #############################################################
-
-# this causes vim to approximate gui colors for
-# limited-palatte (256-color) curses terminal sessions
-# (most colorschemes are written for gvim, and need this)
-#
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = https://github.com/godlygeek/csapprox
@@ -90,3 +80,9 @@
 [submodule "bundle/colorsbox"]
 	path = bundle/colorsbox
 	url = https://github.com/mkarmona/colorsbox
+[submodule "bundle/IndentTab"]
+	path = bundle/IndentTab
+	url = http://github.com/vim-scripts/IndentTab
+[submodule "lib/ingo-library"]
+	path = lib/ingo-library
+	url = http://github.com/vim-scripts/ingo-library
