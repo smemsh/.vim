@@ -68,8 +68,8 @@
 # leading shifts (for indent level) use tabs, later ones
 # (for alignment) will use spaces
 #
-[submodule "bundle/Smart-Tabs"]
-	path = bundle/ctabs
+[submodule "bundle/ctab"]
+	path = bundle/ctab
 	url = http://github.com/vim-scripts/Smart-Tabs
 
 ### COLORSCHEMES #############################################################
