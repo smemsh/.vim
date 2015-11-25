@@ -65,6 +65,13 @@
 	path = bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
 
+# leading shifts (for indent level) use tabs, later ones
+# (for alignment) will use spaces
+#
+[submodule "bundle/Smart-Tabs"]
+	path = bundle/Smart-Tabs
+	url = http://github.com/vim-scripts/Smart-Tabs
+
 ### COLORSCHEMES #############################################################
 
 # this causes vim to approximate gui colors for
@@ -82,3 +89,4 @@
 [submodule "bundle/colorsbox"]
 	path = bundle/colorsbox
 	url = https://github.com/mkarmona/colorsbox
+
