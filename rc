@@ -129,12 +129,16 @@ set statusline =%-5.50f%m%r%w%y
 """
 
 " plugin-specific variables initialized in their own files
+"
 runtime! plugrc/*
 
-" add all ~/.vim/bundle/* to runtime paths
+" add all ~/.vim/lib/* (for libraries, which need to load first)
+" and then ~/.vim/bundle/* (for plugins, etc) to runtime paths
+"
 filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+execute pathogen#infect('lib/{}')
+execute pathogen#infect('bundle/{}')
 
 " TODO: is this the source of the strange indents?
 "filetype plugin indent on
