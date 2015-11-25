@@ -91,13 +91,6 @@ nmap <c-l>              :redraw!<return>
 nmap <leader>o          :set tabstop=4 shiftwidth=4 indentexpr=
                         \ noexpandtab<return>
 
-""" BUNDLES """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" todo: the background isn't a solarized-specific thing
-"
-nmap <leader>sc         :call Solarized_cycle_contrast()<return>
-nmap <leader>sb         :call Solarized_cycle_background()<return>
-
 """ APPLICATIONS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " for editing Trac wiki RST
@@ -173,5 +166,3 @@ nmap <leader>T          :set noexpandtab<return> :retab!<return>
 "
 nmap <leader>N          :set fo+=n<return>
 nmap <leader>n          :set fo-=n<return>
-
-"

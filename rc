@@ -124,14 +124,13 @@ set statusline =%-5.50f%m%r%w%y
 	\\ C%c%V
 	\\ %P
 
-
 """
 
 filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-" todo: is this the source of the strange indents?
+" TODO: is this the source of the strange indents?
 "filetype plugin indent on
 filetype plugin on
 syntax enable
@@ -142,30 +141,7 @@ source ~/.vim/globals
 source ~/.vim/functions
 source ~/.vim/maps
 source ~/.vim/cscope
-
-"filetype plugin indent on
-
-" default is 16; upstream wants us to change the terminal pallette... um, no.
-"
-let g:solarized_termcolors=256
-
-" todo: while these are set on, and that is also the default, do not see any
-" bold or italic displayed (in particular, want italic comments, but none seen)
-"
-let g:solarized_bold=1
-let g:solarized_underline=1
-let g:solarized_italic=1
-
-" this has also 'high' and 'low' solarized author says unwise
-" todo: make this available with keypress
-"
-"let g:solarized_contrast="normal"
-
-" this is for some whitespace and :set list type stuff, has high and low
-let g:solarized_visibility="normal"
-
-set background=dark
-colorscheme solarized
+source ~/.vim/color
 
 " EOF
 
