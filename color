@@ -6,3 +6,9 @@ source ~/.vim/solarized
 
 set background=dark
 colorscheme solarized
+
+" temporarily, until we figure it out: doing this after solarized
+" results in best color scheme seen so far, but haven't yet
+" completed testing with new csapprox setup and 256 color schemes
+"
+colorscheme default
