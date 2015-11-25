@@ -149,22 +149,6 @@ source ~/.vim/color
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" this hack gets around vim using termcap instead of terminfo
-" XXX TODO why was this first case necessary? a builtin
-" termcap perhaps that no longer needs overriding? or maybe
-" remotes not usually having rxvt-unicode? but don't we
-" distribute that now in var/skel/ ?
-"
-"if &term == "rxvt-unicode"
-"       let &term = "xterm-color"
-"elseif &term == "linux"
-"       set t_ve+=[?17;0;64c
-"endif
-
-
-" eof
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " for buffertabs plugin
 "
 "let g:buftabs_only_basename = 1
