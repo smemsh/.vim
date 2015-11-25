@@ -51,9 +51,11 @@ set whichwrap           =b,s,h,l,<,>,[,]
 set wildmenu
 set wildmode            =list,full
 
-
 " irritating menace
 set nodigraph
+
+" possibly dangerous
+set nomodeline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -159,13 +161,6 @@ source ~/.vim/color
 "       set t_ve+=[?17;0;64c
 "endif
 
-" this seems dangerous and rarely results in desirable
-" settings anyways, useful as a hint just like any other
-" comment, and should be treated as such, not as embedded
-" commands which will do who knows what, under control of
-" arbitrary people we do not know
-"
-set nomodeline
 
 " eof
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
