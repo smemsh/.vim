@@ -5,51 +5,51 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set	nocompatible
-set	cpoptions	-=ae
-set	cpoptions	+=Er$
+set nocompatible
+set cpoptions           -=ae
+set cpoptions           +=Er$
 
-set	nocindent
-set	smartindent
-set	autoindent
-set	textwidth	=78
+set nocindent
+set smartindent
+set autoindent
+set textwidth           =78
 
-set	backspace	=2
-set	complete	=t,.,i,w,b,k
-set	noesckeys
-set	fileformats	=unix,dos,mac
-set	hlsearch
-set	hidden
-set	history		=10000
-set	incsearch
-set	ignorecase
-set	laststatus	=2
-set	lazyredraw
-set	listchars	+=tab:.\ ,trail:$,extends:>
-set	listchars	-=eol:$
-set	list
-set	matchtime	=15
-set	report		=1
-set	norestorescreen
-set	ruler
-set	scrolloff	=999
-set	selection	=old
-set	shortmess	+=aI
-set	showbreak	=<
-set	showcmd
-set	showfulltag
-set	showmatch
-set	sidescroll	=1
-set	smartcase
-set	splitbelow
-set	ttyfast
-set	ttyscroll	=999
-set	nostartofline
-set	viminfo		='999,f1,%
-set	visualbell
-set	whichwrap	=b,s,h,l,<,>,[,]
-set	wildmenu
-set	wildmode	=list,full
+set backspace           =2
+set complete            =t,.,i,w,b,k
+set noesckeys
+set fileformats         =unix,dos,mac
+set hlsearch
+set hidden
+set history             =10000
+set incsearch
+set ignorecase
+set laststatus          =2
+set lazyredraw
+set listchars           +=tab:.\ ,trail:$,extends:>
+set listchars           -=eol:$
+set list
+set matchtime           =15
+set report              =1
+set norestorescreen
+set ruler
+set scrolloff           =999
+set selection           =old
+set shortmess           +=aI
+set showbreak           =<
+set showcmd
+set showfulltag
+set showmatch
+set sidescroll          =1
+set smartcase
+set splitbelow
+set ttyfast
+set ttyscroll           =999
+set nostartofline
+set viminfo             ='999,f1,%
+set visualbell
+set whichwrap           =b,s,h,l,<,>,[,]
+set wildmenu
+set wildmode            =list,full
 
 
 " irritating menace
@@ -58,9 +58,9 @@ set nodigraph
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let datadirs =[
-    \['backupdir',  'backups',   '',       ],
-    \['directory',  'swaps',     '//,.',   ],
-    \['undodir',    'undo',      '',       ],
+	\['backupdir',  'backups',   '',       ],
+	\['directory',  'swaps',     '//,.',   ],
+	\['undodir',    'undo',      '',       ],
 \]
 
 for dir in datadirs
@@ -72,7 +72,7 @@ for dir in datadirs
 		if ! isdirectory(path)
 			mkdir(path)
 		endif
-		execute "set " . vimvar . '=' . path . append
+	execute "set " . vimvar . '=' . path . append
 	endif
 endfor
 
@@ -86,11 +86,11 @@ endif
 
 " lost edits too many times... this is before persistent undo
 "
-set	writebackup
-set	backup
-set	backupskip	=
-set patchmode		= " patchmode always saves in pwd; if empty do not use
-set backupext		=.bak " would prefer empty but $patchmode cant be same
+set writebackup
+set backup
+set backupskip          =
+set patchmode           = " patchmode always saves in pwd; if empty do not use
+set backupext           =.bak " would prefer empty but $patchmode cant be same
 
 " we have to do this before the write because if it's just
 " backupext, it has a permanent static value set at vim start
@@ -101,9 +101,9 @@ autocmd BufWritePre * let &backupext = '-' . strftime("%Y%m%d%H%M%S")
 "
 if exists('&fsync')
 set nofsync
-set swapsync		=
-set updatecount		=20 " chars between swapfile writes
-set updatetime		=1000 " msecs idle before swapfile writes
+set swapsync            =
+set updatecount         =20 " chars between swapfile writes
+set updatetime          =1000 " msecs idle before swapfile writes
 endif
 
 if ! &compatible
@@ -130,6 +130,7 @@ set statusline =%-5.50f%m%r%w%y
 filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
 " todo: is this the source of the strange indents?
 "filetype plugin indent on
 filetype plugin on
@@ -177,9 +178,9 @@ colorscheme solarized
 " distribute that now in var/skel/ ?
 "
 "if &term == "rxvt-unicode"
-"	let &term = "xterm-color"
+"       let &term = "xterm-color"
 "elseif &term == "linux"
-"	set t_ve+=[?17;0;64c
+"       set t_ve+=[?17;0;64c
 "endif
 
 " this seems dangerous and rarely results in desirable
@@ -199,10 +200,10 @@ set nomodeline
 "let g:buftabs_in_statusline = 1
 "let g:buftabs_active_highlight_group = "StatusLine"
 "let g:buftabs_inactive_highlight_group = "StatusLineNC"
-"let g:buftabs_separator		= "."
-"let g:buftabs_marker_start	= "("
-"let g:buftabs_marker_end	= ")"
-"let g:buftabs_marker_modified	= "*"
+"let g:buftabs_separator                = "."
+"let g:buftabs_marker_start     = "("
+"let g:buftabs_marker_end       = ")"
+"let g:buftabs_marker_modified  = "*"
 
 " defaults:
 "

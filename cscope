@@ -11,8 +11,8 @@ endif
 
 set cscopetag
 
-set cscopetagorder	=1 " tags file, then cscope
-set cscopequickfix	=s-,c-,d-,i-,t-,e-
+set cscopetagorder =1 " tags file, then cscope
+set cscopequickfix =s-,c-,d-,i-,t-,e-
 
 " only be verbose about it on the initial load
 "
