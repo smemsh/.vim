@@ -13,12 +13,6 @@
 
 ### TODO #####################################################################
 #
-## colorschemes
-# https://github.com/quanganhdo/grb256
-# https://github.com/Lokaltog/vim-distinguished
-# https://github.com/nanotech/jellybeans.vim
-# https://github.com/jpo/vim-railscasts-theme
-#
 ## editing
 # https://github.com/Lokaltog/vim-easymotion
 # https://github.com/tomtom/tcomment_vim
@@ -73,16 +67,30 @@
 	path = bundle/csapprox
 	url = https://github.com/godlygeek/csapprox
 
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-
-[submodule "bundle/colorsbox"]
-	path = bundle/colorsbox
-	url = https://github.com/mkarmona/colorsbox
 [submodule "bundle/IndentTab"]
 	path = bundle/IndentTab
 	url = http://github.com/vim-scripts/IndentTab
 [submodule "lib/ingo-library"]
 	path = lib/ingo-library
 	url = http://github.com/vim-scripts/ingo-library
+
+### COLORSCHEMES #############################################################
+
+[submodule "colorscheme/jellybeans"]
+	path = colorscheme/jellybeans
+	url = http://github.com/nanotech/jellybeans.vim
+[submodule "colorscheme/grb256"]
+	path = colorscheme/grb256
+	url = http://github.com/quanganhdo/grb256
+[submodule "colorscheme/vim-distinguished"]
+	path = colorscheme/vim-distinguished
+	url = https://github.com/Lokaltog/vim-distinguished
+[submodule "colorscheme/vim-railscast-theme"]
+	path = colorscheme/vim-railscast-theme
+	url = https://github.com/jpo/vim-railscasts-theme
+[submodule "colorscheme/colorsbox"]
+	path = colorscheme/colorsbox
+	url = http://github.com/mkarmona/colorsbox
+[submodule "colorscheme/vim-colors-solarized"]
+	path = colorscheme/vim-colors-solarized
+	url = http://github.com/altercation/vim-colors-solarized
