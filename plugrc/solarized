@@ -22,6 +22,24 @@ let g:solarized_visibility="normal"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "
+" todo: probably this is already tracked in solarized itself, but their
+" ':ToggleBG' autoload is broken and no time at the moment, so hacking this
+" (hence use of '__' prefixes for my own namespace)
+"
+
+if !exists("g:__solarized_contrast")
+	let g:__solarized_contrasts = ['low', 'normal', 'high']
+	let g:__solarized_contrast = index(g:__solarized_contrasts, 'normal')
+endif
+
+if !exists("g:__solarized_background")
+	let g:__solarized_backgrounds = ['dark', 'light']
+	let g:__solarized_background = index(g:__solarized_backgrounds, 'dark')
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"
 " TODO
 "
 " The 'background' setting is some kind of magic string that can only be

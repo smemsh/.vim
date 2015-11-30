@@ -64,15 +64,16 @@ set wildmode            =list,full
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let datadirs =[
-	\['backupdir',  'backups',   '',       ],
-	\['directory',  'swaps',     '//,.',   ],
-	\['undodir',    'undo',      '',       ],
+	\['backupdir',  'backups',   '',       ''                       ],
+	\['directory',  'swaps',     '//,.',   ''                       ],
+	\['undodir',    'undo',      '',       'persistent_undo'        ],
 \]
 
 for dir in datadirs
 	let vimvar = dir[0]
 	let subdir = dir[1]
 	let append = dir[2]
+	let testif = dir[3]
 	let path = $HOME . "/var/vim/" . subdir
 	if (exists('&' . vimvar) && exists("*mkdir"))
 		if ! isdirectory(path)
@@ -156,7 +157,6 @@ syntax enable
 
 """
 
-source ~/.vim/globals
 source ~/.vim/functions
 source ~/.vim/maps
 source ~/.vim/cscope
