@@ -63,7 +63,12 @@ set wildmode            =list,full
 
 """
 
-set statusline =%-5.50f%m%r%w%y
+set statusline =
+	\%-5.50f
+	\%m
+	\%r
+	\%w
+	\%y
 	\\ b%n%=%b
 	\\ 0x%B,
 	\\ %o
