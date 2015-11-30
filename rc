@@ -88,10 +88,11 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"	pathvar         pathbase        appendage       flagvar
 let datadirs =[
-	\['backupdir',  'backups',   '',       ''               ],
-	\['directory',  'swaps',     '//,.',   ''               ],
-	\['undodir',    'undo',      '',       'undofile'       ],
+	\['backupdir',  'backups',      '',             ''               ],
+	\['directory',  'swaps',        '//,.',         ''               ],
+	\['undodir',    'undo',         '',             'undofile'       ],
 \]
 
 for dir in datadirs
@@ -103,7 +104,7 @@ for dir in datadirs
 
 	" exists(&var) generalizes has("feature") without needing
 	" feature name; only make the path if dne, set the variable
-	" thereto, and set any supplied auxiliary booleans
+	" thereto, and set any supplied auxiliary boolean
 	"
 	if (exists('&' . vimvar) && exists("*mkdir"))
 		if ! isdirectory(path)
