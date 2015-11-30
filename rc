@@ -5,57 +5,61 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set nocompatible
-set cpoptions           -=ae
-set cpoptions           +=Er$
-
-set nocindent
 set smartindent
 set autoindent
-set textwidth           =78
-
-set backspace           =2
-set complete            =t,.,i,w,b,k
-set noesckeys
-set fileformats         =unix,dos,mac
 set hlsearch
 set hidden
-set history             =10000
 set incsearch
 set ignorecase
-set laststatus          =2
 set lazyredraw
-set listchars           +=tab:.\ ,trail:$,extends:>
-set listchars           -=eol:$
 set list
-set matchtime           =15
-set report              =1
-set norestorescreen
 set ruler
-set scrolloff           =999
-set selection           =old
-set shortmess           +=aI
-set showbreak           =<
 set showcmd
 set showfulltag
 set showmatch
-set sidescroll          =1
 set smartcase
 set splitbelow
 set ttyfast
-set ttyscroll           =999
-set nostartofline
-set viminfo             ='999,f1,%
 set visualbell
-set whichwrap           =b,s,h,l,<,>,[,]
 set wildmenu
-set wildmode            =list,full
+
+"""
+
+set nocompatible
+set nocindent
+set noesckeys
+set norestorescreen
+set nostartofline
 
 " irritating menace
 set nodigraph
 
 " possibly dangerous
 set nomodeline
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set cpoptions           -=ae
+set cpoptions           +=Er$
+set textwidth           =78
+set backspace           =2
+set complete            =t,.,i,w,b,k
+set fileformats         =unix,dos,mac
+set history             =10000
+set laststatus          =2
+set listchars           +=tab:.\ ,trail:$,extends:>
+set listchars           -=eol:$
+set matchtime           =15
+set report              =1
+set scrolloff           =999
+set selection           =old
+set shortmess           +=aI
+set showbreak           =<
+set sidescroll          =1
+set ttyscroll           =999
+set viminfo             ='999,f1,%
+set whichwrap           =b,s,h,l,<,>,[,]
+set wildmode            =list,full
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
