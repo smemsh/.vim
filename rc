@@ -190,6 +190,3 @@ colorscheme smemsh256
 "g:buftabs_marker_end      ]
 "g:buftabs_separator       -
 "g:buftabs_marker_modified !
-"
-" plugins accidentally erased:
-" DrawIt AnsiEscPlugin cecutil 
