@@ -157,6 +157,10 @@ source ~/.vim/functions
 source ~/.vim/maps
 source ~/.vim/cscope
 
+"""
+
+colorscheme smemsh256
+
 " EOF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
