@@ -61,6 +61,26 @@ set viminfo             ='999,f1,%
 set whichwrap           =b,s,h,l,<,>,[,]
 set wildmode            =list,full
 
+"""
+
+set statusline =%-5.50f%m%r%w%y
+	\\ b%n%=%b
+	\\ 0x%B,
+	\\ %o
+	\\ 0x%O,
+	\\ L%l/%L
+	\\ C%c%V
+	\\ %P
+
+"""
+
+if ! &compatible
+	set dictionary =
+	\/usr/share/dict/words,
+	\$HOME/.ispell_english,
+	\$HOME/.aspell.en.pws
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let datadirs =[
@@ -77,8 +97,8 @@ for dir in datadirs
 	let path = $HOME . "/var/vim/" . subdir
 
 	" exists(&var) generalizes has("feature") without needing
-	" feature name; only make the path, set the variable thereto,
-	" and any supplied auxiliary booleans
+	" feature name; only make the path if dne, set the variable
+	" thereto, and set any supplied auxiliary booleans
 	"
 	if (exists('&' . vimvar) && exists("*mkdir"))
 		if ! isdirectory(path)
@@ -92,8 +112,6 @@ for dir in datadirs
 		endif
 	endif
 endfor
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " lost edits too many times... this is before persistent undo
 "
@@ -116,24 +134,6 @@ set swapsync            =
 set updatecount         =20 " chars between swapfile writes
 set updatetime          =1000 " msecs idle before swapfile writes
 endif
-
-if ! &compatible
-set dictionary =
-	\/usr/share/dict/words,
-	\$HOME/.ispell_english,
-	\$HOME/.aspell.en.pws
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set statusline =%-5.50f%m%r%w%y
-	\\ b%n%=%b
-	\\ 0x%B,
-	\\ %o
-	\\ 0x%O,
-	\\ L%l/%L
-	\\ C%c%V
-	\\ %P
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
