@@ -64,32 +64,36 @@ set wildmode            =list,full
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let datadirs =[
-	\['backupdir',  'backups',   '',       ''                       ],
-	\['directory',  'swaps',     '//,.',   ''                       ],
-	\['undodir',    'undo',      '',       'persistent_undo'        ],
+	\['backupdir',  'backups',   '',       ''               ],
+	\['directory',  'swaps',     '//,.',   ''               ],
+	\['undodir',    'undo',      '',       'undofile'       ],
 \]
 
 for dir in datadirs
 	let vimvar = dir[0]
 	let subdir = dir[1]
 	let append = dir[2]
-	let testif = dir[3]
+	let setflag = dir[3]
 	let path = $HOME . "/var/vim/" . subdir
+
+	" exists(&var) generalizes has("feature") without needing
+	" feature name; only make the path, set the variable thereto,
+	" and any supplied auxiliary booleans
+	"
 	if (exists('&' . vimvar) && exists("*mkdir"))
 		if ! isdirectory(path)
 			mkdir(path)
 		endif
-	execute "set " . vimvar . '=' . path . append
+		execute "set " . vimvar . '=' . path . append
+		if ! empty(setflag)
+			if (exists('&' . setflag))
+				execute "set " . setflag
+			endif
+		endif
 	endif
 endfor
 
-" TODO this duplicates set above, but that set does not have a test
-" for capability (nor do any of the dir sets)
-"
-if has("persistent_undo")
-	set undodir=~/var/vim/undo
-	set undofile
-endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " lost edits too many times... this is before persistent undo
 "
