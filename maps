@@ -5,6 +5,34 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" buffer manipulations
+"
+nmap <c-j>              <c-w>j
+nmap <c-k>              <c-w>k
+nmap <c-y>              <c-w>p
+nmap <c-n>              :bn<return>
+nmap <c-p>              :bp<return>
+nnoremap <leader>.      :b#<return>
+
+" to tabs (T), to spaces (t)
+"
+nmap <leader>t          :set expandtab<return> :retab!<return>
+nmap <leader>T          :set noexpandtab<return> :retab!<return>
+
+" temporal undo
+"
+nmap -                  g-
+nmap +                  g+
+nmap =                  g+
+
+" clear settings
+"
+nmap <leader>c          :set noai nosi nocin tw=0 fo-=a indentexpr=<return>
+nmap <leader>5          :set tw=55<return>
+nmap <leader>6          :set tw=60<return>
+nmap <leader>7          :set tw=72<return>
+nmap <leader>0          :set tw=0<return>
+
 " change fold levels
 "
 nmap <leader><leader>f  :set foldlevel+=1<return>
@@ -14,6 +42,8 @@ nmap         <leader>f  :set foldlevel-=1<return>
 "
 nmap <leader><leader>a  :set formatoptions+=a<return>
 nmap         <leader>a  :set formatoptions-=a<return>
+nmap         <leader>N  :set fo+=n<return>
+nmap         <leader>n  :set fo-=n<return>
 
 " wrap toggles
 "
@@ -26,20 +56,12 @@ nmap         <leader>R  :set wrap nolist showbreak=
 nmap <leader><leader>R  :set nowrap list showbreak="> "
                         \ nobreakindent nolinebreak<return>
 
-" buffer manipulations
+" for editing raw text/flowed style microsoft one-line paragraphs
 "
-nmap <c-j>              <c-w>j
-nmap <c-k>              <c-w>k
-nmap <c-y>              <c-w>p
-nmap <c-n>              :bn<return>
-nmap <c-p>              :bp<return>
-nnoremap <leader>.      :b#<return>
-
-" bufexplorer plugin
-" TODO: this should go somewhere else
-"
-"nnoremap <leader>l     :ls<return>
-nmap <leader>l          <leader>be
+nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
+                        \ wrap linebreak showbreak= <return>
+                        \:match WarningMsg ''<return>
+                        \:24vspl /dev/null<return>
 
 " quickfix prev-next maps to vi left-right but one row down
 "
@@ -55,29 +77,10 @@ nmap <c-/>              :cn<return>
 "
 nmap <c-_>              :cn<return>
 
-" temporal undo maps
-" (note: '=' map replaces "filter through 'equalprog' or cindent")
-"
-nmap -                  g-
-nmap +                  g+
-nmap =                  g+
-
 " temporary solution to having nonfunctioning F-keys
+"
 noremap <f1>            <c-^>
 noremap <c-^>           <f1>
-
-" for editing raw text/flowed style microsoft one-line paragraphs
-nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
-                        \ wrap linebreak showbreak= <return>
-                        \:match WarningMsg ''<return>
-                        \:24vspl /dev/null<return>
-
-" clear settings
-nmap <leader>c          :set noai nosi nocin tw=0 fo-=a indentexpr=<return>
-nmap <leader>5          :set tw=55<return>
-nmap <leader>6          :set tw=60<return>
-nmap <leader>7          :set tw=72<return>
-nmap <leader>0          :set tw=0<return>
 
 " screen redraw
 "
@@ -89,7 +92,14 @@ nmap <c-l>              :redraw!<return>
 nmap <leader>o          :set tabstop=4 shiftwidth=4 indentexpr=
                         \ noexpandtab<return>
 
-""" APPLICATIONS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" type while inserting, inputs the date, and then continues
+" appending in insert mode after going to the end of the new
+" date
+"
+map! <leader><leader>d  <esc>:call Read_shell_histtimeformat()<return>
+                        \Ea<space>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " for editing Trac wiki RST
 "
@@ -120,9 +130,9 @@ nmap <leader><leader>O  ,c0,,o}A<return><esc>
                         \78i_<esc>
                         \A<return><esc>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""" TRICKS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" TODO this should be somewhere else, maybe the main rcfile
 " awesome history window, editable same as a buffer!
 " sometimes messages do not show up; use q: in that case
 "
@@ -132,6 +142,8 @@ if ! &compatible
 	autocmd CmdwinEnter [:/?] startinsert
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " diff this buffer against the pristine version and use
 " split screen to show differences, of course will look
 " better on larger screen
@@ -147,20 +159,3 @@ command DiffOrig
 	\ diffthis
 nmap <leader>d :DiffOrig<return>
 endif
-
-" type while inserting, inputs the date, and then continues
-" appending in insert mode after going to the end of the new
-" date
-"
-map! <leader><leader>d  <esc>:call Read_shell_histtimeformat()<return>
-                        \Ea<space>
-
-" to tabs (T), to spaces (t)
-"
-nmap <leader>t          :set expandtab<return> :retab!<return>
-nmap <leader>T          :set noexpandtab<return> :retab!<return>
-
-" toggle understanding of numerics to auto-formatting
-"
-nmap <leader>N          :set fo+=n<return>
-nmap <leader>n          :set fo-=n<return>
