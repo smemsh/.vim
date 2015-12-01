@@ -159,3 +159,15 @@ command DiffOrig
 	\ diffthis
 nmap <leader>d :DiffOrig<return>
 endif
+
+" diff from local version
+nnoremap < :diffget LOCAL<return>:diffupdate<return>
+
+" diff from remote version
+nnoremap > :diffget REMOTE<return>:diffupdate<return>
+
+" resync diff highlighting
+nnoremap <leader>$ :diffupdate<return>
+
+" write this buffer and quit others (they should have no changes)
+nnoremap <leader>x :w<return>:qa<return>
