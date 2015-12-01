@@ -154,7 +154,8 @@ autocmd BufWritePre *   let &backupext = '-' . strftime("%Y%m%d%H%M%S")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" plugins may establish mappings, set leader early
+" <leader> is expanded in keymaps at define-time, and could be
+" used anywhere; set early before sourcings are done
 "
 let mapleader = ","
 
