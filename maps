@@ -131,18 +131,6 @@ nmap <leader><leader>O  ,c0,,o}A<return><esc>
                         \A<return><esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" TODO this should be somewhere else, maybe the main rcfile
-" awesome history window, editable same as a buffer!
-" sometimes messages do not show up; use q: in that case
-"
-if ! &compatible
-	nnoremap q: :
-	nnoremap : q:
-	autocmd CmdwinEnter [:/?] startinsert
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " diff this buffer against the pristine version and use
 " split screen to show differences, of course will look
