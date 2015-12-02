@@ -1,0 +1,5 @@
+"
+" bufexplorer plugin
+"
+"nnoremap       <leader>l :ls<return>
+nmap            <leader>l <leader>be
