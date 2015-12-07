@@ -87,6 +87,12 @@ noremap <c-^>           <f1>
 nmap <leader><leader>l  :redraw!<return>
 nmap <c-l>              :redraw!<return>
 
+" reload current colorscheme
+"
+execute "map <leader>C :colorscheme " .
+	\g:colors_name .
+	\"<return>"
+
 " sometimes use these settings to edit outlines
 "
 nmap <leader>o          :set tabstop=4 shiftwidth=4 indentexpr=
