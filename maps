@@ -56,6 +56,11 @@ nmap         <leader>R  :set wrap nolist showbreak=
 nmap <leader><leader>R  :set nowrap list showbreak="> "
                         \ nobreakindent nolinebreak<return>
 
+" sometimes use these settings to edit outlines
+"
+nmap <leader>o          :set tabstop=4 shiftwidth=4 indentexpr=
+                        \ noexpandtab<return>
+
 " for editing raw text/flowed style microsoft one-line paragraphs
 "
 nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
@@ -93,10 +98,6 @@ execute "map <leader>C :colorscheme " .
 	\g:colors_name .
 	\"<return>"
 
-" sometimes use these settings to edit outlines
-"
-nmap <leader>o          :set tabstop=4 shiftwidth=4 indentexpr=
-                        \ noexpandtab<return>
 
 " type while inserting, inputs the date, and then continues
 " appending in insert mode after going to the end of the new
