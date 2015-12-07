@@ -164,7 +164,9 @@ let mapleader = ","
 runtime! plugrc/*
 
 " add all ~/.vim/lib/* (for libraries, which need to load first)
-" and then ~/.vim/bundle/* (for plugins, etc) to runtime paths
+"   and then ~/.vim/bundle/* (for plugins, etc)
+"   and then ~/.vim/colorsheme/* (only :colorscheme bundles)
+" to $runtime path
 "
 filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim
