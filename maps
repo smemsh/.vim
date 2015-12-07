@@ -94,9 +94,7 @@ nmap <c-l>              :redraw!<return>
 
 " reload current colorscheme
 "
-execute "map <leader>C :colorscheme " .
-	\g:colors_name .
-	\"<return>"
+nmap <leader>C          <esc>:call Reload_colorscheme()<return>
 
 
 " type while inserting, inputs the date, and then continues
