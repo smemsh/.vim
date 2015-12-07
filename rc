@@ -173,8 +173,6 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect('lib/{}')
 execute pathogen#infect('bundle/{}')
 execute pathogen#infect('colorscheme/{}')
-
-" TODO: is this the source of the strange indents?
 "filetype plugin indent on
 filetype plugin on
 syntax enable
