@@ -1,6 +1,6 @@
 "
-" vim-smemsh-256
-"   vim 256-color terminal colorscheme based on elflord
+" smemsh256
+"   vim colorscheme for 256 color xterms, based on elflord
 "
 " magic incantation used to create this file:
 "   - start vim with csapprox plugin installed and enabled
@@ -24,7 +24,7 @@
 "   - no attempt was made to provide gui values, only cterm
 "
 " scott@smemsh.net
-" http://smemsh.net/src/.vim/
+" http://smemsh.net/src/vim-smemsh256/
 " http://spdx.org/licenses/GPL-2.0
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -47,6 +47,10 @@ hi Normal
 
 """
 
+hi Comment              cterm=italic    ctermfg=111     ctermbg=bg
+hi Cursor               cterm=NONE      ctermfg=15      ctermbg=0
+hi SubtleWarningMsg     cterm=NONE      ctermfg=fg      ctermbg=12
+
 hi SpecialKey           cterm=NONE      ctermfg=224     ctermbg=0
 hi NonText              cterm=NONE      ctermfg=159     ctermbg=0
 hi Directory            cterm=NONE      ctermfg=81      ctermbg=0
@@ -58,11 +62,11 @@ hi ModeMsg              cterm=NONE      ctermfg=15      ctermbg=0
 hi LineNr               cterm=NONE      ctermfg=121     ctermbg=0
 hi CursorLineNr         cterm=bold      ctermfg=226     ctermbg=bg
 hi Question             cterm=NONE      ctermfg=11      ctermbg=12
-hi StatusLine           cterm=NONE      ctermfg=121     ctermbg=12
+hi StatusLine           cterm=NONE      ctermfg=81      ctermbg=17
 hi StatusLineNC         cterm=NONE      ctermfg=248     ctermbg=12
 hi VertSplit            cterm=reverse   ctermfg=fg      ctermbg=bg
 hi Title                cterm=bold      ctermfg=201     ctermbg=bg
-hi Visual               cterm=NONE      ctermfg=fg      ctermbg=248
+hi Visual               cterm=NONE      ctermfg=NONE    ctermbg=235
 hi WarningMsg           cterm=NONE      ctermfg=11      ctermbg=9
 hi WildMenu             cterm=NONE      ctermfg=16      ctermbg=226
 hi Folded               cterm=NONE      ctermfg=51      ctermbg=248
@@ -81,17 +85,17 @@ hi SpellCap             cterm=NONE      ctermfg=12      ctermbg=0
 hi SpellRare            cterm=NONE      ctermfg=13      ctermbg=0
 hi SpellLocal           cterm=NONE      ctermfg=81      ctermbg=0
 
-hi Pmenu                cterm=NONE      ctermfg=12      ctermbg=248
-hi PmenuSel             cterm=NONE      ctermfg=9       ctermbg=15
-hi PmenuSbar            cterm=NONE      ctermfg=fg      ctermbg=250
-hi PmenuThumb           cterm=NONE      ctermfg=fg      ctermbg=231
+hi Pmenu                cterm=bold      ctermfg=15      ctermbg=56
+hi PmenuSel             cterm=bold      ctermfg=123     ctermbg=20
+hi PmenuSbar            cterm=NONE      ctermfg=11      ctermbg=21
+hi PmenuThumb           cterm=NONE      ctermfg=fg      ctermbg=17
 
 hi TabLine              cterm=underline ctermfg=fg      ctermbg=248
 hi TabLineSel           cterm=bold      ctermfg=fg      ctermbg=bg
 hi TabLineFill          cterm=reverse   ctermfg=fg      ctermbg=bg
 
-hi CursorColumn         cterm=NONE      ctermfg=fg      ctermbg=241
-hi CursorLine           cterm=NONE      ctermfg=fg      ctermbg=241
+hi CursorColumn         cterm=NONE      ctermfg=fg      ctermbg=236
+hi CursorLine           cterm=NONE      ctermfg=214     ctermbg=236
 hi ColorColumn          cterm=NONE      ctermfg=fg      ctermbg=88
 
 hi MatchParen           cterm=NONE      ctermfg=fg      ctermbg=30
@@ -104,15 +108,11 @@ hi PreProc              cterm=NONE      ctermfg=213     ctermbg=bg
 hi Type                 cterm=bold      ctermfg=83      ctermbg=bg
 hi Underlined           cterm=underline ctermfg=111     ctermbg=bg
 hi Ignore               cterm=NONE      ctermfg=16      ctermbg=bg
-hi Error                ctermfg=231     ctermfg=fg      ctermbg=196
-hi Todo                 ctermfg=21      ctermfg=fg      ctermbg=226
+hi Error                cterm=italic    ctermfg=227     ctermbg=196
+hi Todo                 cterm=italic    ctermfg=52      ctermbg=226
 hi Function             cterm=NONE      ctermfg=231     ctermbg=bg
 hi Repeat               cterm=NONE      ctermfg=231     ctermbg=bg
-hi Operator             cterm=NONE      ctermfg=196     ctermbg=bg
-
-hi Comment              cterm=NONE      ctermfg=111     ctermbg=bg
-hi Cursor               cterm=NONE      ctermfg=15      ctermbg=0
-hi SubtleWarningMsg     cterm=NONE      ctermfg=fg      ctermbg=12
+hi Operator             cterm=NONE      ctermfg=197     ctermbg=bg
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
