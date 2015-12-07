@@ -179,6 +179,8 @@ syntax enable
 
 """
 
+" TODO: use a globbing scheme and maybe rc.d/
+"
 source ~/.vim/functions
 source ~/.vim/maps
 source ~/.vim/cscope
