@@ -94,3 +94,6 @@
 [submodule "colorscheme/vim-colors-solarized"]
 	path = colorscheme/vim-colors-solarized
 	url = http://github.com/altercation/vim-colors-solarized
+[submodule "bundle/vim-hilinks"]
+	path = bundle/vim-hilinks
+	url = https://github.com/kergoth/vim-hilinks

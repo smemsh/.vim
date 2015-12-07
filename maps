@@ -96,6 +96,12 @@ nmap <c-l>              :redraw!<return>
 "
 nmap <leader>C          <esc>:call Reload_colorscheme()<return>
 
+" toggle display of syntax stack (uses drchip hilinks plugin)
+" (note: plugin provided mapping <leader>hlt does not seem to work)
+"
+if ! exists(':HLTm')
+nmap <leader>H          :HLTm<return>
+endif
 
 " type while inserting, inputs the date, and then continues
 " appending in insert mode after going to the end of the new
