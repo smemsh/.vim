@@ -177,6 +177,9 @@ execute pathogen#infect('colorscheme/{}')
 filetype plugin on
 syntax enable
 
+"
+colorscheme smemsh256
+
 """
 
 " TODO: use a globbing scheme and maybe rc.d/
@@ -184,7 +187,3 @@ syntax enable
 source ~/.vim/functions
 source ~/.vim/maps
 source ~/.vim/cscope
-
-"""
-
-colorscheme smemsh256
