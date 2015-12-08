@@ -41,6 +41,7 @@ set nomodeline
 
 set cpoptions           -=ae
 set cpoptions           +=Er$
+set diffopt             =filler,vertical,foldcolumn:0
 set textwidth           =78
 set backspace           =2
 set complete            =t,.,i,w,b,k
