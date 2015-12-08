@@ -48,8 +48,6 @@ set complete            =t,.,i,w,b,k
 set fileformats         =unix,dos,mac
 set history             =10000
 set laststatus          =2
-set listchars           +=tab:.\ ,trail:$,extends:>
-set listchars           -=eol:$
 set matchtime           =15
 set report              =1
 set scrolloff           =999
@@ -63,6 +61,21 @@ set whichwrap           =b,s,h,l,<,>,[,]
 set wildmode            =list,full
 
 """
+
+let &listchars =
+	\"tab:\u00b7\x20," .
+	\"trail:$," .
+	\"extends:\u21e8," .
+	\"precedes:\u21e6," .
+	\"nbsp:\u2581," .
+	\""
+
+let &fillchars =
+	\"vert:\u250a," .
+	\"fold:\u22ef," .
+	\"diff:\u2591," .
+	\""
+"	\"vert:\u2502," .
 
 set statusline =
 	\%-5.50f
