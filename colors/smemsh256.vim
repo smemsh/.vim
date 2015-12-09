@@ -47,72 +47,73 @@ hi Normal
 
 """
 
-hi Comment              cterm=italic    ctermfg=111     ctermbg=bg
-hi Cursor               cterm=NONE      ctermfg=15      ctermbg=0
-hi SubtleWarningMsg     cterm=NONE      ctermfg=fg      ctermbg=12
+hi Comment              cterm=italic        ctermfg=111     ctermbg=bg
+hi Cursor               cterm=NONE          ctermfg=15      ctermbg=0
+hi SubtleWarningMsg     cterm=NONE          ctermfg=fg      ctermbg=12
 
-hi SpecialKey           cterm=NONE      ctermfg=224     ctermbg=0
-hi NonText              cterm=NONE      ctermfg=159     ctermbg=0
-hi Directory            cterm=NONE      ctermfg=81      ctermbg=0
-hi ErrorMsg             cterm=NONE      ctermfg=224     ctermbg=0
-hi IncSearch            cterm=NONE      ctermfg=11      ctermbg=12
-hi Search               cterm=NONE      ctermfg=11      ctermbg=12
-hi MoreMsg              cterm=NONE      ctermfg=11      ctermbg=12
-hi ModeMsg              cterm=NONE      ctermfg=15      ctermbg=0
-hi LineNr               cterm=NONE      ctermfg=121     ctermbg=0
-hi CursorLineNr         cterm=bold      ctermfg=226     ctermbg=bg
-hi Question             cterm=NONE      ctermfg=11      ctermbg=12
-hi StatusLine           cterm=NONE      ctermfg=81      ctermbg=17
-hi StatusLineNC         cterm=NONE      ctermfg=248     ctermbg=12
-hi VertSplit            cterm=reverse   ctermfg=fg      ctermbg=bg
-hi Title                cterm=bold      ctermfg=201     ctermbg=bg
-hi Visual               cterm=NONE      ctermfg=NONE    ctermbg=235
-hi WarningMsg           cterm=NONE      ctermfg=11      ctermbg=9
-hi WildMenu             cterm=NONE      ctermfg=16      ctermbg=226
-hi Folded               cterm=NONE      ctermfg=51      ctermbg=248
-hi FoldColumn           cterm=NONE      ctermfg=51      ctermbg=250
+hi SpecialKey           cterm=NONE          ctermfg=224     ctermbg=0
+hi NonText              cterm=NONE          ctermfg=159     ctermbg=0
+hi Directory            cterm=NONE          ctermfg=81      ctermbg=0
+hi ErrorMsg             cterm=NONE          ctermfg=224     ctermbg=0
+hi IncSearch            cterm=NONE          ctermfg=11      ctermbg=12
+hi Search               cterm=NONE          ctermfg=11      ctermbg=12
+hi MoreMsg              cterm=NONE          ctermfg=11      ctermbg=12
+hi ModeMsg              cterm=NONE          ctermfg=15      ctermbg=0
+hi LineNr               cterm=NONE          ctermfg=121     ctermbg=0
+hi CursorLineNr         cterm=bold          ctermfg=226     ctermbg=bg
+hi Question             cterm=NONE          ctermfg=11      ctermbg=12
+hi StatusLine           cterm=italic        ctermfg=11      ctermbg=17
+hi StatusLineNC         cterm=NONE          ctermfg=6       ctermbg=17
+hi VertSplit            cterm=NONE          ctermfg=63      ctermbg=bg
+hi Title                cterm=bold          ctermfg=201     ctermbg=bg
+hi Visual               cterm=NONE          ctermfg=NONE    ctermbg=235
+hi WarningMsg           cterm=NONE          ctermfg=11      ctermbg=9
+hi WildMenu             cterm=NONE          ctermfg=16      ctermbg=226
+hi Folded               cterm=italic        ctermfg=172     ctermbg=233
+hi FoldColumn           cterm=NONE          ctermfg=51      ctermbg=bg
 
-hi DiffAdd              cterm=NONE      ctermfg=fg      ctermbg=18
-hi DiffChange           cterm=NONE      ctermfg=fg      ctermbg=90
-hi DiffDelete           cterm=bold      ctermfg=21      ctermbg=30
-hi DiffText             cterm=bold      ctermfg=fg      ctermbg=196
+hi DiffAdd              cterm=NONE          ctermfg=252     ctermbg=18
+hi DiffChange           cterm=NONE          ctermfg=252     ctermbg=90
+hi DiffDelete           cterm=NONE          ctermfg=21      ctermbg=30
+hi DiffText             cterm=NONE          ctermfg=252     ctermbg=88
 
-hi SignColumn           cterm=NONE      ctermfg=51      ctermbg=250
-hi Conceal              cterm=NONE      ctermfg=252     ctermbg=248
+hi SignColumn           cterm=NONE          ctermfg=51      ctermbg=250
+hi Conceal              cterm=NONE          ctermfg=252     ctermbg=248
 
-hi SpellBad             cterm=NONE      ctermfg=224     ctermbg=0
-hi SpellCap             cterm=NONE      ctermfg=12      ctermbg=0
-hi SpellRare            cterm=NONE      ctermfg=13      ctermbg=0
-hi SpellLocal           cterm=NONE      ctermfg=81      ctermbg=0
+hi SpellBad             cterm=NONE          ctermfg=224     ctermbg=0
+hi SpellCap             cterm=NONE          ctermfg=12      ctermbg=0
+hi SpellRare            cterm=NONE          ctermfg=13      ctermbg=0
+hi SpellLocal           cterm=NONE          ctermfg=81      ctermbg=0
 
-hi Pmenu                cterm=bold      ctermfg=15      ctermbg=56
-hi PmenuSel             cterm=bold      ctermfg=123     ctermbg=20
-hi PmenuSbar            cterm=NONE      ctermfg=11      ctermbg=21
-hi PmenuThumb           cterm=NONE      ctermfg=fg      ctermbg=17
+hi Pmenu                cterm=bold          ctermfg=15      ctermbg=56
+hi PmenuSel             cterm=bold          ctermfg=123     ctermbg=20
+hi PmenuSbar            cterm=NONE          ctermfg=11      ctermbg=21
+hi PmenuThumb           cterm=NONE          ctermfg=fg      ctermbg=17
 
-hi TabLine              cterm=underline ctermfg=fg      ctermbg=248
-hi TabLineSel           cterm=bold      ctermfg=fg      ctermbg=bg
-hi TabLineFill          cterm=reverse   ctermfg=fg      ctermbg=bg
+hi TabLine              cterm=underline     ctermfg=fg      ctermbg=248
+hi TabLineSel           cterm=bold          ctermfg=fg      ctermbg=bg
+hi TabLineFill          cterm=reverse       ctermfg=fg      ctermbg=bg
 
-hi CursorColumn         cterm=NONE      ctermfg=fg      ctermbg=236
-hi CursorLine           cterm=NONE      ctermfg=214     ctermbg=236
-hi ColorColumn          cterm=NONE      ctermfg=fg      ctermbg=88
+hi CursorColumn         cterm=NONE          ctermfg=fg      ctermbg=236
+hi CursorLine           cterm=NONE          ctermfg=214     ctermbg=236
+hi ColorColumn          cterm=NONE          ctermfg=fg      ctermbg=88
 
-hi MatchParen           cterm=NONE      ctermfg=fg      ctermbg=30
+hi MatchParen           cterm=NONE          ctermfg=fg      ctermbg=30
 
-hi Constant             cterm=NONE      ctermfg=201     ctermbg=bg
-hi Special              cterm=NONE      ctermfg=196     ctermbg=bg
-hi Identifier           cterm=NONE      ctermfg=87      ctermbg=bg
-hi Statement            cterm=bold      ctermfg=131     ctermbg=bg
-hi PreProc              cterm=NONE      ctermfg=213     ctermbg=bg
-hi Type                 cterm=bold      ctermfg=83      ctermbg=bg
-hi Underlined           cterm=underline ctermfg=111     ctermbg=bg
-hi Ignore               cterm=NONE      ctermfg=16      ctermbg=bg
-hi Error                cterm=italic    ctermfg=227     ctermbg=196
-hi Todo                 cterm=italic    ctermfg=52      ctermbg=226
-hi Function             cterm=NONE      ctermfg=231     ctermbg=bg
-hi Repeat               cterm=NONE      ctermfg=231     ctermbg=bg
-hi Operator             cterm=NONE      ctermfg=197     ctermbg=bg
+hi Constant             cterm=NONE          ctermfg=201     ctermbg=bg
+hi Special              cterm=NONE          ctermfg=196     ctermbg=bg
+hi Identifier           cterm=NONE          ctermfg=87      ctermbg=bg
+hi Statement            cterm=bold          ctermfg=131     ctermbg=bg
+hi PreProc              cterm=NONE          ctermfg=213     ctermbg=bg
+hi Type                 cterm=bold          ctermfg=83      ctermbg=bg
+hi Underlined           cterm=underline     ctermfg=111     ctermbg=bg
+hi Ignore               cterm=NONE          ctermfg=16      ctermbg=bg
+hi Error                cterm=bold,italic   ctermfg=227     ctermbg=196
+hi Todo                 cterm=bold,italic   ctermfg=52      ctermbg=226
+hi Function             cterm=NONE          ctermfg=231     ctermbg=bg
+hi Repeat               cterm=NONE          ctermfg=231     ctermbg=bg
+hi Operator             cterm=NONE          ctermfg=197     ctermbg=bg
+                                                        k
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
