@@ -133,7 +133,7 @@ for dir in datadirs
 	"
 	if (exists('&' . vimvar) && exists("*mkdir"))
 		if ! isdirectory(path)
-			mkdir(path)
+			call mkdir(path, "p")
 		endif
 		execute "set " . vimvar . '=' . path . append
 		if ! empty(setflag)
