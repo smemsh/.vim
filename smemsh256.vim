@@ -70,11 +70,6 @@ hi WildMenu             cterm=NONE          ctermfg=16      ctermbg=226
 hi Folded               cterm=italic        ctermfg=172     ctermbg=233
 hi FoldColumn           cterm=NONE          ctermfg=51      ctermbg=bg
 
-hi DiffAdd              cterm=NONE          ctermfg=252     ctermbg=18
-hi DiffChange           cterm=NONE          ctermfg=252     ctermbg=90
-hi DiffDelete           cterm=NONE          ctermfg=21      ctermbg=30
-hi DiffText             cterm=NONE          ctermfg=252     ctermbg=88
-
 hi SignColumn           cterm=NONE          ctermfg=51      ctermbg=250
 hi Conceal              cterm=NONE          ctermfg=252     ctermbg=248
 
@@ -143,8 +138,35 @@ hi Ignore               cterm=NONE          ctermfg=16      ctermbg=bg
 hi Error                cterm=bold,italic   ctermfg=227     ctermbg=196
 hi Todo                 cterm=bold,italic   ctermfg=52      ctermbg=226
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""
 
+" diffmode
+"
+hi DiffAdd              cterm=NONE          ctermfg=252     ctermbg=18
+hi DiffChange           cterm=NONE          ctermfg=252     ctermbg=90
+hi DiffDelete           cterm=NONE          ctermfg=21      ctermbg=30
+hi DiffText             cterm=NONE          ctermfg=252     ctermbg=88
+
+" diffsyntax
+"
+hi diffOldFile          cterm=italic        ctermfg=44      ctermbg=233
+hi diffNewFile          cterm=italic        ctermfg=45      ctermbg=233
+hi diffFile             cterm=italic        ctermfg=87      ctermbg=233
+hi diffLine             cterm=italic        ctermfg=213     ctermbg=233
+hi diffSubname          cterm=italic        ctermfg=171     ctermbg=233
+hi diffAdded            cterm=NONE          ctermfg=11      ctermbg=bg
+hi diffRemoved          cterm=NONE          ctermfg=9       ctermbg=bg
+"hi diffOnly
+"hi diffIdentical
+"hi diffDiffer
+"hi diffBDiffer
+"hi diffIsA
+"hi diffNoEOL
+"hi diffCommon
+"hi diffChanged
+"hi diffComment
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 hi link vimTodo                         Todo
 hi link vimCommand                      Statement
