@@ -97,3 +97,6 @@
 [submodule "bundle/vim-hilinks"]
 	path = bundle/vim-hilinks
 	url = https://github.com/kergoth/vim-hilinks
+[submodule "bundle/vim-dirdiff"]
+	path = bundle/vim-dirdiff
+	url = git://github.com/will133/vim-dirdiff
