@@ -4,10 +4,8 @@
 "
 " magic incantation used to create this file:
 "   - start vim with csapprox plugin installed and enabled
-"   - :colorscheme solarized
-"   - :colorscheme distinguished
 "   - :colorscheme elflord
-"   - :source my own hand-made highlights (~/.vim/colors/default.vim)
+"   - :source old hand made colors (~/.vim/colors/default.vim)
 "   - :redir! > /tmp/thisfile
 "   - :highlight
 "   - add cterm=NONE, ctermfg=fg, ctermbg=bg where missing
@@ -21,7 +19,7 @@
 "
 " note:
 "   - $TERM eg xterm-256color, screen-256color, rxvt-unicode-256color
-"   - no attempt was made to provide gui values, only cterm
+"   - no attempt was made to provide gui or term values, only cterm
 "
 " scott@smemsh.net
 " http://smemsh.net/src/vim-smemsh256/
@@ -42,7 +40,7 @@ let g:colors_name = "smemsh256"
 "
 hi Normal
         \ cterm=NONE
-        \ ctermfg=248
+        \ ctermfg=252
         \ ctermbg=0
 
 """
@@ -85,8 +83,8 @@ hi SpellCap             cterm=NONE          ctermfg=12      ctermbg=0
 hi SpellRare            cterm=NONE          ctermfg=13      ctermbg=0
 hi SpellLocal           cterm=NONE          ctermfg=81      ctermbg=0
 
-hi Pmenu                cterm=bold          ctermfg=15      ctermbg=56
-hi PmenuSel             cterm=bold          ctermfg=123     ctermbg=20
+hi Pmenu                cterm=NONE          ctermfg=15      ctermbg=56
+hi PmenuSel             cterm=bold,italic   ctermfg=227     ctermbg=20
 hi PmenuSbar            cterm=NONE          ctermfg=11      ctermbg=21
 hi PmenuThumb           cterm=NONE          ctermfg=fg      ctermbg=17
 
@@ -102,41 +100,41 @@ hi MatchParen           cterm=NONE          ctermfg=fg      ctermbg=30
 
 """
 
-hi Constant             cterm=NONE          ctermfg=201     ctermbg=bg
-hi String               cterm=NONE          ctermfg=201     ctermbg=bg
-hi Character            cterm=NONE          ctermfg=201     ctermbg=bg
-hi Number               cterm=NONE          ctermfg=201     ctermbg=bg
-hi Boolean              cterm=NONE          ctermfg=201     ctermbg=bg
-hi Float                cterm=NONE          ctermfg=201     ctermbg=bg
+hi Constant             cterm=NONE          ctermfg=129     ctermbg=bg
+hi String               cterm=NONE          ctermfg=187     ctermbg=bg
+hi Character            cterm=NONE          ctermfg=104     ctermbg=bg
+hi Number               cterm=NONE          ctermfg=164     ctermbg=bg
+hi Boolean              cterm=NONE          ctermfg=120     ctermbg=bg
+hi Float                cterm=NONE          ctermfg=163     ctermbg=bg
 
-hi Identifier           cterm=NONE          ctermfg=87      ctermbg=bg
-hi Function             cterm=NONE          ctermfg=231     ctermbg=bg
+hi Identifier           cterm=NONE          ctermfg=80      ctermbg=bg
+hi Function             cterm=NONE          ctermfg=227     ctermbg=bg
 
-hi Statement            cterm=bold          ctermfg=131     ctermbg=bg
-hi Conditional          cterm=NONE          ctermfg=231     ctermbg=bg
-hi Repeat               cterm=NONE          ctermfg=231     ctermbg=bg
-hi Label                cterm=NONE          ctermfg=131     ctermbg=bg
-hi Operator             cterm=NONE          ctermfg=197     ctermbg=bg
-hi Keyword              cterm=NONE          ctermfg=131     ctermbg=bg
-hi Exception            cterm=NONE          ctermfg=131     ctermbg=bg
+hi Statement            cterm=bold          ctermfg=186     ctermbg=bg
+hi Conditional          cterm=NONE          ctermfg=225     ctermbg=bg
+hi Repeat               cterm=NONE          ctermfg=230     ctermbg=bg
+hi Label                cterm=NONE          ctermfg=226     ctermbg=bg
+hi Operator             cterm=bold          ctermfg=204     ctermbg=bg
+hi Keyword              cterm=NONE          ctermfg=142     ctermbg=bg
+hi Exception            cterm=NONE          ctermfg=214     ctermbg=bg
 
-hi PreProc              cterm=NONE          ctermfg=213     ctermbg=bg
-hi Include              cterm=NONE          ctermfg=213     ctermbg=bg
-hi Define               cterm=NONE          ctermfg=213     ctermbg=bg
-hi Macro                cterm=NONE          ctermfg=213     ctermbg=bg
-hi PreCondit            cterm=NONE          ctermfg=213     ctermbg=bg
+hi PreProc              cterm=NONE          ctermfg=221      ctermbg=bg
+hi Include              cterm=italic        ctermfg=212     ctermbg=bg
+hi Define               cterm=italic        ctermfg=211     ctermbg=bg
+hi Macro                cterm=italic        ctermfg=210     ctermbg=bg
+hi PreCondit            cterm=italic        ctermfg=209     ctermbg=bg
 
-hi Type                 cterm=bold          ctermfg=83      ctermbg=bg
+hi Type                 cterm=bold          ctermfg=77      ctermbg=bg
 hi StorageClass         cterm=bold          ctermfg=83      ctermbg=bg
-hi Structure            cterm=bold          ctermfg=83      ctermbg=bg
-hi Typedef              cterm=bold          ctermfg=83      ctermbg=bg
+hi Structure            cterm=bold          ctermfg=78      ctermbg=bg
+hi Typedef              cterm=bold          ctermfg=82      ctermbg=bg
 
-hi Special              cterm=NONE          ctermfg=196     ctermbg=bg
-hi SpecialChar          cterm=NONE          ctermfg=196     ctermbg=bg
-hi Tag                  cterm=NONE          ctermfg=196     ctermbg=bg
-hi Delimiter            cterm=NONE          ctermfg=196     ctermbg=bg
-hi SpecialComment       cterm=NONE          ctermfg=196     ctermbg=bg
-hi Debug                cterm=NONE          ctermfg=196     ctermbg=bg
+hi Special              cterm=NONE          ctermfg=222     ctermbg=bg
+hi SpecialChar          cterm=NONE          ctermfg=199     ctermbg=bg
+hi Tag                  cterm=NONE          ctermfg=204     ctermbg=bg
+hi Delimiter            cterm=NONE          ctermfg=203     ctermbg=bg
+hi SpecialComment       cterm=NONE          ctermfg=161     ctermbg=bg
+hi Debug                cterm=NONE          ctermfg=226     ctermbg=bg
 
 """
 
@@ -497,6 +495,7 @@ hi link pythonNumber                    Number
 hi link pythonBuiltin                   Function
 hi link pythonExceptions                Structure
 hi link pythonDoctestValue              Define
+hi link pythonDot                       Operator
 
 hi link tclCommand                      Statement
 hi link tclProcCommand                  Type
