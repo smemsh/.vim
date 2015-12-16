@@ -155,7 +155,7 @@ hi diffFile             cterm=italic        ctermfg=87      ctermbg=233
 hi diffLine             cterm=italic        ctermfg=213     ctermbg=233
 hi diffSubname          cterm=italic        ctermfg=171     ctermbg=233
 hi diffAdded            cterm=NONE          ctermfg=11      ctermbg=bg
-hi diffRemoved          cterm=NONE          ctermfg=9       ctermbg=bg
+hi diffRemoved          cterm=NONE          ctermfg=204     ctermbg=bg
 "hi diffOnly
 "hi diffIdentical
 "hi diffDiffer
