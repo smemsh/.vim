@@ -37,11 +37,9 @@ endif
 let g:colors_name = "smemsh256"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-hi Normal
-        \ cterm=NONE
-        \ ctermfg=252
-        \ ctermbg=0
+
+hi Normal               cterm=NONE          ctermfg=252     ctermbg=0
+hi smemshNotYet         cterm=NONE          ctermfg=11      ctermbg=1
 
 """
 
@@ -49,7 +47,7 @@ hi Comment              cterm=italic        ctermfg=111     ctermbg=bg
 hi Cursor               cterm=NONE          ctermfg=15      ctermbg=0
 hi SubtleWarningMsg     cterm=NONE          ctermfg=fg      ctermbg=12
 
-hi SpecialKey           cterm=NONE          ctermfg=224     ctermbg=0
+hi SpecialKey           cterm=NONE          ctermfg=23      ctermbg=0
 hi NonText              cterm=NONE          ctermfg=159     ctermbg=0
 hi Directory            cterm=NONE          ctermfg=81      ctermbg=0
 hi ErrorMsg             cterm=NONE          ctermfg=224     ctermbg=0
@@ -138,7 +136,7 @@ hi Ignore               cterm=NONE          ctermfg=16      ctermbg=bg
 hi Error                cterm=bold,italic   ctermfg=227     ctermbg=196
 hi Todo                 cterm=bold,italic   ctermfg=52      ctermbg=226
 
-"""
+""" LANGUAGE OVERRIDES """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " diffmode
 "
@@ -166,7 +164,51 @@ hi diffRemoved          cterm=NONE          ctermfg=204     ctermbg=bg
 "hi diffChanged
 "hi diffComment
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimhelp
+"
+hi helpHyperTextEntry   cterm=bold,italic   ctermfg=39      ctermbg=NONE
+hi helpStar             cterm=italic        ctermfg=9       ctermbg=NONE
+
+" python
+"
+hi pythonConditional    cterm=NONE          ctermfg=184     ctermbg=NONE
+
+" vimscript: overrides
+"
+hi vimAutoCmdSfxList    cterm=NONE          ctermfg=11      ctermbg=bg
+hi vimCmdSep            cterm=NONE          ctermfg=11      ctermbg=bg
+hi vimComment           cterm=italic        ctermfg=111     ctermbg=bg
+hi vimCommentString     cterm=italic        ctermfg=108     ctermbg=bg
+
+" vimscript: too many false positives with isCommand makes it
+" unreadable so treat them like statements
+" TODO: vim syntax def has a bug where "hi clear <group>" does
+"       not color group name differently but "hi link <group>"
+"       does
+"
+hi link vimIsCommand    vimStatement
+
+" vimscript: vetted clears, usually just blank space chars
+" TODO: 'clear' does not change already drawn colors (scheme reload
+"        alone not sufficient to affect changes during edit-test)
+"
+hi clear vimExecute
+hi clear vimFuncBody
+hi clear vimFunction
+hi clear vimHiKeyList
+hi clear vimHiLink
+hi clear vimOperParen
+hi clear vimSet
+hi clear vimMapRhs
+hi clear vimSetEqual
+hi clear vimCommentTitleLeader
+hi clear vimUserCmd
+hi clear vimAutoCmdSpace
+
+""" LINKS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" remove links (below) when overriding with a specific color (above)
+"
 
 hi link vimTodo                         Todo
 hi link vimCommand                      Statement
@@ -219,7 +261,6 @@ hi link vimEchoHL                       vimCommand
 hi link vimHighlight                    vimCommand
 hi link vimNorm                         vimCommand
 hi link vimUnmap                        vimMap
-hi link vimUserCommand                  vimCommand
 hi link vimPattern                      Type
 hi link vimSpecFileMod                  vimSpecFile
 hi link vimSetString                    vimString
@@ -229,7 +270,6 @@ hi link vimUserAttrbKey                 vimOption
 hi link vimUserAttrbCmplt               vimSpecial
 hi link vimUserCmdError                 Error
 hi link vimUserAttrbCmpltFunc           Special
-hi link vimCommentString                vimString
 hi link vimPatSepErr                    vimPatSep
 hi link vimPatSep                       SpecialChar
 hi link vimPatSepZ                      vimPatSep
@@ -499,7 +539,6 @@ hi link rubyError                       Error
 
 hi link pythonStatement                 Statement
 hi link pythonFunction                  Function
-hi link pythonConditional               Conditional
 hi link pythonRepeat                    Repeat
 hi link pythonOperator                  Operator
 hi link pythonException                 Exception
@@ -568,9 +607,7 @@ hi link helpSectionDelim                PreProc
 hi link helpIgnore                      Ignore
 hi link helpExample                     Comment
 hi link helpBar                         Ignore
-hi link helpStar                        Ignore
 hi link helpHyperTextJump               Identifier
-hi link helpHyperTextEntry              String
 hi link helpBacktick                    Ignore
 hi link helpVim                         Identifier
 hi link helpOption                      Type
@@ -615,162 +652,148 @@ hi link helpTodo                        Todo
 hi link helpURL                         String
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" everything below was set to "hi clear <group>"
 
-hi clear VisualNOS
+hi link VisualNOS smemshNotYet
 
-hi clear vimStdPlugin
-hi clear vimGlobal
-hi clear vimIsCommand
-hi clear vimExtCmd
-hi clear vimFilter
-hi clear vimSet
-hi clear vimUserCmd
-hi clear vimCmdSep
-hi clear vimFiletype
-hi clear vimAugroup
-hi clear vimExecute
-hi clear vimFunction
-hi clear vimOperParen
-hi clear vimRegion
-hi clear vimSynLine
-hi clear vimAugroupError
-hi clear vimAugroupSyncA
-hi clear vimEcho
-hi clear vimIf
-hi clear vimFuncBody
-hi clear vimFuncBlank
-hi clear vimEscapeBrace
-hi clear vimSetEqual
-hi clear vimSubstRep
-hi clear vimSubstRange
-hi clear vimPatRegion
-hi clear vimCollection
-hi clear vimSubstPat
-hi clear vimSubstRep4
-hi clear vimCollClass
-hi clear vimMapLhs
-hi clear vimAutoCmdSpace
-hi clear vimAutoEventList
-hi clear vimAutoCmdSfxList
-hi clear vimMapRhs
-hi clear vimMapRhsExtend
-hi clear vimMenuBang
-hi clear vimMenuPriority
-hi clear vimMenuMap
-hi clear vimMenuRhs
-hi clear vimNormCmds
-hi clear vimGroupList
-hi clear vimAuSyntax
-hi clear vimClusterName
-hi clear vimSynKeyRegion
-hi clear vimSynMatchRegion
-hi clear vimSynMtchCchar
-hi clear vimSynMtchGroup
-hi clear vimSynRegion
-hi clear vimSynPatMod
-hi clear vimSyncLines
-hi clear vimSyncMatch
-hi clear vimSyncLinebreak
-hi clear vimSyncLinecont
-hi clear vimSyncRegion
-hi clear vimHiLink
-hi clear vimHiKeyList
-hi clear vimHiBang
-hi clear vimHiCtermColor
-hi clear vimHiFontname
-hi clear vimHiGuiFontname
-hi clear vimHiTermcap
-hi clear vimCommentTitleLeader
-hi clear vimLuaRegion
-hi clear vimPerlRegion
-hi clear vimRubyRegion
-hi clear vimPythonRegion
-hi clear vimTclRegion
-hi clear vimTclScript
+hi link vimStdPlugin smemshNotYet
+hi link vimGlobal smemshNotYet
+hi link vimExtCmd smemshNotYet
+hi link vimFilter smemshNotYet
+hi link vimFiletype smemshNotYet
+hi link vimAugroup smemshNotYet
+hi link vimRegion smemshNotYet
+hi link vimSynLine smemshNotYet
+hi link vimAugroupError smemshNotYet
+hi link vimAugroupSyncA smemshNotYet
+hi link vimEcho smemshNotYet
+hi link vimIf smemshNotYet
+hi link vimFuncBlank smemshNotYet
+hi link vimEscapeBrace smemshNotYet
+hi link vimSubstRep smemshNotYet
+hi link vimSubstRange smemshNotYet
+hi link vimPatRegion smemshNotYet
+hi link vimCollection smemshNotYet
+hi link vimSubstPat smemshNotYet
+hi link vimSubstRep4 smemshNotYet
+hi link vimCollClass smemshNotYet
+hi link vimMapLhs smemshNotYet
+hi link vimAutoEventList smemshNotYet
+hi link vimMapRhsExtend smemshNotYet
+hi link vimMenuBang smemshNotYet
+hi link vimMenuPriority smemshNotYet
+hi link vimMenuMap smemshNotYet
+hi link vimMenuRhs smemshNotYet
+hi link vimNormCmds smemshNotYet
+hi link vimGroupList smemshNotYet
+hi link vimAuSyntax smemshNotYet
+hi link vimClusterName smemshNotYet
+hi link vimSynKeyRegion smemshNotYet
+hi link vimSynMatchRegion smemshNotYet
+hi link vimSynMtchCchar smemshNotYet
+hi link vimSynMtchGroup smemshNotYet
+hi link vimSynRegion smemshNotYet
+hi link vimSynPatMod smemshNotYet
+hi link vimSyncLines smemshNotYet
+hi link vimSyncMatch smemshNotYet
+hi link vimSyncLinebreak smemshNotYet
+hi link vimSyncLinecont smemshNotYet
+hi link vimSyncRegion smemshNotYet
+hi link vimHiBang smemshNotYet
+hi link vimHiCtermColor smemshNotYet
+hi link vimHiFontname smemshNotYet
+hi link vimHiGuiFontname smemshNotYet
+hi link vimHiTermcap smemshNotYet
+hi link vimLuaRegion smemshNotYet
+hi link vimPerlRegion smemshNotYet
+hi link vimRubyRegion smemshNotYet
+hi link vimPythonRegion smemshNotYet
+hi link vimTclRegion smemshNotYet
+hi link vimTclScript smemshNotYet
 
-hi clear luaInnerComment
-hi clear luaIfThen
-hi clear luaElseifThen
-hi clear luaThenEnd
-hi clear luaBlock
-hi clear luaLoopBlock
-hi clear luaParen
-hi clear luaTableBlock
-hi clear luaFunctionBlock
+hi link luaInnerComment smemshNotYet
+hi link luaIfThen smemshNotYet
+hi link luaElseifThen smemshNotYet
+hi link luaThenEnd smemshNotYet
+hi link luaBlock smemshNotYet
+hi link luaLoopBlock smemshNotYet
+hi link luaParen smemshNotYet
+hi link luaTableBlock smemshNotYet
+hi link luaFunctionBlock smemshNotYet
 
-hi clear podBoldItalic
-hi clear podBoldOpen
-hi clear podBoldAlternativeDelimOpen
-hi clear podItalicBold
-hi clear podItalicOpen
-hi clear podItalicAlternativeDelimOpen
-hi clear podNoSpaceOpen
-hi clear podNoSpaceAlternativeDelimOpen
-hi clear podIndexOpen
-hi clear podIndexAlternativeDelimOpen
-hi clear podBold
-hi clear podBoldAlternativeDelim
-hi clear podItalic
-hi clear podItalicAlternativeDelim
+hi link podBoldItalic smemshNotYet
+hi link podBoldOpen smemshNotYet
+hi link podBoldAlternativeDelimOpen smemshNotYet
+hi link podItalicBold smemshNotYet
+hi link podItalicOpen smemshNotYet
+hi link podItalicAlternativeDelimOpen smemshNotYet
+hi link podNoSpaceOpen smemshNotYet
+hi link podNoSpaceAlternativeDelimOpen smemshNotYet
+hi link podIndexOpen smemshNotYet
+hi link podIndexAlternativeDelimOpen smemshNotYet
+hi link podBold smemshNotYet
+hi link podBoldAlternativeDelim smemshNotYet
+hi link podItalic smemshNotYet
+hi link podItalicAlternativeDelim smemshNotYet
 
-hi clear perlBraces
-hi clear perlFakeGroup
-hi clear perlFiledescStatementNocomma
-hi clear perlFiledescStatementComma
-hi clear perlStatementIndirObjWrap
-hi clear perlVarMember
-hi clear perlVarBlock
-hi clear perlVarBlock2
-hi clear perlPackageConst
+hi link perlBraces smemshNotYet
+hi link perlFakeGroup smemshNotYet
+hi link perlFiledescStatementNocomma smemshNotYet
+hi link perlFiledescStatementComma smemshNotYet
+hi link perlStatementIndirObjWrap smemshNotYet
+hi link perlVarMember smemshNotYet
+hi link perlVarBlock smemshNotYet
+hi link perlVarBlock2 smemshNotYet
+hi link perlPackageConst smemshNotYet
 
-hi clear perlAutoload
-hi clear perlFormat
-hi clear perlSync
-hi clear perlSyncPOD
+hi link perlAutoload smemshNotYet
+hi link perlFormat smemshNotYet
+hi link perlSync smemshNotYet
+hi link perlSyncPOD smemshNotYet
 
-hi clear rubyInterpolation
-hi clear rubyDelimEscape
-hi clear rubyNestedParentheses
-hi clear rubyNestedCurlyBraces
-hi clear rubyNestedAngleBrackets
-hi clear rubyNestedSquareBrackets
-hi clear rubyRegexpParens
-hi clear rubyRegexpBrackets
-hi clear rubyLocalVariableOrMethod
-hi clear rubyBlockArgument
-hi clear rubyBlockParameterList
-hi clear rubyHeredocStart
-hi clear rubyAliasDeclaration2
-hi clear rubyAliasDeclaration
-hi clear rubyMethodDeclaration
-hi clear rubyClassDeclaration
-hi clear rubyModuleDeclaration
-hi clear rubyMethodBlock
-hi clear rubyBlock
-hi clear rubyDoBlock
-hi clear rubyCurlyBlockDelimiter
-hi clear rubyCurlyBlock
-hi clear rubyArrayDelimiter
-hi clear rubyArrayLiteral
-hi clear rubyBlockExpression
-hi clear rubyCaseExpression
-hi clear rubyConditionalExpression
-hi clear rubyOptionalDoLine
-hi clear rubyRepeatExpression
-hi clear rubyMultilineComment
-hi clear rubyKeywordAsMethod
+hi link rubyInterpolation smemshNotYet
+hi link rubyDelimEscape smemshNotYet
+hi link rubyNestedParentheses smemshNotYet
+hi link rubyNestedCurlyBraces smemshNotYet
+hi link rubyNestedAngleBrackets smemshNotYet
+hi link rubyNestedSquareBrackets smemshNotYet
+hi link rubyRegexpParens smemshNotYet
+hi link rubyRegexpBrackets smemshNotYet
+hi link rubyLocalVariableOrMethod smemshNotYet
+hi link rubyBlockArgument smemshNotYet
+hi link rubyBlockParameterList smemshNotYet
+hi link rubyHeredocStart smemshNotYet
+hi link rubyAliasDeclaration2 smemshNotYet
+hi link rubyAliasDeclaration smemshNotYet
+hi link rubyMethodDeclaration smemshNotYet
+hi link rubyClassDeclaration smemshNotYet
+hi link rubyModuleDeclaration smemshNotYet
+hi link rubyMethodBlock smemshNotYet
+hi link rubyBlock smemshNotYet
+hi link rubyDoBlock smemshNotYet
+hi link rubyCurlyBlockDelimiter smemshNotYet
+hi link rubyCurlyBlock smemshNotYet
+hi link rubyArrayDelimiter smemshNotYet
+hi link rubyArrayLiteral smemshNotYet
+hi link rubyBlockExpression smemshNotYet
+hi link rubyCaseExpression smemshNotYet
+hi link rubyConditionalExpression smemshNotYet
+hi link rubyOptionalDoLine smemshNotYet
+hi link rubyRepeatExpression smemshNotYet
+hi link rubyMultilineComment smemshNotYet
+hi link rubyKeywordAsMethod smemshNotYet
 
-hi clear pythonSpaceError
-hi clear pythonSync
+hi link pythonSpaceError smemshNotYet
+hi link pythonSync smemshNotYet
 
-hi clear tclVars
-hi clear tclBoolean
-hi clear tcltkWidget
-hi clear tcltkCommand
-hi clear tcltkPackConf
-hi clear tcltlWidgetSwitch
-hi clear tclEmbeddedStatement
+hi link tclVars smemshNotYet
+hi link tclBoolean smemshNotYet
+hi link tcltkWidget smemshNotYet
+hi link tcltkCommand smemshNotYet
+hi link tcltkPackConf smemshNotYet
+hi link tcltlWidgetSwitch smemshNotYet
+hi link tclEmbeddedStatement smemshNotYet
 
-hi clear helpNormal
-hi clear helpGraphic
-hi clear helpLeadBlank
+hi link helpNormal smemshNotYet
+hi link helpGraphic smemshNotYet
+hi link helpLeadBlank smemshNotYet
