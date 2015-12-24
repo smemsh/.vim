@@ -103,3 +103,6 @@
 [submodule "bundle/rainbow"]
 	path = bundle/rainbow
 	url = http://github.com/luochen1990/rainbow
+[submodule "bundle/vim-plugin-AnsiEsc"]
+	path = bundle/vim-plugin-AnsiEsc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc
