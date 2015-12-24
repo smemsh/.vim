@@ -187,8 +187,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect('lib/{}')
 execute pathogen#infect('bundle/{}')
 execute pathogen#infect('colorscheme/{}')
-"filetype plugin indent on
-filetype plugin on
+filetype plugin indent on
 syntax enable
 
 "
