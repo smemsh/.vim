@@ -36,6 +36,15 @@
 # https://github.com/scrooloose/syntastic
 #
 
+### LIBS #####################################################################
+
+# we need these sourced before the others so they go in lib/
+# TODO: find a more clever way to do ordering using existing hierarchy
+#
+[submodule "lib/ingo-library"]
+	path = lib/ingo-library
+	url = http://github.com/vim-scripts/ingo-library
+
 ### LANG #####################################################################
 
 # todo: this does not seem to work
@@ -56,6 +65,8 @@
 
 ### EDITING ##################################################################
 
+# columnar alignment based on regexes, with helpful default maps
+#
 [submodule "bundle/vim-easy-align"]
 	path = bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
@@ -63,16 +74,65 @@
 # leading shifts (for indent level) use tabs, later ones
 # (for alignment) will use spaces
 #
+[submodule "bundle/IndentTab"]
+	path = bundle/IndentTab
+	url = http://github.com/vim-scripts/IndentTab
+
+# enables drawing ansi / ascii line art boxes, tables, etc
+#
+[submodule "bundle/DrawIt"]
+	path = bundle/DrawIt
+	url = https://github.com/vim-scripts/DrawIt
+### SCM ######################################################################
+
+# establishes windows and keys to compare multiple directory trees and
+# select which to present in diffmode or make wholesale file selection
+# (assists doing manual tree merges prior to mergetool usage)
+#
+[submodule "bundle/vim-dirdiff"]
+	path = bundle/vim-dirdiff
+	url = git://github.com/will133/vim-dirdiff
+
+### VIM ######################################################################
+
+# shows a trace of syntax highlighting stack, useful for debugging
+# colorschemes
+#
+[submodule "bundle/vim-hilinks"]
+	path = bundle/vim-hilinks
+	url = https://github.com/kergoth/vim-hilinks
+
+# converts gui-only colorschemes to have cterms (realtime or statically)
+# note: not enabled by default in plugrc/csapprox
+#
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = https://github.com/godlygeek/csapprox
 
-[submodule "bundle/IndentTab"]
-	path = bundle/IndentTab
-	url = http://github.com/vim-scripts/IndentTab
-[submodule "lib/ingo-library"]
-	path = lib/ingo-library
-	url = http://github.com/vim-scripts/ingo-library
+# configurable balanced-colorize for each nested level of parens
+#
+[submodule "bundle/rainbow"]
+	path = bundle/rainbow
+	url = http://github.com/luochen1990/rainbow
+
+# gives vim enhanced (colors, keys, features) buf list and selection
+#
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = http://github.com/jlanzarotta/bufexplorer
+
+# conceal embedded ansi escape sequences in the file being edited and
+# duplicate intended colorization in viml over the intended region
+#
+[submodule "bundle/vim-plugin-AnsiEsc"]
+	path = bundle/vim-plugin-AnsiEsc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc
+
+# integration of vim windows with panes of external tool vifm
+#
+[submodule "bundle/vifm"]
+	path = bundle/vifm
+	url = https://github.com/vifm/vifm.vim
 
 ### COLORSCHEMES #############################################################
 
@@ -94,24 +154,5 @@
 [submodule "colorscheme/vim-colors-solarized"]
 	path = colorscheme/vim-colors-solarized
 	url = http://github.com/altercation/vim-colors-solarized
-[submodule "bundle/vim-hilinks"]
-	path = bundle/vim-hilinks
-	url = https://github.com/kergoth/vim-hilinks
-[submodule "bundle/vim-dirdiff"]
-	path = bundle/vim-dirdiff
-	url = git://github.com/will133/vim-dirdiff
-[submodule "bundle/rainbow"]
-	path = bundle/rainbow
-	url = http://github.com/luochen1990/rainbow
-[submodule "bundle/vim-plugin-AnsiEsc"]
-	path = bundle/vim-plugin-AnsiEsc
-	url = https://github.com/powerman/vim-plugin-AnsiEsc
-[submodule "bundle/bufexplorer"]
-	path = bundle/bufexplorer
-	url = http://github.com/jlanzarotta/bufexplorer
-[submodule "bundle/DrawIt"]
-	path = bundle/DrawIt
-	url = https://github.com/vim-scripts/DrawIt
-[submodule "bundle/vifm"]
-	path = bundle/vifm
-	url = https://github.com/vifm/vifm.vim
+
+#
