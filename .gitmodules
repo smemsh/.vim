@@ -112,3 +112,6 @@
 [submodule "bundle/DrawIt"]
 	path = bundle/DrawIt
 	url = https://github.com/vim-scripts/DrawIt
+[submodule "bundle/vifm"]
+	path = bundle/vifm
+	url = https://github.com/vifm/vifm.vim
