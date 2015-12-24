@@ -102,7 +102,7 @@ endif
 
 """
 
-" awesome history window, editable same as a buffer!
+" history window, editable same as a buffer!
 " sometimes messages do not show up; use q: in that case
 "
 if ! &compatible
