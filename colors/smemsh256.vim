@@ -21,6 +21,12 @@
 "   - $TERM eg xterm-256color, screen-256color, rxvt-unicode-256color
 "   - no attempt was made to provide gui or term values, only cterm
 "
+" todo:
+"   - vim syntax def has a bug where "hi clear <group>" does
+"     not color group name differently but "hi link <group>" does
+"   - 'hi clear' does not change already drawn colors (scheme reload
+"     alone not sufficient to affect changes during edit-test cycle)
+"
 " scott@smemsh.net
 " http://smemsh.net/src/vim-smemsh256/
 " http://spdx.org/licenses/GPL-2.0
@@ -182,15 +188,10 @@ hi vimCommentString     cterm=italic        ctermfg=108     ctermbg=bg
 
 " vimscript: too many false positives with isCommand makes it
 " unreadable so treat them like statements
-" TODO: vim syntax def has a bug where "hi clear <group>" does
-"       not color group name differently but "hi link <group>"
-"       does
 "
 hi link vimIsCommand    vimStatement
 
-" vimscript: vetted clears, usually just blank space chars
-" TODO: 'clear' does not change already drawn colors (scheme reload
-"        alone not sufficient to affect changes during edit-test)
+" vimscript: smemshNotYet-vetted clears
 "
 hi clear vimExecute
 hi clear vimFuncBody
@@ -204,6 +205,11 @@ hi clear vimSetEqual
 hi clear vimCommentTitleLeader
 hi clear vimUserCmd
 hi clear vimAutoCmdSpace
+
+" perl: smemshNotYet-vetted clears
+"
+hi clear perlVarBlock
+hi clear perlStatementIndirkbjWrap
 
 """ LINKS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
