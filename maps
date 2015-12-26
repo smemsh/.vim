@@ -47,6 +47,7 @@ nmap         <leader>n  :set fo-=n<return>
 
 " editing toggles
 "
+nmap         <leader>p  :set paste!
 nmap         <leader>w  :set wrap<return>
 nmap <leader><leader>w  :set nowrap<return>
 nmap         <leader>L  :set list<return>
