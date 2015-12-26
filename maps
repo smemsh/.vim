@@ -45,7 +45,7 @@ nmap         <leader>a  :set formatoptions-=a<return>
 nmap         <leader>N  :set fo+=n<return>
 nmap         <leader>n  :set fo-=n<return>
 
-" wrap toggles
+" editing toggles
 "
 nmap         <leader>w  :set wrap<return>
 nmap <leader><leader>w  :set nowrap<return>
