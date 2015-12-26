@@ -48,10 +48,8 @@ nmap         <leader>n  :set fo-=n<return>
 " editing toggles
 "
 nmap         <leader>p  :set paste!<return>
-nmap         <leader>w  :set wrap<return>
-nmap <leader><leader>w  :set nowrap<return>
-nmap         <leader>L  :set list<return>
-nmap <leader><leader>L  :set nolist<return>
+nmap         <leader>w  :set wrap!<return>
+nmap         <leader>L  :set list!<return>
 nmap         <leader>R  :set wrap nolist showbreak=
                         \ breakindent linebreak<return>
 nmap <leader><leader>R  :set nowrap list showbreak="> "
