@@ -209,6 +209,7 @@ hi clear vimAutoCmdSpace
 " perl: smemshNotYet-vetted clears
 "
 hi clear perlVarBlock
+hi clear perlVarMember
 hi clear perlStatementIndirObjWrap
 
 """ LINKS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -746,7 +747,6 @@ hi link perlBraces smemshNotYet
 hi link perlFakeGroup smemshNotYet
 hi link perlFiledescStatementNocomma smemshNotYet
 hi link perlFiledescStatementComma smemshNotYet
-hi link perlVarMember smemshNotYet
 hi link perlVarBlock2 smemshNotYet
 hi link perlPackageConst smemshNotYet
 
