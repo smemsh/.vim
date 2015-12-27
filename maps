@@ -13,6 +13,7 @@ nmap <c-y>              <c-w>p
 nmap <c-n>              :bn<return>
 nmap <c-p>              :bp<return>
 nnoremap <leader>.      :b#<return>
+nmap <leader><space>    :wincmd p<return>
 
 " to tabs (T), to spaces (t)
 "
