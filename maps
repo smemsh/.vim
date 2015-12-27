@@ -5,7 +5,7 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" buffer manipulations
+" buffer selection
 "
 nmap <c-j>              <c-w>j
 nmap <c-k>              <c-w>k
@@ -56,12 +56,12 @@ nmap         <leader>R  :set wrap nolist showbreak=
 nmap <leader><leader>R  :set nowrap list showbreak="> "
                         \ nobreakindent nolinebreak<return>
 
-" sometimes use these settings to edit outlines
+" for outlines and similar
 "
 nmap <leader>o          :set tabstop=4 shiftwidth=4 indentexpr=
                         \ noexpandtab<return>
 
-" for editing raw text/flowed style microsoft one-line paragraphs
+" for text/flowed: open fixed 80col win, wrap at word breaks
 "
 nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
                         \ wrap linebreak showbreak= <return>
