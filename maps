@@ -98,39 +98,8 @@ nmap <leader>C          <esc>:call Reload_colorscheme()<return>
 map! <leader><leader>d  <esc>:call Read_shell_histtimeformat()<return>
                         \Ea<space>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""
 
-" for editing Trac wiki RST
-"
-map <leader><leader>r   :set fo-=a<return>
-                        \a{{{<return>#!rst<return><return><return><return>}}}
-                        \<esc>kka<esc>
-                        \:set ft=rst nospell tw=72 fo-=a<return>
-                        \i
-
-map <leader>r           \:set nospell ft=rst<return>
-
-map <leader>q           m`WBi``<esc>Ea``<esc>`` | " quote
-nmap <leader><leader>9  a`#99999`:trac:<esc>
-
-" mutt signatures with and without the horiz underline
-" TODO remove personalizations into separate file and git-crypt it,
-"      these are safe for the time being
-"
-nmap <leader><leader>s  ,c0o--<space><return>
-                        \Scott<esc>
-nmap <leader><leader>S  ,,sa<return><return><esc>
-                        \78i_<esc>
-                        \A<return><esc>
-nmap <leader><leader>o  ,c0o--<space><esc>
-                        \:read<space>~/.mutt/crypt/signature.smemsh<return>
-                        \<esc>
-nmap <leader><leader>O  ,c0,,o}A<return><esc>
-                        \78i_<esc>
-                        \A<return><esc>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
 " diff this buffer against the pristine version and use
 " split screen to show differences, of course will look
 " better on larger screen
@@ -158,3 +127,37 @@ nnoremap <leader>$ :diffupdate<return>
 
 " write this buffer and quit others (they should have no changes)
 nnoremap <leader>x :w<return>:qa<return>
+
+""" APPS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" TODO app-specific should probably go into syntax and ftplugin files
+"
+
+" Trac wiki RST
+"
+map <leader><leader>r   :set fo-=a<return>
+                        \a{{{<return>#!rst<return><return><return><return>}}}
+                        \<esc>kka<esc>
+                        \:set ft=rst nospell tw=72 fo-=a<return>
+                        \i
+
+map <leader>r           \:set nospell ft=rst<return>
+
+map <leader>q           m`WBi``<esc>Ea``<esc>`` | " quote
+nmap <leader><leader>9  a`#99999`:trac:<esc>
+
+" mutt signatures with and without the horiz underline
+" TODO remove personalizations into separate file and git-crypt it,
+"      these are safe for the time being
+"
+nmap <leader><leader>s  ,c0o--<space><return>
+                        \Scott<esc>
+nmap <leader><leader>S  ,,sa<return><return><esc>
+                        \78i_<esc>
+                        \A<return><esc>
+nmap <leader><leader>o  ,c0o--<space><esc>
+                        \:read<space>~/.mutt/crypt/signature.smemsh<return>
+                        \<esc>
+nmap <leader><leader>O  ,c0,,o}A<return><esc>
+                        \78i_<esc>
+                        \A<return><esc>
