@@ -67,7 +67,10 @@ nmap <leader>o          :set tabstop=4 shiftwidth=4 indentexpr=
 nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
                         \ wrap linebreak showbreak= <return>
                         \:match WarningMsg ''<return>
-                        \:24vspl /dev/null<return>
+                        \:vspl /dev/null<return>
+                        \:wincmd x<return>
+                        \:set winwidth=80<return>
+                        \:set winfixwidth<return>
 
 " quickfix prev-next maps to vi left-right but one row down
 "
