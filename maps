@@ -30,7 +30,7 @@ nmap =                  g+
 "
 nmap <leader>c          :set noai nosi nocin tw=0 fo-=a indentexpr=<return>
 nmap <leader>5          :set tw=55<return>
-nmap <leader>6          :set tw=60<return>
+nmap <leader>6          :set tw=62<return>
 nmap <leader>7          :set tw=72<return>
 nmap <leader>0          :set tw=0<return>
 
