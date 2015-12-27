@@ -220,6 +220,7 @@ hi clear vimSynKeyRegion
 hi clear vimSynMatchRegion
 hi clear vimClusterName
 hi clear vimSyncLines
+hi clear vimFiletype
 
 " vimscript: suboptimal clears where we could do something better
 "
@@ -683,7 +684,6 @@ hi link vimStdPlugin smemshNotYet
 hi link vimGlobal smemshNotYet
 hi link vimExtCmd smemshNotYet
 hi link vimFilter smemshNotYet
-hi link vimFiletype smemshNotYet
 hi link vimAugroup smemshNotYet
 hi link vimRegion smemshNotYet
 hi link vimSynLine smemshNotYet
