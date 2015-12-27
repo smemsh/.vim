@@ -46,6 +46,7 @@ let g:colors_name = "smemsh256"
 
 hi Normal               cterm=NONE          ctermfg=252     ctermbg=0
 hi smemshNotYet         cterm=NONE          ctermfg=11      ctermbg=1
+hi Ignore               cterm=NONE          ctermfg=0       ctermbg=bg
 
 """
 
@@ -138,7 +139,6 @@ hi Debug                cterm=NONE          ctermfg=226     ctermbg=bg
 """
 
 hi Underlined           cterm=underline     ctermfg=111     ctermbg=bg
-hi Ignore               cterm=NONE          ctermfg=16      ctermbg=bg
 hi Error                cterm=bold,italic   ctermfg=227     ctermbg=196
 hi Todo                 cterm=bold,italic   ctermfg=52      ctermbg=226
 
@@ -174,6 +174,13 @@ hi diffRemoved          cterm=NONE          ctermfg=204     ctermbg=bg
 "
 hi helpHyperTextEntry   cterm=bold,italic   ctermfg=39      ctermbg=NONE
 hi helpStar             cterm=italic        ctermfg=9       ctermbg=NONE
+hi helpBar              cterm=NONE          ctermfg=123     ctermbg=NONE
+hi helpBacktick         cterm=NONE          ctermfg=187     ctermbg=NONE
+
+" vimhelp: eg embdedded examples are surrounded by < > but
+" looks klunky if they're visible (they appear everywhere)
+"
+hi link helpIgnore      Ignore
 
 " python
 "
@@ -190,6 +197,7 @@ hi vimCommentString     cterm=italic        ctermfg=108     ctermbg=bg
 " unreadable so treat them like statements
 "
 hi link vimIsCommand    vimStatement
+
 
 " vimscript: smemshNotYet-vetted clears
 "
@@ -611,11 +619,8 @@ hi link vimStatement                    Statement
 
 hi link helpHeadline                    Statement
 hi link helpSectionDelim                PreProc
-hi link helpIgnore                      Ignore
 hi link helpExample                     Comment
-hi link helpBar                         Ignore
 hi link helpHyperTextJump               Identifier
-hi link helpBacktick                    Ignore
 hi link helpVim                         Identifier
 hi link helpOption                      Type
 hi link helpCommand                     Comment
