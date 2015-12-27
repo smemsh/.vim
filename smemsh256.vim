@@ -192,12 +192,15 @@ hi vimAutoCmdSfxList    cterm=NONE          ctermfg=11      ctermbg=bg
 hi vimCmdSep            cterm=NONE          ctermfg=11      ctermbg=bg
 hi vimComment           cterm=italic        ctermfg=111     ctermbg=bg
 hi vimCommentString     cterm=italic        ctermfg=108     ctermbg=bg
+hi vimGroupList         cterm=NONE          ctermfg=45      ctermbg=bg
+hi vimSynRegion         cterm=NONE          ctermfg=203     ctermbg=bg
+hi vimSynPatMod         cterm=NONE          ctermfg=152     ctermbg=bg
+hi vimMapLhs            cterm=bold,italic   ctermfg=207     ctermbg=bg
 
 " vimscript: too many false positives with isCommand makes it
 " unreadable so treat them like statements
 "
 hi link vimIsCommand    vimStatement
-
 
 " vimscript: smemshNotYet-vetted clears
 "
@@ -213,6 +216,14 @@ hi clear vimSetEqual
 hi clear vimCommentTitleLeader
 hi clear vimUserCmd
 hi clear vimAutoCmdSpace
+hi clear vimSynKeyRegion
+hi clear vimSynMatchRegion
+hi clear vimClusterName
+hi clear vimSyncLines
+
+" vimscript: suboptimal clears where we could do something better
+"
+hi clear vimMapRhsExtend
 
 " perl: smemshNotYet-vetted clears
 "
@@ -664,7 +675,7 @@ hi link helpTodo                        Todo
 hi link helpURL                         String
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" everything below was set to "hi clear <group>"
+" everything below originally set to "hi clear <group>" after loading elflord
 
 hi link VisualNOS smemshNotYet
 
@@ -689,24 +700,15 @@ hi link vimCollection smemshNotYet
 hi link vimSubstPat smemshNotYet
 hi link vimSubstRep4 smemshNotYet
 hi link vimCollClass smemshNotYet
-hi link vimMapLhs smemshNotYet
 hi link vimAutoEventList smemshNotYet
-hi link vimMapRhsExtend smemshNotYet
 hi link vimMenuBang smemshNotYet
 hi link vimMenuPriority smemshNotYet
 hi link vimMenuMap smemshNotYet
 hi link vimMenuRhs smemshNotYet
 hi link vimNormCmds smemshNotYet
-hi link vimGroupList smemshNotYet
 hi link vimAuSyntax smemshNotYet
-hi link vimClusterName smemshNotYet
-hi link vimSynKeyRegion smemshNotYet
-hi link vimSynMatchRegion smemshNotYet
 hi link vimSynMtchCchar smemshNotYet
 hi link vimSynMtchGroup smemshNotYet
-hi link vimSynRegion smemshNotYet
-hi link vimSynPatMod smemshNotYet
-hi link vimSyncLines smemshNotYet
 hi link vimSyncMatch smemshNotYet
 hi link vimSyncLinebreak smemshNotYet
 hi link vimSyncLinecont smemshNotYet
