@@ -184,9 +184,10 @@ runtime! plugrc/*
 "   3. then ~/.vim/colorsheme/* (only :colorscheme bundles)
 "
 filetype off
-let s:pathogen = "bundle/vim-pathogen/autoload/pathogen.vim"
+
+let s:pathogen = expand("~/.vim/bundle/vim-pathogen/autoload/pathogen.vim")
 if filereadable(s:pathogen)
-	source ~/.vim . s:pathogen
+	execute "source " . s:pathogen
 	execute pathogen#infect('lib/{}')
 	execute pathogen#infect('bundle/{}')
 	execute pathogen#infect('colorscheme/{}')
