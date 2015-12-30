@@ -33,7 +33,6 @@ nmap <leader>5          :set tw=55<return>
 nmap <leader>6          :set tw=62<return>
 nmap <leader>7          :set tw=72<return>
 nmap <leader>0          :set tw=0<return>
-nmap <leader>h          :set hlsearch!<return>
 nmap <leader>4          :set ts=4 sw=4
 nmap <leader>8          :set ts=8 sw=8
 
@@ -49,11 +48,12 @@ nmap         <leader>a  :set formatoptions-=a<return>
 nmap         <leader>N  :set fo+=n<return>
 nmap         <leader>n  :set fo-=n<return>
 
-" editing toggles
+" various toggles
 "
 nmap         <leader>p  :set paste!<return>
 nmap         <leader>w  :set wrap!<return>
 nmap         <leader>L  :set list!<return>
+nmap         <leader>h  :set hlsearch!<return>
 nmap         <leader>R  :set wrap nolist showbreak=
                         \ breakindent linebreak<return>
 nmap <leader><leader>R  :set nowrap list showbreak="> "
