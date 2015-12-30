@@ -26,7 +26,7 @@ nmap -                  g-
 nmap +                  g+
 nmap =                  g+
 
-" clear settings
+" resets
 "
 nmap <leader>c          :set noai nosi nocin tw=0 fo-=a indentexpr=<return>
 nmap <leader>5          :set tw=55<return>
@@ -34,6 +34,8 @@ nmap <leader>6          :set tw=62<return>
 nmap <leader>7          :set tw=72<return>
 nmap <leader>0          :set tw=0<return>
 nmap <leader>h          :set hlsearch!<return>
+nmap <leader>4          :set ts=4 sw=4
+nmap <leader>8          :set ts=8 sw=8
 
 " change fold levels
 "
