@@ -1,0 +1,3 @@
+"
+
+let g:autosess_dir = ~/var/vim/autosess
