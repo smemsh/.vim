@@ -113,7 +113,7 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"	pathvar         pathbase        appendage       flagvar
+"	vimvar          subdir          append          setflag
 let datadirs =[
 	\['backupdir',  'backups',      '',             ''               ],
 	\['directory',  'swaps',        '//,.',         ''               ],
