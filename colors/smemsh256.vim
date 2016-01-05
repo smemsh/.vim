@@ -196,6 +196,14 @@ hi vimGroupList         cterm=NONE          ctermfg=45      ctermbg=bg
 hi vimSynRegion         cterm=NONE          ctermfg=203     ctermbg=bg
 hi vimSynPatMod         cterm=NONE          ctermfg=152     ctermbg=bg
 hi vimMapLhs            cterm=bold,italic   ctermfg=207     ctermbg=bg
+hi vimNormCmds          cterm=NONE          ctermfg=85      ctermbg=bg
+hi vimGlobal            cterm=NONE          ctermfg=27      ctermbg=bg
+hi vimSubstPat          cterm=NONE          ctermfg=206     ctermbg=bg
+hi vimSubstRep4         cterm=NONE          ctermfg=155     ctermbg=bg
+
+" vimscript: links to other groups
+"
+hi link vimHiCtermColor Number
 
 " vimscript: too many false positives with isCommand makes it
 " unreadable so treat them like statements
@@ -221,6 +229,9 @@ hi clear vimSynMatchRegion
 hi clear vimClusterName
 hi clear vimSyncLines
 hi clear vimFiletype
+hi clear vimAugroup
+hi clear vimFilter
+hi clear vimEcho
 
 " vimscript: suboptimal clears where we could do something better
 "
@@ -681,15 +692,11 @@ hi link helpURL                         String
 hi link VisualNOS smemshNotYet
 
 hi link vimStdPlugin smemshNotYet
-hi link vimGlobal smemshNotYet
 hi link vimExtCmd smemshNotYet
-hi link vimFilter smemshNotYet
-hi link vimAugroup smemshNotYet
 hi link vimRegion smemshNotYet
 hi link vimSynLine smemshNotYet
 hi link vimAugroupError smemshNotYet
 hi link vimAugroupSyncA smemshNotYet
-hi link vimEcho smemshNotYet
 hi link vimIf smemshNotYet
 hi link vimFuncBlank smemshNotYet
 hi link vimEscapeBrace smemshNotYet
@@ -697,15 +704,12 @@ hi link vimSubstRep smemshNotYet
 hi link vimSubstRange smemshNotYet
 hi link vimPatRegion smemshNotYet
 hi link vimCollection smemshNotYet
-hi link vimSubstPat smemshNotYet
-hi link vimSubstRep4 smemshNotYet
 hi link vimCollClass smemshNotYet
 hi link vimAutoEventList smemshNotYet
 hi link vimMenuBang smemshNotYet
 hi link vimMenuPriority smemshNotYet
 hi link vimMenuMap smemshNotYet
 hi link vimMenuRhs smemshNotYet
-hi link vimNormCmds smemshNotYet
 hi link vimAuSyntax smemshNotYet
 hi link vimSynMtchCchar smemshNotYet
 hi link vimSynMtchGroup smemshNotYet
@@ -714,7 +718,6 @@ hi link vimSyncLinebreak smemshNotYet
 hi link vimSyncLinecont smemshNotYet
 hi link vimSyncRegion smemshNotYet
 hi link vimHiBang smemshNotYet
-hi link vimHiCtermColor smemshNotYet
 hi link vimHiFontname smemshNotYet
 hi link vimHiGuiFontname smemshNotYet
 hi link vimHiTermcap smemshNotYet
