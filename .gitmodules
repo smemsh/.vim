@@ -38,11 +38,10 @@
 
 ### LIBS #####################################################################
 
-# we need these sourced before the others so they go in lib/
-# TODO: find a more clever way to do ordering using existing hierarchy
+# this has all kinds of stuff, right now seems used only by IndentTab
 #
-[submodule "lib/ingo-library"]
-	path = lib/ingo-library
+[submodule "bundle/ingo-library"]
+	path = bundle/ingo-library
 	url = http://github.com/vim-scripts/ingo-library
 
 ### LANG #####################################################################
