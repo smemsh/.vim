@@ -156,6 +156,3 @@
 	url = http://github.com/altercation/vim-colors-solarized
 
 #
-[submodule "bundle/vim-plugin-autosess"]
-	path = bundle/vim-plugin-autosess
-	url = https://github.com/powerman/vim-plugin-autosess
