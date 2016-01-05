@@ -118,6 +118,7 @@ let datadirs =[
 	\['backupdir',  'backups',  '',                 ''          ],
 	\['directory',  'swaps',    '//,.',             ''          ],
 	\['undodir',    'undo',     '',                 'undofile'  ],
+	\['spellfile',  'spell',    '/en.latin1.add',   ''          ],
 \]
 
 for dir in datadirs
