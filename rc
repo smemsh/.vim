@@ -113,11 +113,11 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"	vimvar          subdir          append          setflag
+"	vimvar          subdir      append              setflag
 let datadirs =[
-	\['backupdir',  'backups',      '',             ''               ],
-	\['directory',  'swaps',        '//,.',         ''               ],
-	\['undodir',    'undo',         '',             'undofile'       ],
+	\['backupdir',  'backups',  '',                 ''          ],
+	\['directory',  'swaps',    '//,.',             ''          ],
+	\['undodir',    'undo',     '',                 'undofile'  ],
 \]
 
 for dir in datadirs
