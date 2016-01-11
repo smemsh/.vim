@@ -50,6 +50,7 @@ nmap         <leader>n  :set fo-=n<return>
 
 " various toggles
 "
+nmap         <leader>e  :set expandtab!<return>
 nmap         <leader>p  :set paste!<return>
 nmap         <leader>w  :set wrap!<return>
 nmap         <leader>L  :set list!<return>
