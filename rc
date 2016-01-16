@@ -182,7 +182,7 @@ runtime! plugrc/*
 " (skips if submodules not initialized)
 "   1. all ~/.vim/lib/* (for libraries, which need to load first),
 "   2. then ~/.vim/bundle/* (for plugins, etc),
-"   3. then ~/.vim/colorsheme/* (only :colorscheme bundles)
+"   3. then ~/.vim/colors/*/ (only :colorscheme bundles)
 "
 filetype off
 
@@ -191,7 +191,7 @@ if filereadable(s:pathogen)
 	execute "source " . s:pathogen
 	execute pathogen#infect('lib/{}')
 	execute pathogen#infect('bundle/{}')
-	execute pathogen#infect('colorscheme/{}')
+	execute pathogen#infect('colors/{}')
 endif
 filetype plugin indent on
 syntax enable

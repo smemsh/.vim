@@ -95,13 +95,13 @@
 ### VIM ######################################################################
 
 # shows a trace of syntax highlighting stack, useful for debugging
-# colorschemes
+# colorss
 #
 [submodule "bundle/vim-hilinks"]
 	path = bundle/vim-hilinks
 	url = https://github.com/kergoth/vim-hilinks
 
-# converts gui-only colorschemes to have cterms (realtime or statically)
+# converts gui-only colorss to have cterms (realtime or statically)
 # note: not enabled by default in plugrc/csapprox
 #
 [submodule "bundle/csapprox"]
@@ -135,23 +135,23 @@
 
 ### COLORSCHEMES #############################################################
 
-[submodule "colorscheme/jellybeans"]
-	path = colorscheme/jellybeans
+[submodule "colors/jellybeans"]
+	path = colors/jellybeans
 	url = http://github.com/nanotech/jellybeans.vim
-[submodule "colorscheme/grb256"]
-	path = colorscheme/grb256
+[submodule "colors/grb256"]
+	path = colors/grb256
 	url = http://github.com/quanganhdo/grb256
-[submodule "colorscheme/vim-distinguished"]
-	path = colorscheme/vim-distinguished
+[submodule "colors/vim-distinguished"]
+	path = colors/vim-distinguished
 	url = https://github.com/Lokaltog/vim-distinguished
-[submodule "colorscheme/vim-railscast-theme"]
-	path = colorscheme/vim-railscast-theme
+[submodule "colors/vim-railscast-theme"]
+	path = colors/vim-railscast-theme
 	url = https://github.com/jpo/vim-railscasts-theme
-[submodule "colorscheme/colorsbox"]
-	path = colorscheme/colorsbox
+[submodule "colors/colorsbox"]
+	path = colors/colorsbox
 	url = http://github.com/mkarmona/colorsbox
-[submodule "colorscheme/vim-colors-solarized"]
-	path = colorscheme/vim-colors-solarized
+[submodule "colors/vim-colors-solarized"]
+	path = colors/vim-colors-solarized
 	url = http://github.com/altercation/vim-colors-solarized
 
 #
