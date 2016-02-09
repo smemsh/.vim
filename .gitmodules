@@ -69,6 +69,11 @@
 	path = bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
 
+# translate vim buffer xml <--> yaml and reverse
+[submodule "bundle/vimxy"]
+	path = bundle/vimxy
+	url = https://github.com/ericcong/vimxy
+
 ### EDITING ##################################################################
 
 # columnar alignment based on regexes, with helpful default maps
