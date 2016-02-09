@@ -34,6 +34,7 @@ nnoremap csg :cs find g <C-R>=expand("<cword>")<CR><CR>
 nnoremap csi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nnoremap css :cs find s <C-R>=expand("<cword>")<CR><CR>
 nnoremap cst :cs find t <C-R>=expand("<cword>")<CR><CR>
+nnoremap csa :!cscope -bR <CR>:cs add cscope.out<CR>
 
 function! Cscope_menu ()
 	echo
