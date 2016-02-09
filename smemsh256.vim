@@ -78,7 +78,7 @@ hi FoldColumn           cterm=NONE          ctermfg=51      ctermbg=bg
 hi SignColumn           cterm=NONE          ctermfg=51      ctermbg=250
 hi Conceal              cterm=NONE          ctermfg=252     ctermbg=248
 
-hi SpellBad             cterm=NONE          ctermfg=224     ctermbg=0
+hi SpellBad             cterm=NONE          ctermfg=208     ctermbg=0
 hi SpellCap             cterm=NONE          ctermfg=12      ctermbg=0
 hi SpellRare            cterm=NONE          ctermfg=13      ctermbg=0
 hi SpellLocal           cterm=NONE          ctermfg=81      ctermbg=0
