@@ -145,6 +145,11 @@
 	path = bundle/vifm
 	url = https://github.com/vifm/vifm.vim
 
+# needed for vimdeck to do syntax highlighting of code blocks
+[submodule "bundle/SyntaxRange"]
+	path = bundle/SyntaxRange
+	url = https://github.com/vim-scripts/SyntaxRange
+
 ### COLORSCHEMES #############################################################
 
 [submodule "colors/jellybeans"]
