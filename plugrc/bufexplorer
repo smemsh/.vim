@@ -1,8 +1,14 @@
 "
 " bufexplorer plugin
+
 "
 "nnoremap       <leader>l :ls<return>
 nmap            <leader>l <leader>be
+
+"
+let g:bufExplorerShowDirectories        =0
+let g:bufExplorerShowRelativePath       =1
+let g:bufExplorerDefaultHelp            =0
 
 " see bufexplorer.vim::BESetupSyntax
 " for exactly which syntax patterns these correspond to
