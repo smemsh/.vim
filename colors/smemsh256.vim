@@ -100,7 +100,7 @@ hi MatchParen           cterm=NONE          ctermfg=fg      ctermbg=30
 
 """
 
-hi Constant             cterm=NONE          ctermfg=129     ctermbg=bg
+hi Constant             cterm=NONE          ctermfg=182     ctermbg=bg
 hi String               cterm=NONE          ctermfg=187     ctermbg=bg
 hi Character            cterm=NONE          ctermfg=104     ctermbg=bg
 hi Number               cterm=NONE          ctermfg=164     ctermbg=bg
