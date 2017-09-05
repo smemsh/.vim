@@ -51,6 +51,7 @@ nmap         <leader>n  :set fo-=n<return>
 
 " various toggles
 "
+nmap         #          :set number!<return>
 nmap         <leader>e  :set expandtab!<return>
 nmap         <leader>p  :set paste!<return>
 nmap         <leader>w  :set wrap!<return>
