@@ -28,14 +28,17 @@ nmap =                  g+
 
 " resets
 "
-nmap <leader>c          :set noai nosi nocin tw=0 fo-=a indentexpr=<return>
 nmap <leader>5          :set tw=55<return>
-nmap <leader>6          :set tw=62<return>
+nmap <leader>6          :set tw=64<return>
 nmap <leader>7          :set tw=72<return>
 nmap <leader>0          :set tw=0<return>
 nmap <leader>2          :set ts=2 sw=2<return>
 nmap <leader>4          :set ts=4 sw=4<return>
 nmap <leader>8          :set ts=8 sw=8<return>
+nmap <leader>c          :set noai nosi nocin tw=0
+                        \ fo-=a fo-=t
+                        \ indentexpr=
+                        \<return>
 
 " change fold levels
 "
@@ -44,8 +47,8 @@ nmap         <leader>f  :set foldlevel-=1<return>
 
 " auto-format +/-
 "
-nmap <leader><leader>a  :set formatoptions+=a<return>
-nmap         <leader>a  :set formatoptions-=a<return>
+nmap <leader><leader>a  :set fo+=a fo+=t<return>
+nmap         <leader>a  :set fo-=a fo-=t<return>
 nmap         <leader>N  :set fo+=n<return>
 nmap         <leader>n  :set fo-=n<return>
 
@@ -67,7 +70,7 @@ nmap <leader><leader>R  :set nowrap list showbreak="> "
 nmap <leader>o          :set tabstop=4 shiftwidth=4 indentexpr=
                         \ noexpandtab<return>
 
-" for text/flowed: open fixed 80col win, wrap at word breaks
+" for line-paragraphs: open fixed 80col win, wrap at word breaks
 "
 nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
                         \ wrap linebreak showbreak= <return>
@@ -76,6 +79,11 @@ nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
                         \:wincmd x<return>
                         \:set winwidth=80<return>
                         \:set winfixwidth<return>
+
+" useful for editing text/plain format=flowed (cf mutt):
+"
+nmap <leader>W          :set formatoptions-=w<return>
+nmap <leader><leader>W  :set formatoptions+=w<return>
 
 " quickfix prev-next maps to a led vi left-right, one row down
 "
