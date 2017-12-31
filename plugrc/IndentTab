@@ -7,4 +7,4 @@ let g:IndentTab = 1
 " keymaps to toggle the smart tabs vim-wide
 "
 nmap         <leader>i  :call IndentTab#Set(1, 1)<return>
-nmap <leader><leader>i  :call IndentTab#Set(0, 0)<return>
+nmap <leader><leader>i  :call IndentTab#Set(0, 1)<return>
