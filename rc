@@ -28,6 +28,7 @@ set wildmenu
 set nocompatible
 set nocindent
 set noesckeys
+set nofoldenable
 set norestorescreen
 set nostartofline
 
