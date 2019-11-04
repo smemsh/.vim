@@ -42,6 +42,7 @@ set nomodeline
 
 set cpoptions           -=ae
 set cpoptions           +=Er$
+set cpoptions           +=d " tags file relative to cwd, not the file we edit
 set diffopt             =filler,vertical,foldcolumn:0
 set textwidth           =78
 set backspace           =2
