@@ -139,13 +139,8 @@
 	path = bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
 
-# integration of vim windows with panes of external tool vifm
-#
-[submodule "bundle/vifm"]
-	path = bundle/vifm
-	url = https://github.com/vifm/vifm.vim
-
 # needed for vimdeck to do syntax highlighting of code blocks
+#
 [submodule "bundle/SyntaxRange"]
 	path = bundle/SyntaxRange
 	url = https://github.com/vim-scripts/SyntaxRange
