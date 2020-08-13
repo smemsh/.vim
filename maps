@@ -129,6 +129,17 @@ command DiffOrig
 nmap <leader>d :DiffOrig<return>
 endif
 
+" toggle whitespace mattering whilst diffing
+if ! exists(":DiffWhiteToggle")
+command DiffWhiteToggle
+	\ if &diffopt =~ 'iwhite'       |
+	\ set diffopt-=iwhite           |
+	\ else                          |
+	\ set diffopt+=iwhite           |
+	\ endif
+nmap <leader>dw :DiffWhiteToggle<return>
+endif
+
 " diff from local version
 nnoremap < :diffget LOCAL<return>:diffupdate<return>
 
