@@ -178,7 +178,7 @@ let mapleader = ","
 
 " plugin-specific variables initialized in their own files
 "
-runtime! plugrc/*
+runtime! plugrc/*.vim
 
 " append bundles to runtime path
 " (skips if submodules not initialized)
@@ -209,6 +209,6 @@ colorscheme smemsh256
 
 " TODO: use a globbing scheme and maybe rc.d/
 "
-source ~/.vim/functions
-source ~/.vim/maps
-source ~/.vim/cscope
+source ~/.vim/functions.vim
+source ~/.vim/maps.vim
+source ~/.vim/cscope.vim
