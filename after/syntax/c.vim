@@ -1,4 +1,3 @@
-source	$VIM/syntax/c.vim
 set	comments		=snr:/*,mn:*,enl:*/
 set	comments		+=fnb:-
 set	formatoptions		=croq2b
