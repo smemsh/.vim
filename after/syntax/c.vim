@@ -1,3 +1,5 @@
+"
+
 set	cindent
 set	autoindent
 
