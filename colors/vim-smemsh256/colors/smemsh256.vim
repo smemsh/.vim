@@ -236,6 +236,13 @@ hi clear perlVarBlock
 hi clear perlVarMember
 hi clear perlStatementIndirObjWrap
 
+" python
+"
+hi pythonDot            cterm=bold          ctermfg=009     ctermbg=bg
+hi pythonOperator       cterm=bold          ctermfg=206     ctermbg=bg
+hi pythonFunctionTag    cterm=bold          ctermfg=204     ctermbg=bg
+
+
 """ LINKS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " remove links (below) when overriding with a specific color (above)
@@ -571,7 +578,7 @@ hi link rubyError                       Error
 hi link pythonStatement                 Statement
 hi link pythonFunction                  Function
 hi link pythonRepeat                    Repeat
-hi link pythonOperator                  Operator
+"hi link pythonOperator                  Operator
 hi link pythonException                 Exception
 hi link pythonInclude                   Include
 hi link pythonDecorator                 Define
@@ -587,8 +594,8 @@ hi link pythonNumber                    Number
 hi link pythonBuiltin                   Function
 hi link pythonExceptions                Structure
 hi link pythonDoctestValue              Define
-hi link pythonDot                       Operator
-hi link pythonFunctionTag               Operator
+"hi link pythonDot                       Operator
+"hi link pythonFunctionTag               Operator
 hi link pythonConditional               Conditional
 
 hi link tclCommand                      Statement
