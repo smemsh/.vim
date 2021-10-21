@@ -241,6 +241,7 @@ hi clear perlStatementIndirObjWrap
 hi pythonDot            cterm=bold          ctermfg=009     ctermbg=bg
 hi pythonOperator       cterm=bold          ctermfg=206     ctermbg=bg
 hi pythonFunctionTag    cterm=bold          ctermfg=204     ctermbg=bg
+hi pythonBuiltinFunc    cterm=bold          ctermfg=184     ctermbg=bg
 
 
 """ LINKS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
