@@ -194,6 +194,8 @@ if filereadable(s:pathogen)
 	execute pathogen#infect('lib/{}')
 	execute pathogen#infect('bundle/{}')
 	execute pathogen#infect('colors/{}')
+else
+	set runtimepath +=~/.vim/colors/vim-smemsh256
 endif
 filetype plugin indent on
 
