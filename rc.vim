@@ -73,11 +73,11 @@ let &listchars =
 	\""
 
 let &fillchars =
-	\"vert:\u2502," .
+	\"vert:\u250a," .
 	\"fold:\u22ef," .
 	\"diff:\u2591," .
 	\""
-"	\"vert:\u250a," .
+"	\"vert:\u2502," .
 
 set statusline =
 	\%-5.50f
