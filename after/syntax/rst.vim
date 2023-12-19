@@ -9,3 +9,6 @@ set tabstop=4 shiftwidth=4
 "
 set nocindent
 set autoindent smartindent
+
+" otherwise we get funny stuff with emphasis/bold presumed to be C comments
+set formatoptions=2b
