@@ -49,7 +49,7 @@ function! Cscope_menu ()
 	\"  (t)o        find assignments to\n"
 	\"? "
 	let gotchar = getchar()
-	execute "normal cs" . gotchar
+	execute "normal cs" . nr2char(gotchar)
 endf
 nnoremap csh :call Cscope_menu()<return>
 
