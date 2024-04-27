@@ -169,6 +169,13 @@ set backupext           =.bak   " would prefer empty but $patchmode cant be same
 "
 autocmd BufWritePre *   let &backupext = '-' . strftime("%Y%m%d%H%M%S")
 
+" on start, restore last position in file; see :help last-position-jump
+"
+autocmd BufReadPost *
+\ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+\ |   exe "normal! g`\""
+\ | endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " <leader> is expanded in keymaps at define-time, and could be
