@@ -5,7 +5,7 @@ set	autoindent
 
 "set	comments		=snr:/*,mn:*,enl:*/
 "set	comments		+=fnb:-
-set	formatoptions		=croq2b
+set	formatoptions		=croq2bj
 set	cinkeys			=0{,0},:o,O,e
 set	cinwords		=if,else,while,do,for,switch
 set	cinoptions		=>s,e0,n0,f0,{0,)0,^0,:s,=s,gs,hs,p0,t0,+s,c0,(0,u0,)50,*256
