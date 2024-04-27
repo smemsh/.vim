@@ -3,8 +3,8 @@
 set	cindent
 set	autoindent
 
-set	comments		=snr:/*,mn:*,enl:*/
-set	comments		+=fnb:-
+"set	comments		=snr:/*,mn:*,enl:*/
+"set	comments		+=fnb:-
 set	formatoptions		=croq2b
 set	cinkeys			=0{,0},:o,O,e
 set	cinwords		=if,else,while,do,for,switch
