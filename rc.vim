@@ -5,7 +5,6 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set smartindent
 set autoindent
 set hlsearch
 set hidden
@@ -18,6 +17,7 @@ set showcmd
 set showfulltag
 set showmatch
 set smartcase
+set smartindent
 set splitbelow
 set ttyfast
 set visualbell
@@ -40,13 +40,12 @@ set nomodeline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set backspace           =2
+set complete            =t,.,i,w,b,k
 set cpoptions           -=ae
 set cpoptions           +=Er$
 set cpoptions           +=d " tags file relative to cwd, not the file we edit
 set diffopt             =filler,vertical,foldcolumn:0
-set textwidth           =78
-set backspace           =2
-set complete            =t,.,i,w,b,k
 set fileformats         =unix,dos,mac
 set history             =10000
 set laststatus          =2
@@ -57,6 +56,7 @@ set selection           =old
 set shortmess           +=aI
 set showbreak           =<
 set sidescroll          =1
+set textwidth           =78
 set ttyscroll           =999
 set viminfo             ='999,f1,%
 set whichwrap           =b,s,h,l,<,>,[,]
