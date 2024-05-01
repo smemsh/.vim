@@ -1,7 +1,7 @@
 "
 " vim runcom
 " scott@smemsh.net
-" http://smemsh.net/src/.vim/
+" https://github.com/smemsh/.vim/
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
