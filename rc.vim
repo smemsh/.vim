@@ -187,7 +187,7 @@ let mapleader = ","
 
 " plugin-specific variables initialized in their own files
 "
-runtime! plugrc/*.vim
+runtime! plugrc/**/*.vim
 
 " append bundles to runtime path
 " (skips if submodules not initialized)
