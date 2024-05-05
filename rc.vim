@@ -189,23 +189,7 @@ let mapleader = ","
 "
 runtime! plugrc/**/*.vim
 
-" append bundles to runtime path
-" (skips if submodules not initialized)
-"   1. all ~/.vim/lib/* (for libraries, which need to load first),
-"   2. then ~/.vim/bundle/* (for plugins, etc),
-"   3. then ~/.vim/colors/*/ (only :colorscheme bundles)
 "
-filetype off
-
-let s:pathogen = expand("~/.vim/bundle/vim-pathogen/autoload/pathogen.vim")
-if filereadable(s:pathogen)
-	execute "source " . s:pathogen
-	execute pathogen#infect('lib/{}')
-	execute pathogen#infect('bundle/{}')
-	execute pathogen#infect('colors/{}')
-else
-	set runtimepath +=~/.vim/colors/vim-smemsh256
-endif
 filetype plugin indent on
 
 syntax enable

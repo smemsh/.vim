@@ -3,20 +3,13 @@
 # https://github.com/smemsh/.vim/
 # https://spdx.org/licenses/GPL-2.0
 #
-##############################################################################
-
-# first one loaded explicitly in vimrc, bootstraps rest in bundle/
-#
-[submodule "bundle/vim-pathogen"]
-	path = bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
 
 ### LIBS #####################################################################
 
 # this has all kinds of stuff, right now seems used only by IndentTab
 #
 [submodule "bundle/ingo-library"]
-	path = bundle/ingo-library
+	path = pack/bundle/start/ingo-library
 	url = http://github.com/vim-scripts/ingo-library
 
 ### LANG #####################################################################
@@ -26,14 +19,14 @@
 # should give command: ":compiler clang"
 #
 [submodule "bundle/clang"]
-	path = bundle/clang
+	path = pack/bundle/start/clang
 	url = https://github.com/vim-scripts/clang.git
 
 # todo: obsoleted by YouCompleteMe?
 # todo: is this same: http://github.com/Rip-Rip/clang_complete
 #
 [submodule "bundle/clang-complete"]
-	path = bundle/clang-complete
+	path = pack/bundle/start/clang-complete
 	url = https://github.com/vim-scripts/clang-complete.git
 	ignore = untracked
 
@@ -41,12 +34,12 @@
 # languages -- "one to rule them all"
 #
 [submodule "bundle/vim-polyglot"]
-	path = bundle/vim-polyglot
+	path = pack/bundle/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
 
 # translate vim buffer xml <--> yaml and reverse
 [submodule "bundle/vimxy"]
-	path = bundle/vimxy
+	path = pack/bundle/start/vimxy
 	url = https://github.com/ericcong/vimxy
 
 ### EDITING ##################################################################
@@ -54,21 +47,22 @@
 # columnar alignment based on regexes, with helpful default maps
 #
 [submodule "bundle/vim-easy-align"]
-	path = bundle/vim-easy-align
+	path = pack/bundle/start/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
 
 # leading shifts (for indent level) use tabs, later ones
 # (for alignment) will use spaces
 #
 [submodule "bundle/IndentTab"]
-	path = bundle/IndentTab
+	path = pack/bundle/start/IndentTab
 	url = http://github.com/vim-scripts/IndentTab
 
 # enables drawing ansi / ascii line art boxes, tables, etc
 #
 [submodule "bundle/DrawIt"]
-	path = bundle/DrawIt
+	path = pack/bundle/start/DrawIt
 	url = https://github.com/vim-scripts/DrawIt
+
 ### SCM ######################################################################
 
 # establishes windows and keys to compare multiple directory trees and
@@ -76,7 +70,7 @@
 # (assists doing manual tree merges prior to mergetool usage)
 #
 [submodule "bundle/vim-dirdiff"]
-	path = bundle/vim-dirdiff
+	path = pack/bundle/start/vim-dirdiff
 	url = git://github.com/will133/vim-dirdiff
 
 ### VIM ######################################################################
@@ -85,68 +79,68 @@
 # colorss
 #
 [submodule "bundle/vim-hilinks"]
-	path = bundle/vim-hilinks
+	path = pack/bundle/start/vim-hilinks
 	url = https://github.com/kergoth/vim-hilinks
 
 # converts gui-only colorss to have cterms (realtime or statically)
 # note: not enabled by default in plugrc/csapprox
 #
 [submodule "bundle/csapprox"]
-	path = bundle/csapprox
+	path = pack/bundle/start/csapprox
 	url = https://github.com/godlygeek/csapprox
 
 # configurable balanced-colorize for each nested level of parens
 #
 [submodule "bundle/rainbow"]
-	path = bundle/rainbow
+	path = pack/bundle/start/rainbow
 	url = http://github.com/luochen1990/rainbow
 
 # gives vim enhanced (colors, keys, features) buf list and selection
 #
 [submodule "bundle/bufexplorer"]
-	path = bundle/bufexplorer
+	path = pack/bundle/start/bufexplorer
 	url = http://github.com/jlanzarotta/bufexplorer
 
 # conceal embedded ansi escape sequences in the file being edited and
 # duplicate intended colorization in viml over the intended region
 #
 [submodule "bundle/vim-plugin-AnsiEsc"]
-	path = bundle/vim-plugin-AnsiEsc
+	path = pack/bundle/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
 
 # needed for vimdeck to do syntax highlighting of code blocks
 #
 [submodule "bundle/SyntaxRange"]
-	path = bundle/SyntaxRange
+	path = pack/bundle/start/SyntaxRange
 	url = https://github.com/vim-scripts/SyntaxRange
 
 ### COLORSCHEMES #############################################################
 
 [submodule "colors/jellybeans"]
-	path = colors/jellybeans
+	path = pack/colors/opt/jellybeans
 	url = http://github.com/nanotech/jellybeans.vim
 [submodule "colors/grb256"]
-	path = colors/grb256
+	path = pack/colors/opt/grb256
 	url = http://github.com/quanganhdo/grb256
 [submodule "colors/vim-distinguished"]
-	path = colors/vim-distinguished
+	path = pack/colors/opt/vim-distinguished
 	url = https://github.com/Lokaltog/vim-distinguished
 [submodule "colors/vim-railscast-theme"]
-	path = colors/vim-railscast-theme
+	path = pack/colors/opt/vim-railscast-theme
 	url = https://github.com/jpo/vim-railscasts-theme
 [submodule "colors/colorsbox"]
-	path = colors/colorsbox
+	path = pack/colors/opt/colorsbox
 	url = http://github.com/mkarmona/colorsbox
 [submodule "colors/vim-colors-solarized"]
-	path = colors/vim-colors-solarized
+	path = pack/colors/opt/vim-colors-solarized
 	url = http://github.com/altercation/vim-colors-solarized
 
 #
 [submodule "bundle/vim-misc"]
-	path = bundle/vim-misc
+	path = pack/bundle/start/vim-misc
 	url = https://github.com/xolox/vim-misc
 [submodule "bundle/vim-easytags"]
-	path = bundle/vim-easytags
+	path = pack/bundle/start/vim-easytags
 	url = https://github.com/xolox/vim-easytags
 
 ### TODO #####################################################################
