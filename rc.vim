@@ -185,9 +185,8 @@ autocmd BufReadPost *
 "
 let mapleader = ","
 
-" plugin-specific variables initialized in their own files
-"
-runtime! plugrc/**/*.vim
+" bundle-specific variables initialized in their own files
+runtime! packrc/**/*.vim
 
 "
 filetype plugin indent on
