@@ -208,9 +208,6 @@ else
 endif
 filetype plugin indent on
 
-" TODO: this shouldn't go here, but it's for vim's own rst.vim
-let rst_use_emphasis_colors = 1
-
 syntax enable
 
 "
