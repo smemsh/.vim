@@ -191,8 +191,10 @@ runtime! plugrc/**/*.vim
 
 "
 filetype plugin indent on
-
 syntax enable
+
+" always sync whole file, defined last to override earlier syntax autocmds
+autocmd Syntax * syntax sync fromstart
 
 "
 colorscheme smemsh256
