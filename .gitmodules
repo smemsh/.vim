@@ -11,31 +11,6 @@
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
 
-### TODO #####################################################################
-#
-## editing
-# https://github.com/Lokaltog/vim-easymotion
-# https://github.com/tomtom/tcomment_vim
-#
-## git
-# https://github.com/airblade/vim-gitgutter
-# https://github.com/mhinz/vim-signify
-#
-## statline
-# https://github.com/bling/vim-airline
-# https://github.com/itchyny/lightline.vim
-# https://github.com/something/powerline
-#
-## syntax
-# https://github.com/artoj/pgn-syntax-vim
-#
-### LATER ####################################################################
-#
-# https://github.com/majutsushi/tagbar
-# https://github.com/tpope/vim-fugitive
-# https://github.com/scrooloose/syntastic
-#
-
 ### LIBS #####################################################################
 
 # this has all kinds of stuff, right now seems used only by IndentTab
@@ -173,3 +148,28 @@
 [submodule "bundle/vim-easytags"]
 	path = bundle/vim-easytags
 	url = https://github.com/xolox/vim-easytags
+
+### TODO #####################################################################
+#
+## editing
+# https://github.com/Lokaltog/vim-easymotion
+# https://github.com/tomtom/tcomment_vim
+#
+## git
+# https://github.com/airblade/vim-gitgutter
+# https://github.com/mhinz/vim-signify
+#
+## statline
+# https://github.com/bling/vim-airline
+# https://github.com/itchyny/lightline.vim
+# https://github.com/something/powerline
+#
+## syntax
+# https://github.com/artoj/pgn-syntax-vim
+#
+### LATER ####################################################################
+#
+# https://github.com/majutsushi/tagbar
+# https://github.com/tpope/vim-fugitive
+# https://github.com/scrooloose/syntastic
+#
