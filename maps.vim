@@ -100,16 +100,24 @@ noremap <c-^>           <f1>
 nmap <leader><leader>l  :redraw!<return>
 nmap <c-l>              :redraw!<return>
 
-" reload current colorscheme
+" refresh the currently loaded colorscheme from its source file
+" (as declared by the standard g:colors_name)
 "
-nmap <leader>C          <esc>:call Reload_colorscheme()<return>
+function! Reload_colorscheme()
+	execute ":colorscheme " . g:colors_name
+endfunction
+nmap <leader>C <esc>:call Reload_colorscheme()<return>
 
 " type while inserting, inputs the date, and then continues
 " appending in insert mode after going to the end of the new
 " date
 "
-map! <leader><leader>d  <esc>:call Read_shell_histtimeformat()<return>
-                        \Ea<space>
+function! Read_shell_date()
+	let nowdate = system("date +$HISTTIMEFORMAT")
+	call setreg('a', nowdate, 'b14')
+	normal "ap
+endfunction
+map! <leader><leader>d <esc>:call Read_shell_date()<return>Ea<space>
 
 """
 

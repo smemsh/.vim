@@ -198,9 +198,5 @@ autocmd Syntax * syntax sync fromstart
 "
 colorscheme smemsh256
 
-"""
-
-" TODO: use a globbing scheme and maybe rc.d/
 "
-source ~/.vim/functions.vim
 source ~/.vim/maps.vim
