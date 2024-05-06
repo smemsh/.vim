@@ -1,6 +1,7 @@
 "
 " scott@smemsh.net
-" http://smemsh.net/src/.vim/
+" https://github.com/smemsh/.vim/
+" https://spdx.org/licenses/GPL-2.0
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

@@ -2,8 +2,8 @@
 " pomoutils.vim
 "   vim syntax highlighting for pomoutils data file
 "
-" http://smemsh.net/src/pomoutils/
-" http://spdx.org/licenses/GPL-2.0
+" https://github.com/smemsh/.vim/
+" https://spdx.org/licenses/GPL-2.0
 " scott@smemsh.net
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
