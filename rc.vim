@@ -204,4 +204,3 @@ colorscheme smemsh256
 "
 source ~/.vim/functions.vim
 source ~/.vim/maps.vim
-source ~/.vim/cscope.vim
