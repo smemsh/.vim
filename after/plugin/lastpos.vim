@@ -1,5 +1,6 @@
 "
 " on start, restore last position in file; see :help last-position-jump
+" (needs to run in after/ or else &filetype is still empty)
 "
 augroup RestoreCursor
   autocmd!
