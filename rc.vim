@@ -148,22 +148,18 @@ endfor
 "
 if exists('&fsync')
 set nofsync
-set swapsync            =
-set updatecount         =20     " chars between swapfile writes
-set updatetime          =1000   " msecs idle before swapfile writes
+set swapsync =
+set updatetime =1000 " msecs idle before swapfile writes
+set updatecount =20 " chars between swapfile writes
 endif
 
-" lost edits too many times... this is before persistent undo
+" lost edits too many times...
 "
 set writebackup
 set backup
-set backupskip          =
-set patchmode           =       " patchmode always saves in pwd; if empty do not use
-
-" we have to do this before the write because if it's just
-" backupext, it has a permanent static value set at vim start
-"
-autocmd BufWritePre *   let &backupext = '-' . strftime("%Y%m%d%H%M%S")
+set backupskip =
+set patchmode = " prefer backupdir/backupext
+autocmd BufWritePre * let &backupext = '-' . strftime("%Y%m%d%H%M%S")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
