@@ -89,7 +89,7 @@ set statusline =
 	\%w
 	\%y
 	\\ b%n
-	\%{&paste?\"\ *\":\"\"}
+	\%{&paste&&win_getid()==g:actual_curwin?\"\ *\":\"\"}
 	\%=
 	\\ %b\ 0x%B,
 	\\ %o\ 0x%O,
