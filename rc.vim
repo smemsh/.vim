@@ -84,7 +84,7 @@ let &fillchars =
 
 set statusline =
 	\%-5.50f
-	\%m
+	\[%{getbufinfo(\"%\")[0].changed?\"+\":\"-\"}]
 	\%r
 	\%w
 	\%y
