@@ -159,7 +159,6 @@ set writebackup
 set backup
 set backupskip          =
 set patchmode           =       " patchmode always saves in pwd; if empty do not use
-set backupext           =.bak   " would prefer empty but $patchmode cant be same
 
 " we have to do this before the write because if it's just
 " backupext, it has a permanent static value set at vim start
