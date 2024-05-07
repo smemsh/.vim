@@ -89,6 +89,7 @@ set statusline =
 	\%w
 	\%y
 	\\ b%n
+	\%{&paste?\"\ *\":\"\"}
 	\%=
 	\%b\ 0x%B,
 	\\ %o\ 0x%O,
