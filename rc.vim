@@ -104,14 +104,9 @@ if ! &compatible
 	\$HOME/.aspell.en.pws
 endif
 
-"""
-
-" history window, editable same as a buffer!
-" sometimes messages do not show up; use q: in that case
-"
 if ! &compatible
-	nnoremap q: :
-	nnoremap : q:
+"	nnoremap q: :
+"	nnoremap : q:
 	autocmd CmdwinEnter [:/?] startinsert
 endif
 
