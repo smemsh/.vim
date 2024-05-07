@@ -91,7 +91,7 @@ set statusline =
 	\\ b%n
 	\%{&paste?\"\ *\":\"\"}
 	\%=
-	\%b\ 0x%B,
+	\\ %b\ 0x%B,
 	\\ %o\ 0x%O,
 	\\ L%l/%L
 	\\ C%c%V
