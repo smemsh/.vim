@@ -90,10 +90,8 @@ set statusline =
 	\%y
 	\\ b%n
 	\%=
-	\%b
-	\\ 0x%B,
-	\\ %o
-	\\ 0x%O,
+	\%b\ 0x%B,
+	\\ %o\ 0x%O,
 	\\ L%l/%L
 	\\ C%c%V
 	\\ %P
