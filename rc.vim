@@ -88,7 +88,9 @@ set statusline =
 	\%r
 	\%w
 	\%y
-	\\ b%n%=%b
+	\\ b%n
+	\%=
+	\%b
 	\\ 0x%B,
 	\\ %o
 	\\ 0x%O,
