@@ -9,6 +9,6 @@ let g:polyglot_disabled += ['autoindent']
 let g:polyglot_disabled += ['sleuth']
 
 " we want the system yaml, which has a lot better syntax for operators and the
-" like.  the one included with polyglot basically sucks
+" like.  the one included with polyglot basically sucks (TODO: was 2017, retry)
 "
 let g:polyglot_disabled += ['yaml']
