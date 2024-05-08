@@ -91,7 +91,7 @@ let statusline =
 	\'%w' .
 	\'%y' .
 	\' b%n' .
-	\'%{&paste && win_getid() == g:actual_curwin ? " *" : ""}' .
+	\'%{&paste && g:statusline_winid == g:actual_curwin ? " *" : ""}' .
 	\"%=" .
 	\" %b 0x%B," .
 	\" %o 0x%O," .
