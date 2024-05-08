@@ -71,7 +71,7 @@
 #
 [submodule "bundle/vim-dirdiff"]
 	path = pack/bundle/start/vim-dirdiff
-	url = git://github.com/will133/vim-dirdiff
+	url = https://github.com/will133/vim-dirdiff
 
 ### VIM ######################################################################
 
