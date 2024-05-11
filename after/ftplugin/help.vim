@@ -7,7 +7,7 @@ if exists("b:did_ftplugin_after") | finish | endif
 noremap <buffer> q :bw<return>
 augroup TimeoutRestore
 	autocmd!
-	autocmd BufEnter <buffer> let b:oldtol = &timeoutlen | set timeoutlen=1
-	autocmd BufLeave <buffer> let &timeoutlen = b:oldtol
+	autocmd BufEnter <buffer> let b:oldtm = &timeoutlen | set tm=1
+	autocmd BufLeave <buffer> let &timeoutlen = b:oldtm
 augroup END
 let b:did_ftplugin_after = 1
