@@ -61,7 +61,7 @@ set sidescroll          =1
 set textwidth           =78
 set timeoutlen          =650
 set ttyscroll           =999
-set viminfo             =%,'999,f1
+set viminfo             ='999,f1
 set whichwrap           =b,s,h,l,<,>,[,]
 set wildmode            =list,full
 
