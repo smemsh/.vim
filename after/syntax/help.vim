@@ -1,4 +1,3 @@
 "
 
-set readonly
 set noswapfile
