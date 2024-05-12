@@ -166,6 +166,7 @@ syntax enable
 autocmd Syntax * syntax sync fromstart
 
 "
+if !has('packages') | set rtp+=~/.vim/pack/colors/opt/vim-smemsh256 | endif
 colorscheme smemsh256
 
 "
