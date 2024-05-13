@@ -135,14 +135,6 @@
 	path = pack/colors/opt/vim-colors-solarized
 	url = http://github.com/altercation/vim-colors-solarized
 
-#
-[submodule "bundle/vim-misc"]
-	path = pack/bundle/start/vim-misc
-	url = https://github.com/xolox/vim-misc
-[submodule "bundle/vim-easytags"]
-	path = pack/bundle/start/vim-easytags
-	url = https://github.com/xolox/vim-easytags
-
 ### TODO #####################################################################
 #
 ## editing
