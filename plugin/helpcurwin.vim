@@ -5,7 +5,11 @@
 
 if !has('patch-7.4.2204') | finish | endif " getwininfo()
 command -nargs=? -complete=help Help call s:Help(<q-args>)
-function s:Help(subject) abort
+command -nargs=? Helpgrep call s:Help(<q-args>, 1)
+function s:Helpgrep(arg) abort
+	call s:Help(a:arg, 1)
+endfunction
+function s:Help(subject, grep = 0) abort
 
 	let l:helpbufs = []
 
@@ -20,7 +24,7 @@ function s:Help(subject) abort
 	endfor
 
 	" open new help, close, becomes unlisted, change original to that buf
-	execute 'help ' . a:subject
+	execute 'help' . (a:grep ? 'grep' : '') . ' ' . a:subject
 	let l:helpbufnum = bufnr()
 	execute 'helpclose'
 	execute 'buffer ' . l:helpbufnum
@@ -39,17 +43,22 @@ endfunction
 " getcmdline() = 7.0001
 "
 function s:HelpAbbrev(arg) abort
-	let pat = '^' . a:arg
-	return getcmdtype() == ":" && getcmdline() =~ pat ? 'Help' : a:arg
+	let l:helpfunc = (a:arg == 'helpgrep' ? 'Helpgrep' : 'Help')
+	if (getcmdtype() == ":") && (getcmdline() =~ ('^' . a:arg))
+		return l:helpfunc
+	else
+		return a:arg
+	endif
 endfunction
 
 if has('patch-8.2.4883') " string interpolation
-	for a in ['help', 'h']
+	for a in ['help', 'h', 'helpgrep']
 	execute $"cnoreabbrev <expr> {a} <SID>HelpAbbrev('{a}')" | endfor
 else
 	" todo: remove this case once all deployed vims are recent enough
 	cnoreabbrev <expr> h <SID>HelpAbbrev('h')
 	cnoreabbrev <expr> help <SID>HelpAbbrev('help')
+	cnoreabbrev <expr> helpgrep <SID>HelpAbbrev('helpgrep')
 endif
 
 finish
