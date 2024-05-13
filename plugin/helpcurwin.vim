@@ -38,18 +38,18 @@ endfunction
 " getcmdtype() = 7.0149
 " getcmdline() = 7.0001
 "
-function HelpAbbrev(arg) abort
+function s:HelpAbbrev(arg) abort
 	let pat = '^' . a:arg
 	return getcmdtype() == ":" && getcmdline() =~ pat ? 'Help' : a:arg
 endfunction
 
 if has('patch-8.2.4883') " string interpolation
 	for a in ['help', 'h']
-	execute $"cnoreabbrev <expr> {a} HelpAbbrev('{a}')" | endfor
+	execute $"cnoreabbrev <expr> {a} <SID>HelpAbbrev('{a}')" | endfor
 else
 	" todo: remove this case once all deployed vims are recent enough
-	cnoreabbrev <expr> h HelpAbbrev('h')
-	cnoreabbrev <expr> help HelpAbbrev('help')
+	cnoreabbrev <expr> h <SID>HelpAbbrev('h')
+	cnoreabbrev <expr> help <SID>HelpAbbrev('help')
 endif
 
 finish
