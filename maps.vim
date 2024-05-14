@@ -97,6 +97,11 @@ nmap <leader>/          :cn<return>
 "
 nmap <leader>r          :redraw!<return>
 
+" write this buffer and quit others (they should have no changes)
+nnoremap <leader>x      :w<return>:qa<return>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " refresh the currently loaded colorscheme from its source file
 " (as declared by the standard g:colors_name)
 "
@@ -153,9 +158,6 @@ nnoremap > :diffget REMOTE<return>:diffupdate<return>
 
 " resync diff highlighting
 nnoremap <leader>$ :diffupdate<return>
-
-" write this buffer and quit others (they should have no changes)
-nnoremap <leader>x :w<return>:qa<return>
 
 """ APPS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
