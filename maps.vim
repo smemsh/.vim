@@ -9,6 +9,8 @@
 "
 nmap <c-j>              <c-w>j
 nmap <c-k>              <c-w>k
+nmap <c-h>              <c-w>h
+nmap <c-l>              <c-w>l
 nmap <c-n>              :bn<return>
 nmap <c-p>              :bp<return>
 nmap <leader>.          :b#<return>
@@ -94,10 +96,11 @@ nmap <leader>/          :cn<return>
 noremap <f1>            <c-^>
 noremap <c-^>           <f1>
 
-" screen redraw
+" screen redraw/refresh
+" (ctrl-l would be nice, but ctrl-hjkl too useful as window movement)
+" (<leader>l would be nice, but too useful as bufexplorer-list macro
 "
-nmap <leader><leader>l  :redraw!<return>
-nmap <c-l>              :redraw!<return>
+nmap <leader>r          :redraw!<return>
 
 " refresh the currently loaded colorscheme from its source file
 " (as declared by the standard g:colors_name)
