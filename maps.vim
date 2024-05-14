@@ -11,7 +11,7 @@ nmap <c-j>              <c-w>j
 nmap <c-k>              <c-w>k
 nmap <c-n>              :bn<return>
 nmap <c-p>              :bp<return>
-nnoremap <leader>.      :b#<return>
+nmap <leader>.          :b#<return>
 nmap <leader><space>    <c-w>p
 
 " to tabs (T), to spaces (t)
