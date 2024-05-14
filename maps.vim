@@ -164,19 +164,6 @@ nnoremap <leader>x :w<return>:qa<return>
 " TODO app-specific should probably go into syntax and ftplugin files
 "
 
-" Trac wiki RST
-"
-map <leader><leader>r   :set fo-=a<return>
-                        \a{{{<return>#!rst<return><return><return><return>}}}
-                        \<esc>kka<esc>
-                        \:set ft=rst nospell tw=72 fo-=a<return>
-                        \i
-
-map <leader>r           \:set nospell ft=rst<return>
-
-map <leader>q           m`WBi``<esc>Ea``<esc>`` | " quote
-nmap <leader><leader>9  a`#99999`:trac:<esc>
-
 " mutt signatures with and without the horiz underline
 " TODO remove personalizations into separate file and git-crypt it,
 "      these are safe for the time being
