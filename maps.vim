@@ -91,11 +91,6 @@ nmap <leader><leader>W  :set formatoptions+=w<return>
 nmap <leader>m          :cp<return>
 nmap <leader>/          :cn<return>
 
-" temporary solution to having nonfunctioning F-keys
-"
-noremap <f1>            <c-^>
-noremap <c-^>           <f1>
-
 " screen redraw/refresh
 " (ctrl-l would be nice, but ctrl-hjkl too useful as window movement)
 " (<leader>l would be nice, but too useful as bufexplorer-list macro
