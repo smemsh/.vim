@@ -5,7 +5,7 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" buffer selection
+" window/buffer selection
 "
 nmap <c-j>              <c-w>j
 nmap <c-k>              <c-w>k
