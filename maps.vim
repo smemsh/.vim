@@ -79,7 +79,7 @@ nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
                         \:set winwidth=80<return>
                         \:set winfixwidth<return>
 
-" useful for editing text/plain format=flowed (cf mutt):
+" useful for editing text/plain format=flowed (ie, for mutt):
 "
 nmap <leader>W          :set formatoptions-=w<return>
 nmap <leader><leader>W  :set formatoptions+=w<return>
