@@ -1,3 +1,3 @@
 "
 
-au BufNewFile,BufRead ~/{,src/}.gitcli/** set filetype=gitconfig
+au BufNewFile,BufRead ~/{,src/}.gitcli/*\(.git/*\)\@<! set filetype=gitconfig
