@@ -42,6 +42,11 @@
 	path = pack/bundle/start/vimxy
 	url = https://github.com/ericcong/vimxy
 
+# run gtags and friends in git repos or any tree with a .root file
+[submodule "bundle/vim-gutentags"]
+	path = pack/bundle/start/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags
+
 ### EDITING ##################################################################
 
 # columnar alignment based on regexes, with helpful default maps
