@@ -52,9 +52,3 @@ function! Cscope_menu ()
 	execute "normal cs" . nr2char(gotchar)
 endf
 nnoremap csh :call Cscope_menu()<return>
-
-" TODO: these came from meklar-cull, not sure if still used
-nmap <c-/> :cn<return>
-nmap <c-m> :cp<return>
-
-" EOF
