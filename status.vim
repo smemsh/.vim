@@ -1,5 +1,12 @@
 "
 
+" does not work until 8.2.2529
+"if !has('vim9script')
+"	"legacy script implementation
+"	finish
+"endif
+"vim9script
+"" vim9script implementation
 
 function StatusLine()
 
