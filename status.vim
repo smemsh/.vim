@@ -8,7 +8,8 @@ function StatusLine()
 		let l:statusline_modified =
 		\'[' .
 		\'%{getbufinfo("%")[0].changed? "+": "-"}' .
-		\']'
+		\']' .
+		\''
 	else
 		let l:statusline_modified = '%m'
 	endif
