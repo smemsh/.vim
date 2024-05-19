@@ -35,11 +35,22 @@ function StatusLine()
 		let l:statusline_paste = '%{&paste ? " *" : ""}'
 	endif
 
+	" preview window is active
+	if &previewwindow
+		let l:statusline_preview =
+		\'[' .
+		\'Preview' .
+		\']' .
+		\''
+	else
+		let l:statusline_preview = ""
+	endif
+
 	return
 	\'%-5.50f' .
 	\ l:statusline_modified .
 	\ l:statusline_readonly .
-	\'%w' .
+	\ l:statusline_preview .
 	\'%y' .
 	\' b%n' .
 	\ l:statusline_paste .
