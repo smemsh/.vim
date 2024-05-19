@@ -1,30 +1,34 @@
 "
 
-if has('patch-7.4.2204') " getbufinfo()
-	let s:statusline_modified =
-	\'[' .
-	\'%{getbufinfo("%")[0].changed? "+": "-"}' .
-	\']'
-else
-	let s:statusline_modified = '%m'
-endif
 
-if has('patch-8.1.1372')
-	let s:statusline_paste =
-	\'%{&paste && g:statusline_winid == g:actual_curwin ? " *" : ""}'
-else
-	let s:statusline_paste =
-	\'%{&paste ? " *" : ""}'
-endif
+function StatusLine()
 
-let s:statusline =
+	if has('patch-7.4.2204') " getbufinfo()
+		let l:statusline_modified =
+		\'[' .
+		\'%{getbufinfo("%")[0].changed? "+": "-"}' .
+		\']'
+	else
+		let l:statusline_modified = '%m'
+	endif
+
+	if has('patch-8.1.1372')
+		let l:statusline_paste = " "
+		if &paste && (g:statusline_winid == win_getid())
+			let l:statusline_paste .= "*"
+		endif
+	else
+		let l:statusline_paste = '%{&paste ? " *" : ""}'
+	endif
+
+	return
 	\'%-5.50f' .
-	\ s:statusline_modified .
+	\ l:statusline_modified .
 	\'%r' .
 	\'%w' .
 	\'%y' .
 	\' b%n' .
-	\ s:statusline_paste .
+	\ l:statusline_paste .
 	\"%=" .
 	\" %b 0x%B," .
 	\" %o 0x%O," .
@@ -32,5 +36,6 @@ let s:statusline =
 	\" C%c%V" .
 	\" %P" .
 	\""
+endfunc
 
-let &statusline = s:statusline
+set statusline=%!StatusLine()
