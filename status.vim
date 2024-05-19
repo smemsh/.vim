@@ -10,7 +10,11 @@
 
 function StatusLine()
 
+	" path to the file currently being edited
+	let l:statusline_filename = '%-5.50f'
+
 	" buffer is modified
+	"
 	if has('patch-7.4.2204') " getbufinfo()
 		let l:statusline_modified =
 		\'[' .
@@ -22,6 +26,7 @@ function StatusLine()
 	endif
 
 	" buffer is readonly
+	"
 	if &readonly
 		let l:statusline_readonly =
 		\'[' .
@@ -43,6 +48,7 @@ function StatusLine()
 	endif
 
 	" preview window is active
+	"
 	if &previewwindow
 		let l:statusline_preview =
 		\'[' .
@@ -54,6 +60,7 @@ function StatusLine()
 	endif
 
 	" ftdetected syntax type if known
+	"
 	if len(&filetype) > 0
 		let l:statusline_filetype =
 		\'[' .
@@ -67,8 +74,28 @@ function StatusLine()
 	" buffer number represented by this window
 	let l:statusline_bufnum = ' b%n'
 
+	" decimal and hex code for character under cursor
+	"
+	let l:statusline_cursorchar = " %b 0x%B,"
+
+	" byte offset into file
+	"
+	let l:statusline_offset = " %o 0x%O,"
+
+	" line offset into file / total
+	"
+	let l:statusline_linepos = " L%l/%L"
+
+	" column offset
+	"
+	let l:statusline_colpos = " C%c%V"
+
+	" hundredths into file
+	"
+	let l:statusline_percent = " %P"
+
 	return
-	\'%-5.50f' .
+	\ l:statusline_filename .
 	\ l:statusline_modified .
 	\ l:statusline_readonly .
 	\ l:statusline_preview .
@@ -76,11 +103,11 @@ function StatusLine()
 	\ l:statusline_bufnum .
 	\ l:statusline_paste .
 	\"%=" .
-	\" %b 0x%B," .
-	\" %o 0x%O," .
-	\" L%l/%L" .
-	\" C%c%V" .
-	\" %P" .
+	\ l:statusline_cursorchar .
+	\ l:statusline_offset .
+	\ l:statusline_linepos .
+	\ l:statusline_colpos .
+	\ l:statusline_percent .
 	\""
 endfunc
 
