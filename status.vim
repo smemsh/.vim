@@ -46,12 +46,23 @@ function StatusLine()
 		let l:statusline_preview = ""
 	endif
 
+	" ftdetected syntax type if known
+	if len(&filetype) > 0
+		let l:statusline_filetype =
+		\'[' .
+		\ &filetype .
+		\']' .
+		\''
+	else
+		let l:statusline_filetype = ""
+	endif
+
 	return
 	\'%-5.50f' .
 	\ l:statusline_modified .
 	\ l:statusline_readonly .
 	\ l:statusline_preview .
-	\'%y' .
+	\ l:statusline_filetype .
 	\' b%n' .
 	\ l:statusline_paste .
 	\"%=" .
