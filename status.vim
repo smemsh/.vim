@@ -18,7 +18,7 @@ function StatusLine()
 	if &readonly
 		let l:statusline_readonly =
 		\'[' .
-		\'RO' .
+		\'ro' .
 		\']' .
 		\''
 	else
