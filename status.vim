@@ -17,7 +17,7 @@ else
 	\'%{&paste ? " *" : ""}'
 endif
 
-let statusline =
+let s:statusline =
 	\'%-5.50f' .
 	\ s:statusline_modified .
 	\'%r' .
@@ -33,4 +33,4 @@ let statusline =
 	\" %P" .
 	\""
 
-let &statusline = statusline
+let &statusline = s:statusline
