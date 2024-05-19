@@ -64,13 +64,16 @@ function StatusLine()
 		let l:statusline_filetype = ""
 	endif
 
+	" buffer number represented by this window
+	let l:statusline_bufnum = ' b%n'
+
 	return
 	\'%-5.50f' .
 	\ l:statusline_modified .
 	\ l:statusline_readonly .
 	\ l:statusline_preview .
 	\ l:statusline_filetype .
-	\' b%n' .
+	\ l:statusline_bufnum .
 	\ l:statusline_paste .
 	\"%=" .
 	\" %b 0x%B," .
