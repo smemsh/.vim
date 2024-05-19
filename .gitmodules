@@ -42,10 +42,15 @@
 	path = pack/bundle/start/vimxy
 	url = https://github.com/ericcong/vimxy
 
-# run gtags and friends in git repos or any tree with a .root file
+# run ctags/gtags/cscope in git repos, or any tree with .root, without .notags
 [submodule "bundle/vim-gutentags"]
 	path = pack/bundle/start/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
+
+# switches cscope databases
+[submodule "bundle/gutentags_plus"]
+	path = pack/bundle/start/gutentags_plus
+	url = https://github.com/skywind3000/gutentags_plus
 
 ### EDITING ##################################################################
 
