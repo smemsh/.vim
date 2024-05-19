@@ -37,16 +37,6 @@ function StatusLine()
 		let l:statusline_readonly = ""
 	endif
 
-	" paste mode is active
-	if has('patch-8.1.1372')
-		let l:statusline_paste = " "
-		if &paste && (g:statusline_winid == win_getid())
-			let l:statusline_paste .= "*"
-		endif
-	else
-		let l:statusline_paste = '%{&paste ? " *" : ""}'
-	endif
-
 	" preview window is active
 	"
 	if &previewwindow
@@ -73,6 +63,17 @@ function StatusLine()
 
 	" buffer number represented by this window
 	let l:statusline_bufnum = ' b%n'
+
+	" paste mode is active
+	"
+	if has('patch-8.1.1372')
+		let l:statusline_paste = " "
+		if &paste && (g:statusline_winid == win_getid())
+			let l:statusline_paste .= "*"
+		endif
+	else
+		let l:statusline_paste = '%{&paste ? " *" : ""}'
+	endif
 
 	" decimal and hex code for character under cursor
 	"
