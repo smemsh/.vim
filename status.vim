@@ -39,7 +39,7 @@ function StatusLine()
 	if &previewwindow
 		let l:statusline_preview =
 		\'[' .
-		\'Preview' .
+		\'preview' .
 		\']' .
 		\''
 	else
