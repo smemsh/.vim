@@ -3,6 +3,7 @@
 
 function StatusLine()
 
+	" buffer is modified
 	if has('patch-7.4.2204') " getbufinfo()
 		let l:statusline_modified =
 		\'[' .
@@ -12,6 +13,7 @@ function StatusLine()
 		let l:statusline_modified = '%m'
 	endif
 
+	" paste mode is active
 	if has('patch-8.1.1372')
 		let l:statusline_paste = " "
 		if &paste && (g:statusline_winid == win_getid())
