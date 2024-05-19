@@ -14,6 +14,17 @@ function StatusLine()
 		let l:statusline_modified = '%m'
 	endif
 
+	" buffer is readonly
+	if &readonly
+		let l:statusline_readonly =
+		\'[' .
+		\'RO' .
+		\']' .
+		\''
+	else
+		let l:statusline_readonly = ""
+	endif
+
 	" paste mode is active
 	if has('patch-8.1.1372')
 		let l:statusline_paste = " "
@@ -27,7 +38,7 @@ function StatusLine()
 	return
 	\'%-5.50f' .
 	\ l:statusline_modified .
-	\'%r' .
+	\ l:statusline_readonly .
 	\'%w' .
 	\'%y' .
 	\' b%n' .
