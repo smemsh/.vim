@@ -1,12 +1,20 @@
 "
-
-" does not work until 8.2.2529
-"if !has('vim9script')
-"	"legacy script implementation
-"	finish
-"endif
-"vim9script
-"" vim9script implementation
+" vim statusline
+"
+" TODO: implement parallel function in vim9 and test for capability
+" using this (8.2.2529+) idiom:
+"
+"   if !has('vim9script')
+"       "legacy script implementation
+"       finish
+"   endif
+"   vim9script
+"   " vim9script implementation
+"
+" but then we have to maintain two parallel versions.  also vim8 and vim9 do
+" not share comment character (?), so not sure how the files can coexist?
+" for now we just write a vim8-only
+"
 
 function StatusLine()
 
