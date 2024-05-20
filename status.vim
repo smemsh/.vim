@@ -106,7 +106,6 @@ function StatusLine()
 	let l:status .= '%-5.50f'
 
 	" buffer is modified
-	"
 	if has('patch-7.4.2204') " getbufinfo()
 		let l:status .=
 		\ l:lbracket .
@@ -119,7 +118,6 @@ function StatusLine()
 	endif
 
 	" buffer is readonly
-	"
 	if &readonly
 		let l:status .=
 		\ l:lbracket .
@@ -130,7 +128,6 @@ function StatusLine()
 	endif
 
 	" preview window is active
-	"
 	if &previewwindow
 		let l:status .=
 		\ l:lbracket .
@@ -141,7 +138,6 @@ function StatusLine()
 	endif
 
 	" ftdetected syntax type if known
-	"
 	if len(&filetype) > 0
 		let l:status .=
 		\ l:lbracket .
@@ -155,7 +151,6 @@ function StatusLine()
 	let l:status .= l:hi_letter .  ' b' .  l:hi_bufnum .  '%n'
 
 	" paste mode is active
-	"
 	let l:status .= l:hi_normal
 	if exists('l:our_win_current')
 		let l:status .= " "
@@ -167,27 +162,21 @@ function StatusLine()
 	endif
 
 	" relative to this mark, text justification is ipsilateral
-	"
 	let l:status .= "%="
 
 	" decimal and hex code for character under cursor
-	"
 	let l:status .= l:hi_charcode . " %b 0x%B" .  l:hi_comma .  ","
 
 	" byte offset into file
-	"
 	let l:status .= l:hi_offset . " %o 0x%O" .  l:hi_comma . ","
 
 	" line offset into file / total
-	"
 	let l:status .= l:hi_letter . " L" . l:hi_coord . "%l/%L"
 
 	" column offset
-	"
 	let l:status .= l:hi_letter . " C" . l:hi_coord . "%c%V"
 
 	" hundredths into file
-	"
 	let l:status .= l:hi_percent . " %P"
 
 	" return to normal for the last escape emitted
