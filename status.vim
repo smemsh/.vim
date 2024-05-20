@@ -18,6 +18,13 @@
 
 function StatusLine()
 
+	let l:winid = win_getid()
+	if has('patch-8.1.1372')
+		let l:our_win_current = (g:statusline_winid == l:winid)
+	else | :
+		" todo: how to do this on older versions?
+	endif
+
 	" path to the file currently being edited
 	let l:statusline_filename = '%-5.50f'
 
@@ -74,9 +81,9 @@ function StatusLine()
 
 	" paste mode is active
 	"
-	if has('patch-8.1.1372')
-		let l:statusline_paste = " "
-		if &paste && (g:statusline_winid == win_getid())
+	if exists('l:our_win_current')
+		let l:status .= " "
+		if &paste && l:our_win_current
 			let l:statusline_paste .= "*"
 		endif
 	else
