@@ -136,7 +136,7 @@ function StatusLine()
 	endif
 
 	" ftdetected syntax type if known
-	if l:fullstatus && len(&filetype) > 0
+	if l:fullstatus && strlen(&filetype) > 0
 		let l:status .=
 		\ l:lbracket .
 		\ l:hi_filetype .
