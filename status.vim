@@ -16,6 +16,36 @@
 " for now we just write a vim8-only
 "
 
+" all ctermfg are 12 more than their NC-suffixed equivalents
+hi StatusLineFileName     cterm=italic      ctermfg=226     ctermbg=17
+hi StatusLineBracket      cterm=italic      ctermfg=114     ctermbg=17
+hi StatusLineModified     cterm=italic      ctermfg=213     ctermbg=17
+hi StatusLineFlags        cterm=italic      ctermfg=35      ctermbg=17
+hi StatusLineFileType     cterm=italic      ctermfg=75      ctermbg=17
+hi StatusLinePaste        cterm=italic      ctermfg=214     ctermbg=17
+hi StatusLineCharCode     cterm=italic      ctermfg=44      ctermbg=17
+hi StatusLineOffset       cterm=italic      ctermfg=38      ctermbg=17
+hi StatusLineLetter       cterm=italic      ctermfg=142     ctermbg=17
+hi StatusLineCoord        cterm=italic      ctermfg=116     ctermbg=17
+hi StatusLinePercent      cterm=italic      ctermfg=112     ctermbg=17
+hi StatusLineBufNum       cterm=italic      ctermfg=82      ctermbg=17
+hi StatusLineComma        cterm=italic      ctermfg=71      ctermbg=17
+
+" all ctermfg are 12 less than their non-NC equivalents
+hi StatusLineFileNameNC   cterm=NONE        ctermfg=214     ctermbg=17
+hi StatusLineBracketNC    cterm=NONE        ctermfg=102     ctermbg=17
+hi StatusLineModifiedNC   cterm=NONE        ctermfg=201     ctermbg=17
+hi StatusLineFlagsNC      cterm=NONE        ctermfg=23      ctermbg=17
+hi StatusLineFileTypeNC   cterm=NONE        ctermfg=63      ctermbg=17
+hi StatusLinePasteNC      cterm=NONE        ctermfg=202     ctermbg=17
+hi StatusLineCharCodeNC   cterm=NONE        ctermfg=32      ctermbg=17
+hi StatusLineOffsetNC     cterm=NONE        ctermfg=26      ctermbg=17
+hi StatusLineLetterNC     cterm=NONE        ctermfg=130     ctermbg=17
+hi StatusLineCoordNC      cterm=NONE        ctermfg=104     ctermbg=17
+hi StatusLinePercentNC    cterm=NONE        ctermfg=100     ctermbg=17
+hi StatusLineBufNumNC     cterm=NONE        ctermfg=70      ctermbg=17
+hi StatusLineCommaNC      cterm=NONE        ctermfg=59      ctermbg=17
+
 function StatusLine()
 
 	let l:status = ""
