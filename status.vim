@@ -21,7 +21,8 @@ function StatusLine()
 	let l:status = ""
 
 	if has('patch-8.1.1372')
-		let l:bufinfo = getbufinfo(winbufnr(g_statusline_winid))[0]
+		let l:bufn = winbufnr(g:statusline_winid)
+		let l:bufinfo = getbufinfo(l:bufn)[0]
 		let l:our_win_current = (g:statusline_winid == win_getid())
 		let l:fullstatus = v:true
 	else
@@ -113,7 +114,7 @@ function StatusLine()
 	endif
 
 	" buffer is readonly
-	if l:fullstatus && &readonly
+	if l:fullstatus && getbufvar(l:bufn, "&readonly")
 		let l:status .=
 		\ l:lbracket .
 		\ l:hi_flags .
@@ -125,7 +126,7 @@ function StatusLine()
 	endif
 
 	" preview window is active
-	if l:fullstatus && &previewwindow
+	if l:fullstatus && getbufvar(l:bufn, '&previewwindow')
 		let l:status .=
 		\ l:lbracket .
 		\'preview' .
@@ -136,13 +137,16 @@ function StatusLine()
 	endif
 
 	" ftdetected syntax type if known
-	if l:fullstatus && strlen(&filetype) > 0
-		let l:status .=
-		\ l:lbracket .
-		\ l:hi_filetype .
-		\ &filetype .
-		\ l:rbracket .
-		\''
+	if l:fullstatus
+		let l:ft = getbufvar(l:bufn, '&filetype')
+		if strlen(l:ft) != 0
+			let l:status .=
+			\ l:lbracket .
+			\ l:hi_filetype .
+			\ l:ft .
+			\ l:rbracket .
+			\''
+		endif
 	else
 		let l:status .= '%y'
 	endif
@@ -153,7 +157,7 @@ function StatusLine()
 	" paste mode is active
 	if l:fullstatus
 		let l:status .= " "
-		if &paste && l:our_win_current
+		if getbufvar(l:bufn, &paste) && l:our_win_current
 			let l:status .= l:hi_paste . "*"
 		endif
 	else
