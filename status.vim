@@ -120,6 +120,8 @@ function StatusLine()
 		\'RO' .
 		\ l:rbracket .
 		\''
+	else
+		let l:status .= '%r'
 	endif
 
 	" preview window is active
@@ -129,6 +131,8 @@ function StatusLine()
 		\'preview' .
 		\ l:rbracket .
 		\''
+	else
+		let l:status .= '%w'
 	endif
 
 	" ftdetected syntax type if known
@@ -139,6 +143,8 @@ function StatusLine()
 		\ &filetype .
 		\ l:rbracket .
 		\''
+	else
+		let l:status .= '%y'
 	endif
 
 	" buffer number represented by this window
