@@ -16,35 +16,49 @@
 " for now we just write a vim8-only
 "
 
-" all ctermfg are 12 more than their NC-suffixed equivalents
-hi StatusLineFilename     cterm=italic      ctermfg=226     ctermbg=17
-hi StatusLineBracket      cterm=italic      ctermfg=114     ctermbg=17
-hi StatusLineModified     cterm=italic      ctermfg=213     ctermbg=17
-hi StatusLineFlags        cterm=italic      ctermfg=35      ctermbg=17
-hi StatusLineFiletype     cterm=italic      ctermfg=75      ctermbg=17
-hi StatusLinePaste        cterm=italic      ctermfg=214     ctermbg=17
-hi StatusLineCharcode     cterm=italic      ctermfg=44      ctermbg=17
-hi StatusLineOffset       cterm=italic      ctermfg=38      ctermbg=17
-hi StatusLineLetter       cterm=italic      ctermfg=142     ctermbg=17
-hi StatusLineCoord        cterm=italic      ctermfg=116     ctermbg=17
-hi StatusLinePercent      cterm=italic      ctermfg=112     ctermbg=17
-hi StatusLineBufnum       cterm=italic      ctermfg=82      ctermbg=17
-hi StatusLineComma        cterm=italic      ctermfg=71      ctermbg=17
+" subtract from StatusLinePrefix ctermfg values to get StatusLinePrefixNC
+let s:nc_hi_offset = 12
 
-" all ctermfg are 12 less than their non-NC equivalents
-hi StatusLineFilenameNC   cterm=NONE        ctermfg=214     ctermbg=17
-hi StatusLineBracketNC    cterm=NONE        ctermfg=102     ctermbg=17
-hi StatusLineModifiedNC   cterm=NONE        ctermfg=201     ctermbg=17
-hi StatusLineFlagsNC      cterm=NONE        ctermfg=23      ctermbg=17
-hi StatusLineFiletypeNC   cterm=NONE        ctermfg=63      ctermbg=17
-hi StatusLinePasteNC      cterm=NONE        ctermfg=202     ctermbg=17
-hi StatusLineCharcodeNC   cterm=NONE        ctermfg=32      ctermbg=17
-hi StatusLineOffsetNC     cterm=NONE        ctermfg=26      ctermbg=17
-hi StatusLineLetterNC     cterm=NONE        ctermfg=130     ctermbg=17
-hi StatusLineCoordNC      cterm=NONE        ctermfg=104     ctermbg=17
-hi StatusLinePercentNC    cterm=NONE        ctermfg=100     ctermbg=17
-hi StatusLineBufnumNC     cterm=NONE        ctermfg=70      ctermbg=17
-hi StatusLineCommaNC      cterm=NONE        ctermfg=59      ctermbg=17
+" highlight group prefix (group=StatusLinePrefixSuffix), ctermfg=
+let s:hipairs =	[
+	\ [ 'filename',   226 ],
+	\ [ 'bracket',    114 ],
+	\ [ 'modified',   213 ],
+	\ [ 'flags',       35 ],
+	\ [ 'filetype',    75 ],
+	\ [ 'paste',      214 ],
+	\ [ 'charcode',    44 ],
+	\ [ 'offset',      38 ],
+	\ [ 'letter',     142 ],
+	\ [ 'coord',      116 ],
+	\ [ 'percent',    112 ],
+	\ [ 'bufnum',      82 ],
+	\ [ 'comma',       71 ],
+\ ]
+
+" highlight group name suffix, cterm=<str>, ctermbg=<1-255>
+let s:attrpairs = [
+	\ [ '', 'italic', 17 ],
+	\ [ 'NC', 'NONE', 17 ],
+\ ]
+
+for hipair in s:hipairs
+	let s:firstloop = v:true
+	for attrpair in s:attrpairs
+		let s:suffix = attrpair[0]
+		let s:cterm = attrpair[1]
+		let s:bg = attrpair[2]
+		let s:hi = hipair[0]
+		let s:fg = hipair[1]
+		execute ':hi '
+		\ 'StatusLine' . toupper(s:hi[0]) . s:hi[1:] . s:suffix .
+		\ ' cterm=' . s:cterm .
+		\ ' ctermfg=' . (s:firstloop? s:fg: (s:fg - s:nc_hi_offset)) .
+		\ ' ctermbg=' . s:bg .
+		\''
+		let s:firstloop = v:false
+	endfor
+endfor
 
 function StatusLine()
 
