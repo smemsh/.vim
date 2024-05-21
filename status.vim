@@ -43,7 +43,6 @@ function StatusLine()
 	"
 	if exists('l:winid') && exists('l:our_win_current')
 		if l:our_win_current
-			let l:hi_normal     = '%#StatusLine#'
 			let l:hi_filename   = '%#StatusLineFileName#'
 			let l:hi_bracket    = '%#StatusLineBracket#'
 			let l:hi_modified   = '%#StatusLineModified#'
@@ -58,7 +57,6 @@ function StatusLine()
 			let l:hi_bufnum     = '%#StatusLineBufNum#'
 			let l:hi_comma      = '%#StatusLineComma#'
 		else
-			let l:hi_normal     = '%#StatusLineNC#'
 			let l:hi_filename   = '%#StatusLineFileNameNC#'
 			let l:hi_bracket    = '%#StatusLineBracketNC#'
 			let l:hi_modified   = '%#StatusLineModifiedNC#'
@@ -78,7 +76,6 @@ function StatusLine()
 		" will be StatusLine or StatusLineNC depending on if active.
 		" this will be fine for older vim versions.
 		"
-		let l:hi_normal     = ''
 		let l:hi_filename   = ''
 		let l:hi_bracket    = ''
 		let l:hi_modified   = ''
@@ -97,9 +94,6 @@ function StatusLine()
 	"
 	let l:lbracket = l:hi_bracket . '['
 	let l:rbracket = l:hi_bracket . ']'
-
-	" start
-	let l:status .= l:hi_normal
 
 	" path to the file currently being edited
 	let l:status .= l:hi_filename
@@ -131,7 +125,6 @@ function StatusLine()
 	if &previewwindow
 		let l:status .=
 		\ l:lbracket .
-		\ l:hi_normal .
 		\'preview' .
 		\ l:rbracket .
 		\''
@@ -151,7 +144,6 @@ function StatusLine()
 	let l:status .= l:hi_letter .  ' b' .  l:hi_bufnum .  '%n'
 
 	" paste mode is active
-	let l:status .= l:hi_normal
 	if exists('l:our_win_current')
 		let l:status .= " "
 		if &paste && l:our_win_current
@@ -178,9 +170,6 @@ function StatusLine()
 
 	" hundredths into file
 	let l:status .= l:hi_percent . " %P"
-
-	" return to normal for the last escape emitted
-	let l:status .= l:hi_normal
 
 	"
 	return l:status
