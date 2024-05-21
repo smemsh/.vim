@@ -18,14 +18,14 @@
 
 function StatusLine()
 
-	if has('patch-7.4.1557')
-		let l:winid = win_getid()
-		if has('patch-8.1.1372')
-			let l:our_win_current = (g:statusline_winid == l:winid)
-		endif
-	endif
-
 	let l:status = ""
+
+	if has('patch-8.1.1372')
+		let l:our_win_current = (g:statusline_winid == win_getid())
+		let l:fullstatus = v:true
+	else
+		let l:fullstatus = v:false
+	endif
 
 	" /etc/passwd [-] [RO]
 	" <filename> <bracket> <modified> <bracket> <bracket> <flags> <bracket>
@@ -41,7 +41,7 @@ function StatusLine()
 	" L1/45 C6 Top
 	" <letter> <coord> <letter> <coord> <percent>
 	"
-	if exists('l:winid') && exists('l:our_win_current')
+	if l:fullstatus
 		if l:our_win_current
 			let l:hi_filename   = '%#StatusLineFileName#'
 			let l:hi_bracket    = '%#StatusLineBracket#'
@@ -100,7 +100,7 @@ function StatusLine()
 	let l:status .= '%-5.50f'
 
 	" buffer is modified
-	if has('patch-7.4.2204') " getbufinfo()
+	if l:fullstatus
 		let l:status .=
 		\ l:lbracket .
 		\ l:hi_modified .
@@ -112,7 +112,7 @@ function StatusLine()
 	endif
 
 	" buffer is readonly
-	if &readonly
+	if l:fullstatus && &readonly
 		let l:status .=
 		\ l:lbracket .
 		\ l:hi_flags .
@@ -122,7 +122,7 @@ function StatusLine()
 	endif
 
 	" preview window is active
-	if &previewwindow
+	if l:fullstatus && &previewwindow
 		let l:status .=
 		\ l:lbracket .
 		\'preview' .
@@ -131,7 +131,7 @@ function StatusLine()
 	endif
 
 	" ftdetected syntax type if known
-	if len(&filetype) > 0
+	if l:fullstatus && len(&filetype) > 0
 		let l:status .=
 		\ l:lbracket .
 		\ l:hi_filetype .
@@ -144,7 +144,7 @@ function StatusLine()
 	let l:status .= l:hi_letter .  ' b' .  l:hi_bufnum .  '%n'
 
 	" paste mode is active
-	if exists('l:our_win_current')
+	if l:fullstatus
 		let l:status .= " "
 		if &paste && l:our_win_current
 			let l:status .= l:hi_paste . "*"
