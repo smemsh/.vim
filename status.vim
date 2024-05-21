@@ -17,33 +17,33 @@
 "
 
 " all ctermfg are 12 more than their NC-suffixed equivalents
-hi StatusLineFileName     cterm=italic      ctermfg=226     ctermbg=17
+hi StatusLineFilename     cterm=italic      ctermfg=226     ctermbg=17
 hi StatusLineBracket      cterm=italic      ctermfg=114     ctermbg=17
 hi StatusLineModified     cterm=italic      ctermfg=213     ctermbg=17
 hi StatusLineFlags        cterm=italic      ctermfg=35      ctermbg=17
-hi StatusLineFileType     cterm=italic      ctermfg=75      ctermbg=17
+hi StatusLineFiletype     cterm=italic      ctermfg=75      ctermbg=17
 hi StatusLinePaste        cterm=italic      ctermfg=214     ctermbg=17
-hi StatusLineCharCode     cterm=italic      ctermfg=44      ctermbg=17
+hi StatusLineCharcode     cterm=italic      ctermfg=44      ctermbg=17
 hi StatusLineOffset       cterm=italic      ctermfg=38      ctermbg=17
 hi StatusLineLetter       cterm=italic      ctermfg=142     ctermbg=17
 hi StatusLineCoord        cterm=italic      ctermfg=116     ctermbg=17
 hi StatusLinePercent      cterm=italic      ctermfg=112     ctermbg=17
-hi StatusLineBufNum       cterm=italic      ctermfg=82      ctermbg=17
+hi StatusLineBufnum       cterm=italic      ctermfg=82      ctermbg=17
 hi StatusLineComma        cterm=italic      ctermfg=71      ctermbg=17
 
 " all ctermfg are 12 less than their non-NC equivalents
-hi StatusLineFileNameNC   cterm=NONE        ctermfg=214     ctermbg=17
+hi StatusLineFilenameNC   cterm=NONE        ctermfg=214     ctermbg=17
 hi StatusLineBracketNC    cterm=NONE        ctermfg=102     ctermbg=17
 hi StatusLineModifiedNC   cterm=NONE        ctermfg=201     ctermbg=17
 hi StatusLineFlagsNC      cterm=NONE        ctermfg=23      ctermbg=17
-hi StatusLineFileTypeNC   cterm=NONE        ctermfg=63      ctermbg=17
+hi StatusLineFiletypeNC   cterm=NONE        ctermfg=63      ctermbg=17
 hi StatusLinePasteNC      cterm=NONE        ctermfg=202     ctermbg=17
-hi StatusLineCharCodeNC   cterm=NONE        ctermfg=32      ctermbg=17
+hi StatusLineCharcodeNC   cterm=NONE        ctermfg=32      ctermbg=17
 hi StatusLineOffsetNC     cterm=NONE        ctermfg=26      ctermbg=17
 hi StatusLineLetterNC     cterm=NONE        ctermfg=130     ctermbg=17
 hi StatusLineCoordNC      cterm=NONE        ctermfg=104     ctermbg=17
 hi StatusLinePercentNC    cterm=NONE        ctermfg=100     ctermbg=17
-hi StatusLineBufNumNC     cterm=NONE        ctermfg=70      ctermbg=17
+hi StatusLineBufnumNC     cterm=NONE        ctermfg=70      ctermbg=17
 hi StatusLineCommaNC      cterm=NONE        ctermfg=59      ctermbg=17
 
 function StatusLine()
@@ -75,32 +75,32 @@ function StatusLine()
 	"
 	if l:fullstatus
 		if l:our_win_current
-			let l:hi_filename   = '%#StatusLineFileName#'
+			let l:hi_filename   = '%#StatusLineFilename#'
 			let l:hi_bracket    = '%#StatusLineBracket#'
 			let l:hi_modified   = '%#StatusLineModified#'
 			let l:hi_flags      = '%#StatusLineFlags#'
-			let l:hi_filetype   = '%#StatusLineFileType#'
+			let l:hi_filetype   = '%#StatusLineFiletype#'
 			let l:hi_paste      = '%#StatusLinePaste#'
-			let l:hi_charcode   = '%#StatusLineCharCode#'
+			let l:hi_charcode   = '%#StatusLineCharcode#'
 			let l:hi_offset     = '%#StatusLineOffset#'
 			let l:hi_letter     = '%#StatusLineLetter#'
 			let l:hi_coord      = '%#StatusLineCoord#'
 			let l:hi_percent    = '%#StatusLinePercent#'
-			let l:hi_bufnum     = '%#StatusLineBufNum#'
+			let l:hi_bufnum     = '%#StatusLineBufnum#'
 			let l:hi_comma      = '%#StatusLineComma#'
 		else
-			let l:hi_filename   = '%#StatusLineFileNameNC#'
+			let l:hi_filename   = '%#StatusLineFilenameNC#'
 			let l:hi_bracket    = '%#StatusLineBracketNC#'
 			let l:hi_modified   = '%#StatusLineModifiedNC#'
 			let l:hi_flags      = '%#StatusLineFlagsNC#'
-			let l:hi_filetype   = '%#StatusLineFileTypeNC#'
+			let l:hi_filetype   = '%#StatusLineFiletypeNC#'
 			let l:hi_paste      = '%#StatusLinePasteNC#'
-			let l:hi_charcode   = '%#StatusLineCharCodeNC#'
+			let l:hi_charcode   = '%#StatusLineCharcodeNC#'
 			let l:hi_offset     = '%#StatusLineOffsetNC#'
 			let l:hi_letter     = '%#StatusLineLetterNC#'
 			let l:hi_coord      = '%#StatusLineCoordNC#'
 			let l:hi_percent    = '%#StatusLinePercentNC#'
-			let l:hi_bufnum     = '%#StatusLineBufNumNC#'
+			let l:hi_bufnum     = '%#StatusLineBufnumNC#'
 			let l:hi_comma      = '%#StatusLineCommaNC#'
 		endif
 	else
