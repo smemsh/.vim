@@ -21,6 +21,7 @@ function StatusLine()
 	let l:status = ""
 
 	if has('patch-8.1.1372')
+		let l:bufinfo = getbufinfo(winbufnr(g_statusline_winid))[0]
 		let l:our_win_current = (g:statusline_winid == win_getid())
 		let l:fullstatus = v:true
 	else
@@ -104,7 +105,7 @@ function StatusLine()
 		let l:status .=
 		\ l:lbracket .
 		\ l:hi_modified .
-		\'%{getbufinfo("%")[0].changed? "+": "-"}' .
+		\ (l:bufinfo.changed ? "+" : "-") .
 		\ l:rbracket .
 		\''
 	else
