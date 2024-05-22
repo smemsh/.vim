@@ -84,7 +84,7 @@ for hipair in s:hipairs
 	let s:hlstrs[2][s:hi] = 'let l:hi_' . s:hi . ' = ""'
 endfor
 
-function StatusLine() abort
+function StatusLine()
 
 	let l:status = ""
 
