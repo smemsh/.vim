@@ -33,6 +33,7 @@ let s:hipairs =	[
 	\ [ 'modified',   213 ],
 	\ [ 'flags',       35 ],
 	\ [ 'filetype',    75 ],
+	\ [ 'qftitle',     81 ],
 	\ [ 'paste',      214 ],
 	\ [ 'charcode',    44 ],
 	\ [ 'offset',      38 ],
@@ -186,7 +187,7 @@ function StatusLine()
 			let l:qfstr = l:title ? w:quickfix_title : 'Fix'
 			let l:status .=
 			\ l:lbracket .
-			\ l:hi_filetype .
+			\ l:hi_qftitle .
 			\ l:qfstr .
 			\ l:rbracket .
 			\''
