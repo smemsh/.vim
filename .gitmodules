@@ -12,7 +12,7 @@
 	path = pack/bundle/start/ingo-library
 	url = http://github.com/vim-scripts/ingo-library
 
-### LANG #####################################################################
+### LANG opt #################################################################
 
 # todo: this does not seem to work
 # the plugin in the bundle dir does not seem to activate
@@ -30,17 +30,19 @@
 	url = https://github.com/vim-scripts/clang-complete.git
 	ignore = untracked
 
+# translate vim buffer xml <--> yaml and reverse
+[submodule "bundle/vimxy"]
+	path = pack/bundle/opt/vimxy
+	url = https://github.com/ericcong/vimxy
+
+### LANG start ###############################################################
+
 # bunch of bundled upstream repos for individual lang/syntax/hi for many
 # languages -- "one to rule them all"
 #
 [submodule "bundle/vim-polyglot"]
 	path = pack/bundle/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-
-# translate vim buffer xml <--> yaml and reverse
-[submodule "bundle/vimxy"]
-	path = pack/bundle/opt/vimxy
-	url = https://github.com/ericcong/vimxy
 
 # run ctags/gtags/cscope in git repos, or any tree with .root, without .notags
 [submodule "bundle/vim-gutentags"]
