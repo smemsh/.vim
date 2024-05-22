@@ -4,14 +4,6 @@
 # https://spdx.org/licenses/GPL-2.0
 #
 
-### LIBS #####################################################################
-
-# this has all kinds of stuff, right now seems used only by IndentTab
-#
-[submodule "bundle/ingo-library"]
-	path = pack/bundle/start/ingo-library
-	url = http://github.com/vim-scripts/ingo-library
-
 ### LANG opt #################################################################
 
 # todo: this does not seem to work
@@ -68,6 +60,12 @@
 [submodule "bundle/IndentTab"]
 	path = pack/bundle/start/IndentTab
 	url = http://github.com/vim-scripts/IndentTab
+
+# library required by IndentTab
+#
+[submodule "bundle/ingo-library"]
+	path = pack/bundle/start/ingo-library
+	url = http://github.com/vim-scripts/ingo-library
 
 # enables drawing ansi / ascii line art boxes, tables, etc
 #
