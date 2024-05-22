@@ -39,7 +39,7 @@
 
 # translate vim buffer xml <--> yaml and reverse
 [submodule "bundle/vimxy"]
-	path = pack/bundle/start/vimxy
+	path = pack/bundle/opt/vimxy
 	url = https://github.com/ericcong/vimxy
 
 # run ctags/gtags/cscope in git repos, or any tree with .root, without .notags
