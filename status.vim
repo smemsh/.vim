@@ -23,6 +23,9 @@
 "
 let s:nc_hi_offset = 12
 
+" see dist ftplugin/qf.vim, otherwise our status is not used for quickfix
+let g:qf_disable_statusline = 1
+
 " highlight group prefix (group=StatusLinePrefixSuffix), ctermfg=
 let s:hipairs =	[
 	\ [ 'filename',   226 ],
