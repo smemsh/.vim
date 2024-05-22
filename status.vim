@@ -93,7 +93,7 @@ function StatusLine() abort
 		let l:our_win_current = (g:statusline_winid == win_getid())
 		let l:fullstatus = v:true
 	else
-		let l:fullstatus = v:false
+		let l:fullstatus = (has('patch-7.4.1154') ? v:false : 0)
 	endif
 
 	" /etc/passwd [-] [RO]
