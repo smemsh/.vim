@@ -15,8 +15,12 @@
 " not share comment character (?), so not sure how the files can coexist?
 " for now we just write a vim8-only
 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" subtract from StatusLinePrefix ctermfg values to get StatusLinePrefixNC
+" subtract from StatusLinePrefix ctermfg values to get StatusLinePrefixNC.  by
+" using 12 it looks unformly darker, this is two rows on the 16-231 6-value
+" rows list output by show-all-256-colors.py
+"
 let s:nc_hi_offset = 12
 
 " highlight group prefix (group=StatusLinePrefixSuffix), ctermfg=
@@ -35,29 +39,48 @@ let s:hipairs =	[
 	\ [ 'bufnum',      82 ],
 	\ [ 'comma',       71 ],
 \ ]
+let s:hikeys = []
+for pair in s:hipairs | call add(s:hikeys, pair[0]) | endfor
 
 " highlight group name suffix, cterm=<str>, ctermbg=<1-255>
+"  [0] -> current window [1] -> not current window
+"
 let s:attrpairs = [
 	\ [ '', 'italic', 17 ],
 	\ [ 'NC', 'NONE', 17 ],
 \ ]
 
+" 0 -> current window, 1 -> not current window, 2 -> not fullstatus.
+" at each index is a dict indexed by the lowercase hi base string.  value is
+" the corresponding highlight escape string "%#groupname#".  for index 2, all
+" values are empty strings: we emit no highlights, relying only on StatusLine
+" and StatusLineNC
+"
+let s:hlstrs = []
+
+call add(s:hlstrs, {}) " 0
+call add(s:hlstrs, {}) " 1
+call add(s:hlstrs, {}) " 2
+
 for hipair in s:hipairs
-	let s:firstloop = v:true
-	for attrpair in s:attrpairs
+	let s:hi = hipair[0]
+	let s:fg = hipair[1]
+	let s:loop = 0
+	for attrpair in s:attrpairs " hlstrs[0], hlstrs[1]
 		let s:suffix = attrpair[0]
 		let s:cterm = attrpair[1]
 		let s:bg = attrpair[2]
-		let s:hi = hipair[0]
-		let s:fg = hipair[1]
-		execute ':hi '
-		\ 'StatusLine' . toupper(s:hi[0]) . s:hi[1:] . s:suffix .
+		let s:hiname = 'StatusLine' . toupper(s:hi[0]) . s:hi[1:] . s:suffix
+		execute ':hi ' .
+		\ s:hiname
 		\ ' cterm=' . s:cterm .
-		\ ' ctermfg=' . (s:firstloop? s:fg: (s:fg - s:nc_hi_offset)) .
+		\ ' ctermfg=' . (s:loop ? (s:fg - s:nc_hi_offset) : s:fg) .
 		\ ' ctermbg=' . s:bg .
 		\''
-		let s:firstloop = v:false
+		let s:hlstrs[s:loop][s:hi] = '%#' . s:hiname . '#'
+		let s:loop += 1
 	endfor
+	let s:hlstrs[2][s:hi] = ''
 endfor
 
 function StatusLine() abort
@@ -86,58 +109,20 @@ function StatusLine() abort
 	"
 	" L1/45 C6 Top
 	" <letter> <coord> <letter> <coord> <percent>
-	"
-	if l:fullstatus
-		if l:our_win_current
-			let l:hi_filename   = '%#StatusLineFilename#'
-			let l:hi_bracket    = '%#StatusLineBracket#'
-			let l:hi_modified   = '%#StatusLineModified#'
-			let l:hi_flags      = '%#StatusLineFlags#'
-			let l:hi_filetype   = '%#StatusLineFiletype#'
-			let l:hi_paste      = '%#StatusLinePaste#'
-			let l:hi_charcode   = '%#StatusLineCharcode#'
-			let l:hi_offset     = '%#StatusLineOffset#'
-			let l:hi_letter     = '%#StatusLineLetter#'
-			let l:hi_coord      = '%#StatusLineCoord#'
-			let l:hi_percent    = '%#StatusLinePercent#'
-			let l:hi_bufnum     = '%#StatusLineBufnum#'
-			let l:hi_comma      = '%#StatusLineComma#'
-		else
-			let l:hi_filename   = '%#StatusLineFilenameNC#'
-			let l:hi_bracket    = '%#StatusLineBracketNC#'
-			let l:hi_modified   = '%#StatusLineModifiedNC#'
-			let l:hi_flags      = '%#StatusLineFlagsNC#'
-			let l:hi_filetype   = '%#StatusLineFiletypeNC#'
-			let l:hi_paste      = '%#StatusLinePasteNC#'
-			let l:hi_charcode   = '%#StatusLineCharcodeNC#'
-			let l:hi_offset     = '%#StatusLineOffsetNC#'
-			let l:hi_letter     = '%#StatusLineLetterNC#'
-			let l:hi_coord      = '%#StatusLineCoordNC#'
-			let l:hi_percent    = '%#StatusLinePercentNC#'
-			let l:hi_bufnum     = '%#StatusLineBufnumNC#'
-			let l:hi_comma      = '%#StatusLineCommaNC#'
-		endif
-	else
-		" if we don't provide any highlighting escapes, the whole thing
-		" will be StatusLine or StatusLineNC depending on if active.
-		" this will be fine for older vim versions.
-		"
-		let l:hi_filename   = ''
-		let l:hi_bracket    = ''
-		let l:hi_modified   = ''
-		let l:hi_flags      = ''
-		let l:hi_filetype   = ''
-		let l:hi_paste      = ''
-		let l:hi_charcode   = ''
-		let l:hi_offset     = ''
-		let l:hi_letter     = ''
-		let l:hi_coord      = ''
-		let l:hi_percent    = ''
-		let l:hi_bufnum     = ''
-		let l:hi_comma      = ''
-	endif
 
+	" the hlstrs[] were already made for us at load time, indexed by
+	" whether we are current (0), non-current (1), or no-highlight (2).
+	" then we define a variable l:hi_<group> with the result that we can
+	" expand inline later.  this saves a bit by using precomputed strings
 	"
+	let l:statindex = l:fullstatus ? (l:our_win_current ? 0 : 1) : 2
+	for key in s:hikeys
+		let l:hldict = s:hlstrs[l:statindex]
+		let l:hlgrp = l:hldict[key]
+		exec 'let l:hi_' . key . ' = ' . '"' . l:hlgrp . '"'
+	endfor
+
+	" we use a lot of brackets
 	let l:lbracket = l:hi_bracket . '['
 	let l:rbracket = l:hi_bracket . ']'
 
