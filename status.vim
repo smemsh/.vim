@@ -77,10 +77,11 @@ for hipair in s:hipairs
 		\ ' ctermfg=' . (s:loop ? (s:fg - s:nc_hi_offset) : s:fg) .
 		\ ' ctermbg=' . s:bg .
 		\''
-		let s:hlstrs[s:loop][s:hi] = '%#' . s:hiname . '#'
+		let s:hlstrs[s:loop][s:hi] =
+		\ 'let l:hi_' . s:hi . ' = ' . '"%#' . s:hiname . '#"'
 		let s:loop += 1
 	endfor
-	let s:hlstrs[2][s:hi] = ''
+	let s:hlstrs[2][s:hi] = 'let l:hi_' . s:hi . ' = ""'
 endfor
 
 function StatusLine() abort
@@ -113,14 +114,14 @@ function StatusLine() abort
 	" the hlstrs[] were already made for us at load time, indexed by
 	" whether we are current (0), non-current (1), or no-highlight (2).
 	" then we define a variable l:hi_<group> with the result that we can
-	" expand inline later.  this saves a bit by using precomputed strings
+	" expand inline later.  this saves a bit by using precomputed strings,
+	" but we still have to concatenate them all, at least this saves
+	" multiple exec calls
 	"
+	let l:execstr = ""
 	let l:statindex = l:fullstatus ? (l:our_win_current ? 0 : 1) : 2
-	for key in s:hikeys
-		let l:hldict = s:hlstrs[l:statindex]
-		let l:hlgrp = l:hldict[key]
-		exec 'let l:hi_' . key . ' = ' . '"' . l:hlgrp . '"'
-	endfor
+	for key in s:hikeys | let l:execstr .= s:hlstrs[l:statindex][key] . '| '
+	endfor | exec l:execstr
 
 	" we use a lot of brackets
 	let l:lbracket = l:hi_bracket . '['
