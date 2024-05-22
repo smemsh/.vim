@@ -51,7 +51,7 @@ for pair in s:hipairs | call add(s:hikeys, pair[0]) | endfor
 "
 let s:attrpairs = [
 	\ [ '', 'italic', 17 ],
-	\ [ 'NC', 'NONE', 17 ],
+	\ [ 'NC', 'NONE', 234 ],
 \ ]
 
 " 0 -> current window, 1 -> not current window, 2 -> not fullstatus.
