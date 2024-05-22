@@ -179,9 +179,15 @@ function StatusLine()
 	"
 	if l:fullstatus
 		if getbufvar(l:bufn, '&buftype') == 'quickfix'
+			let l:title = (
+				\ exists('w:quickfix_title')
+				\ && strlen(w:quickfix_title)
+			\ )
+			let l:qfstr = l:title ? w:quickfix_title : 'Fix'
 			let l:status .=
 			\ l:lbracket .
-			\'Fix' .
+			\ l:hi_filetype .
+			\ l:qfstr .
 			\ l:rbracket .
 			\''
 		endif
