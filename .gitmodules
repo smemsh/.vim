@@ -19,14 +19,14 @@
 # should give command: ":compiler clang"
 #
 [submodule "bundle/clang"]
-	path = pack/bundle/start/clang
+	path = pack/bundle/opt/clang
 	url = https://github.com/vim-scripts/clang.git
 
 # todo: obsoleted by YouCompleteMe?
 # todo: is this same: http://github.com/Rip-Rip/clang_complete
 #
 [submodule "bundle/clang-complete"]
-	path = pack/bundle/start/clang-complete
+	path = pack/bundle/opt/clang-complete
 	url = https://github.com/vim-scripts/clang-complete.git
 	ignore = untracked
 
