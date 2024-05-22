@@ -166,6 +166,20 @@ function StatusLine()
 		let l:status .= '%w'
 	endif
 
+	" quickfix window is active
+	" todo: can distinguish location and quickfix with
+	"  getwininfo() -> ['loclist'] == 1, ['quickfix'] == 1
+	"
+	if l:fullstatus && (getbufvar(l:bufn, '&buftype') == 'quickfix')
+		let l:status .=
+		\ l:lbracket .
+		\'Fix' .
+		\ l:rbracket .
+		\''
+	else
+		let l:status .= '%q'
+	endif
+
 	" ftdetected syntax type if known
 	if l:fullstatus
 		let l:ft = getbufvar(l:bufn, '&filetype')
