@@ -159,7 +159,7 @@ function StatusLine()
 	if l:fullstatus && getbufvar(l:bufn, '&previewwindow')
 		let l:status .=
 		\ l:lbracket .
-		\'preview' .
+		\'Preview' .
 		\ l:rbracket .
 		\''
 	else
