@@ -144,24 +144,28 @@ function StatusLine()
 	endif
 
 	" buffer is readonly
-	if l:fullstatus && getbufvar(l:bufn, "&readonly")
-		let l:status .=
-		\ l:lbracket .
-		\ l:hi_flags .
-		\'RO' .
-		\ l:rbracket .
-		\''
+	if l:fullstatus
+		if getbufvar(l:bufn, "&readonly")
+			let l:status .=
+			\ l:lbracket .
+			\ l:hi_flags .
+			\'RO' .
+			\ l:rbracket .
+			\''
+		endif
 	else
 		let l:status .= '%r'
 	endif
 
 	" preview window is active
-	if l:fullstatus && getbufvar(l:bufn, '&previewwindow')
-		let l:status .=
-		\ l:lbracket .
-		\'Preview' .
-		\ l:rbracket .
-		\''
+	if l:fullstatus
+		if getbufvar(l:bufn, '&previewwindow')
+			let l:status .=
+			\ l:lbracket .
+			\'Preview' .
+			\ l:rbracket .
+			\''
+		endif
 	else
 		let l:status .= '%w'
 	endif
@@ -170,12 +174,14 @@ function StatusLine()
 	" todo: can distinguish location and quickfix with
 	"  getwininfo() -> ['loclist'] == 1, ['quickfix'] == 1
 	"
-	if l:fullstatus && (getbufvar(l:bufn, '&buftype') == 'quickfix')
-		let l:status .=
-		\ l:lbracket .
-		\'Fix' .
-		\ l:rbracket .
-		\''
+	if l:fullstatus
+		if getbufvar(l:bufn, '&buftype') == 'quickfix'
+			let l:status .=
+			\ l:lbracket .
+			\'Fix' .
+			\ l:rbracket .
+			\''
+		endif
 	else
 		let l:status .= '%q'
 	endif
