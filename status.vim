@@ -60,7 +60,7 @@ for hipair in s:hipairs
 	endfor
 endfor
 
-function StatusLine()
+function StatusLine() abort
 
 	let l:status = ""
 
