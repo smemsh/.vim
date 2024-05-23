@@ -58,13 +58,13 @@
 # (for alignment) will use spaces
 #
 [submodule "bundle/IndentTab"]
-	path = pack/bundle/start/IndentTab
+	path = pack/bundle/opt/IndentTab
 	url = http://github.com/vim-scripts/IndentTab
 
 # library required by IndentTab
 #
 [submodule "bundle/ingo-library"]
-	path = pack/bundle/start/ingo-library
+	path = pack/bundle/opt/ingo-library
 	url = http://github.com/vim-scripts/ingo-library
 
 # enables drawing ansi / ascii line art boxes, tables, etc
