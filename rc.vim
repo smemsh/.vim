@@ -156,7 +156,7 @@ autocmd BufWritePre * let &backupext = '-' . strftime("%Y%m%d%H%M%S")
 let mapleader = ","
 
 " bundle-specific variables initialized in their own files
-runtime! ~/.vim/rc/**/*.vim
+runtime! rc/**/*.vim
 
 "
 filetype plugin indent on
