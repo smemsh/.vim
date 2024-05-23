@@ -50,8 +50,6 @@ nmap         <leader>f  :set foldlevel-=1<return>
 "
 nmap <leader><leader>a  :set fo+=a fo+=t<return>
 nmap         <leader>a  :set fo-=a fo-=t<return>
-nmap         <leader>N  :set fo+=n<return>
-nmap         <leader>n  :set fo-=n<return>
 
 " various toggles
 "
