@@ -57,6 +57,13 @@
 # leading shifts (for indent level) use tabs, later ones
 # (for alignment) will use spaces
 #
+[submodule "bundle/vim-stabs"]
+	path = pack/bundle/start/vim-stabs
+	url = https://github.com/smemsh/vim-stabs
+
+# leading shifts (for indent level) use tabs, later ones
+# (for alignment) will use spaces
+#
 [submodule "bundle/IndentTab"]
 	path = pack/bundle/opt/IndentTab
 	url = http://github.com/vim-scripts/IndentTab
