@@ -15,7 +15,7 @@
 	url = https://github.com/vim-scripts/clang.git
 
 # todo: obsoleted by YouCompleteMe?
-# todo: is this same: http://github.com/Rip-Rip/clang_complete
+# todo: is this same: https://github.com/Rip-Rip/clang_complete
 #
 [submodule "bundle/clang-complete"]
 	path = pack/bundle/opt/clang-complete
@@ -66,13 +66,13 @@
 #
 [submodule "bundle/IndentTab"]
 	path = pack/bundle/opt/IndentTab
-	url = http://github.com/vim-scripts/IndentTab
+	url = https://github.com/vim-scripts/IndentTab
 
 # library required by IndentTab
 #
 [submodule "bundle/ingo-library"]
 	path = pack/bundle/opt/ingo-library
-	url = http://github.com/vim-scripts/ingo-library
+	url = https://github.com/vim-scripts/ingo-library
 
 # enables drawing ansi / ascii line art boxes, tables, etc
 #
@@ -110,13 +110,13 @@
 #
 [submodule "bundle/rainbow"]
 	path = pack/bundle/start/rainbow
-	url = http://github.com/luochen1990/rainbow
+	url = https://github.com/luochen1990/rainbow
 
 # gives vim enhanced (colors, keys, features) buf list and selection
 #
 [submodule "bundle/bufexplorer"]
 	path = pack/bundle/start/bufexplorer
-	url = http://github.com/jlanzarotta/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer
 
 # conceal embedded ansi escape sequences in the file being edited and
 # duplicate intended colorization in viml over the intended region
@@ -135,10 +135,10 @@
 
 [submodule "colors/jellybeans"]
 	path = pack/colors/opt/jellybeans
-	url = http://github.com/nanotech/jellybeans.vim
+	url = https://github.com/nanotech/jellybeans.vim
 [submodule "colors/grb256"]
 	path = pack/colors/opt/grb256
-	url = http://github.com/quanganhdo/grb256
+	url = https://github.com/quanganhdo/grb256
 [submodule "colors/vim-distinguished"]
 	path = pack/colors/opt/vim-distinguished
 	url = https://github.com/Lokaltog/vim-distinguished
@@ -147,10 +147,10 @@
 	url = https://github.com/jpo/vim-railscasts-theme
 [submodule "colors/colorsbox"]
 	path = pack/colors/opt/colorsbox
-	url = http://github.com/mkarmona/colorsbox
+	url = https://github.com/mkarmona/colorsbox
 [submodule "colors/vim-colors-solarized"]
 	path = pack/colors/opt/vim-colors-solarized
-	url = http://github.com/altercation/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
 
 ### TODO #####################################################################
 #
