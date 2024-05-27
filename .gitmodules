@@ -6,12 +6,22 @@
 
 ### LANG opt #################################################################
 
-# todo: does not seem to activate, should give command: ":compiler clang"
+# todo: we do not use any of these yet, just did project research
+
+# the big one, uses jedi, many languages, probably the others would not be
+# needed if this is used.  has a server, interacts with LSP (optionally),
+# implemented in python
+#
+[submodule "bundle/YouCompleteMe"]
+       path = pack/bundle/opt/YouCompleteMe
+       url = https://github.com/ycm-core/YouCompleteMe
+
+# supposedly more performant and easier than clang_complete
 [submodule "bundle/vim-clang"]
        path = pack/bundle/opt/vim-clang
        url = https://github.com/justmao945/vim-clang
 
-# todo: obsoleted by YouCompleteMe?
+# "original", uses libclang
 [submodule "bundle/clang_complete"]
        path = pack/bundle/opt/clang_complete
        url = https://github.com/xavierd/clang_complete
