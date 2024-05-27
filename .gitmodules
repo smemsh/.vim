@@ -64,18 +64,6 @@
 # leading shifts (for indent level) use tabs, later ones
 # (for alignment) will use spaces
 #
-[submodule "bundle/IndentTab"]
-	path = pack/bundle/opt/IndentTab
-	url = https://github.com/vim-scripts/IndentTab
-
-# library required by IndentTab
-#
-[submodule "bundle/ingo-library"]
-	path = pack/bundle/opt/ingo-library
-	url = https://github.com/vim-scripts/ingo-library
-
-# enables drawing ansi / ascii line art boxes, tables, etc
-#
 [submodule "bundle/DrawIt"]
 	path = pack/bundle/start/DrawIt
 	url = https://github.com/vim-scripts/DrawIt
