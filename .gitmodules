@@ -3,38 +3,9 @@
 # scott@smemsh.net
 # https://github.com/smemsh/.vim/
 
-### LANG opt #################################################################
+### LANG #####################################################################
 
-# todo: we do not use any of these yet, just did project research
-
-# the big one, uses jedi, many languages, probably the others would not be
-# needed if this is used.  has a server, interacts with LSP (optionally),
-# implemented in python
-#
-[submodule "bundle/YouCompleteMe"]
-       path = pack/bundle/opt/YouCompleteMe
-       url = https://github.com/ycm-core/YouCompleteMe
-
-# supposedly more performant and easier than clang_complete
-[submodule "bundle/vim-clang"]
-       path = pack/bundle/opt/vim-clang
-       url = https://github.com/justmao945/vim-clang
-
-# "original", uses libclang
-[submodule "bundle/clang_complete"]
-       path = pack/bundle/opt/clang_complete
-       url = https://github.com/xavierd/clang_complete
-
-# translate vim buffer xml <--> yaml and reverse
-[submodule "bundle/vimxy"]
-	path = pack/bundle/opt/vimxy
-	url = https://github.com/ericcong/vimxy
-
-### LANG start ###############################################################
-
-# bunch of bundled upstream repos for individual lang/syntax/hi for many
-# languages -- "one to rule them all"
-#
+# bundled upstream repos with enhanced lang/syntax/hi for many languages
 [submodule "bundle/vim-polyglot"]
 	path = pack/bundle/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
@@ -44,7 +15,7 @@
 	path = pack/bundle/start/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
 
-# switches cscope databases
+# build and switch cscope db transparently and integrate with gutentags
 [submodule "bundle/gutentags_plus"]
 	path = pack/bundle/start/gutentags_plus
 	url = https://github.com/skywind3000/gutentags_plus
@@ -52,26 +23,21 @@
 ### EDITING ##################################################################
 
 # columnar alignment based on regexes, with helpful default maps
-#
 [submodule "bundle/vim-easy-align"]
 	path = pack/bundle/start/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
 
-# leading shifts (for indent level) use tabs, later ones
-# (for alignment) will use spaces
-#
+# leading indent shifts will use tabs, later shifts for alignment use spaces
 [submodule "bundle/vim-stabs"]
 	path = pack/bundle/start/vim-stabs
 	url = https://github.com/smemsh/vim-stabs
 
-# leading shifts (for indent level) use tabs, later ones
-# (for alignment) will use spaces
-#
+# easily draw ascii/utf8 line symbols, boxes, etc
 [submodule "bundle/DrawIt"]
 	path = pack/bundle/start/DrawIt
 	url = https://github.com/vim-scripts/DrawIt
 
-### SCM ######################################################################
+### TOOLS ####################################################################
 
 # establishes windows and keys to compare multiple directory trees and
 # select which to present in diffmode or make wholesale file selection
@@ -81,30 +47,19 @@
 	path = pack/bundle/start/vim-dirdiff
 	url = https://github.com/will133/vim-dirdiff
 
+# translate vim buffer xml to yaml and reverse
+[submodule "bundle/vimxy"]
+	path = pack/bundle/opt/vimxy
+	url = https://github.com/ericcong/vimxy
+
 ### VIM ######################################################################
 
-# shows a trace of syntax highlighting stack, useful for debugging
-# colorss
-#
+# shows a trace of syntax highlighting stack, useful for debugging colors
 [submodule "bundle/vim-hilinks"]
 	path = pack/bundle/start/vim-hilinks
 	url = https://github.com/kergoth/vim-hilinks
 
-# converts gui-only colorss to have cterms (realtime or statically)
-# note: not enabled by default in plugrc/csapprox
-#
-[submodule "bundle/csapprox"]
-	path = pack/bundle/start/csapprox
-	url = https://github.com/godlygeek/csapprox
-
-# configurable balanced-colorize for each nested level of parens
-#
-[submodule "bundle/rainbow"]
-	path = pack/bundle/start/rainbow
-	url = https://github.com/luochen1990/rainbow
-
-# gives vim enhanced (colors, keys, features) buf list and selection
-#
+# enhanced buffer list/select dialog (colors, keys, features)
 [submodule "bundle/bufexplorer"]
 	path = pack/bundle/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer
@@ -116,8 +71,43 @@
 	path = pack/bundle/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
 
-# needed for vimdeck to do syntax highlighting of code blocks
+### COMPLETION ###############################################################
+
+# TODO we do not use any of these yet, just did project research
+
+# the big one, uses jedi, many languages, probably the others would not be
+# needed if this is used.  has a server, interacts with LSP (optionally),
+# implemented in python
 #
+[submodule "bundle/YouCompleteMe"]
+	path = pack/bundle/opt/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe
+
+# supposedly more performant and easier than clang_complete
+[submodule "bundle/vim-clang"]
+	path = pack/bundle/opt/vim-clang
+	url = https://github.com/justmao945/vim-clang
+
+# the "original" that started from vim.org collection, uses libclang
+[submodule "bundle/clang_complete"]
+	path = pack/bundle/opt/clang_complete
+	url = https://github.com/xavierd/clang_complete
+
+### HIGHLIGHTING #############################################################
+
+# converts gui-only colors to have cterms (realtime or statically)
+# note: not enabled by default in plugrc/csapprox
+#
+[submodule "bundle/csapprox"]
+	path = pack/bundle/start/csapprox
+	url = https://github.com/godlygeek/csapprox
+
+# configurable balanced-colorize for each nested level of parens
+[submodule "bundle/rainbow"]
+	path = pack/bundle/start/rainbow
+	url = https://github.com/luochen1990/rainbow
+
+# needed for vimdeck to do syntax highlighting of code blocks
 [submodule "bundle/SyntaxRange"]
 	path = pack/bundle/start/SyntaxRange
 	url = https://github.com/vim-scripts/SyntaxRange
