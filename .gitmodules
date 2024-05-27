@@ -6,22 +6,6 @@
 
 ### LANG opt #################################################################
 
-# todo: this does not seem to work
-# the plugin in the bundle dir does not seem to activate
-# should give command: ":compiler clang"
-#
-[submodule "bundle/clang"]
-	path = pack/bundle/opt/clang
-	url = https://github.com/vim-scripts/clang.git
-
-# todo: obsoleted by YouCompleteMe?
-# todo: is this same: https://github.com/Rip-Rip/clang_complete
-#
-[submodule "bundle/clang-complete"]
-	path = pack/bundle/opt/clang-complete
-	url = https://github.com/vim-scripts/clang-complete.git
-	ignore = untracked
-
 # translate vim buffer xml <--> yaml and reverse
 [submodule "bundle/vimxy"]
 	path = pack/bundle/opt/vimxy
