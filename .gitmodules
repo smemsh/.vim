@@ -35,7 +35,7 @@
 # easily draw ascii/utf8 line symbols, boxes, etc
 [submodule "bundle/DrawIt"]
 	path = pack/bundle/start/DrawIt
-	url = https://github.com/vim-scripts/DrawIt
+	url = https://github.com/smemsh/DrawIt
 
 ### TOOLS ####################################################################
 
