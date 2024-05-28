@@ -44,7 +44,7 @@
 # (assists doing manual tree merges prior to mergetool usage)
 #
 [submodule "bundle/vim-dirdiff"]
-	path = pack/bundle/start/vim-dirdiff
+	path = pack/bundle/opt/vim-dirdiff
 	url = https://github.com/will133/vim-dirdiff
 
 # translate vim buffer xml to yaml and reverse
