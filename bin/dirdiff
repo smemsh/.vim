@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+(($# == 2)) || exit
+test -d "$1" || exit
+test -d "$2" || exit
+
+vim ${@:3} \
+-c "packadd vim-dirdiff" \
+-c "DirDiff $(printf %q "$1") $(printf %q "$2")"
