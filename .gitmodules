@@ -41,7 +41,8 @@
 
 # establishes windows and keys to compare multiple directory trees and
 # select which to present in diffmode or make wholesale file selection
-# (assists doing manual tree merges prior to mergetool usage)
+# (assists doing manual tree merges prior to mergetool usage).
+# invoke with bin/dirdiff wrapper, or via :DirDiff
 #
 [submodule "bundle/vim-dirdiff"]
 	path = pack/bundle/opt/vim-dirdiff
