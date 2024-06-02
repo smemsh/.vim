@@ -119,6 +119,16 @@ function! Read_shell_date()
 endfunction
 map! <leader><leader>d <esc>:call Read_shell_date()<return>Ea<space>
 
+" toggle the quickfix window
+" https://stackoverflow.com/a/63162084/5616796
+"
+function! QuickToggle()
+	if !has('patch-7.4.2204') | echo "needs getwininfo()" | return | endif
+	if empty(filter(getwininfo(), 'v:val.quickfix')) | copen
+	else | cclose | endif
+endfunction
+nnoremap <silent> Q :call QuickToggle()<return>
+
 """
 
 " diff this buffer against the pristine version and use
