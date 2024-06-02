@@ -23,8 +23,11 @@ function s:Help(subject, grep = v:false) abort
 		endif
 	endfor
 
+	" always case-insensitive helpgrep, vim uses a strange postfix escape
+	let l:subject = a:subject . (a:grep ? '\c' : '')
+
 	" open new help, close, becomes unlisted, change original to that buf
-	execute 'help' . (a:grep ? 'grep' : '') . ' ' . a:subject
+	execute 'help' . (a:grep ? 'grep' : '') . ' ' l:subject
 	let l:helpbufnum = bufnr()
 	execute 'helpclose'
 	execute 'buffer ' . l:helpbufnum
