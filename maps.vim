@@ -27,6 +27,11 @@ nmap -                  g-
 nmap +                  g+
 nmap =                  g+
 
+" quickfix
+"
+nmap [q                 :cprev<return>
+nmap ]q                 :cnext<return>
+
 " resets
 "
 nmap <leader>5          :set tw=55<return>
@@ -83,11 +88,6 @@ nmap <leader>v          :set formatoptions-=a textwidth=0 nolist
 "
 nmap <leader>W          :set formatoptions-=w<return>
 nmap <leader><leader>W  :set formatoptions+=w<return>
-
-" quickfix prev-next maps to a led vi left-right, one row down
-"
-nmap <leader>m          :cp<return>
-nmap <leader>/          :cn<return>
 
 " screen redraw/refresh
 " (ctrl-l would be nice, but ctrl-hjkl too useful as window movement)
