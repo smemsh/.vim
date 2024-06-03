@@ -14,3 +14,6 @@ let g:gutentags_ctags_extra_args = ['--links=no']
 
 " neither should gtags, but is set via environment in update_gtags.sh
 let $GTAGS_ARGS = '--skip-symlink'
+
+" DEBUG
+"let g:gutentags_trace = 1
