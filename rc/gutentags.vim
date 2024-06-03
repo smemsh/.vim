@@ -1,11 +1,12 @@
 "
 
+" create all the databases that are supported by gutentags
 let g:gutentags_modules = ['ctags', 'gtags_cscope', 'cscope']
 
-" do our own maps (in gscope.vim plugin)
+" do our own maps (in plugin/gscope.vim)
 let g:gutentags_plus_nomap = 1
 
-" always make a tags file
+" always try to make a tags file in a project, even without a file yet
 let g:gutentags_generate_on_empty_buffer = 1
 
 " ctags should not follow symbolic links (ie installx dirs)
