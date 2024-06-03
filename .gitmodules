@@ -10,7 +10,7 @@
 	path = pack/bundle/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
 
-# run ctags/gtags/cscope in git repos, or any tree with .root, without .notags
+# run ctags/gtags/cscope automatically in git repos
 [submodule "bundle/vim-gutentags"]
 	path = pack/bundle/start/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
