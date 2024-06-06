@@ -1,5 +1,4 @@
 "
-" scott@smemsh.net
 " like the cscope interface, but uses gutentags-generated db
 "
 
