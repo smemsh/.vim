@@ -3,9 +3,6 @@
 " we don't use the old cscope, gtags is better and has a cscope interface
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
 
-" do our own maps (in plugin/gscope.vim)
-let g:gutentags_plus_nomap = 1
-
 " always try to make a tags file in a project, even without a file yet
 let g:gutentags_generate_on_empty_buffer = 1
 
