@@ -5,6 +5,17 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" see gscope.vim instead, cscope is older, does not handle spaces in filenames,
+" not developed any longer, so we use gnu global with cscope mode
+"
+" TODO: remove this file after some time, they cannot co-exist because they use
+" the same bindings.  used to have both available, but consensus seems to be
+" that global is better anyways
+"
+finish
+
+""" EOF """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 if ! has("cscope")
 	finish
 endif

@@ -1,7 +1,7 @@
 "
 
-" create all the databases that are supported by gutentags
-let g:gutentags_modules = ['ctags', 'gtags_cscope', 'cscope']
+" we don't use the old cscope, gtags is better and has a cscope interface
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
 
 " do our own maps (in plugin/gscope.vim)
 let g:gutentags_plus_nomap = 1

@@ -3,22 +3,35 @@
 " like the cscope interface, but uses gutentags-generated db
 "
 
-if ! has("cscope") && has("channel")
-	finish
-endif
+if !has("cscope") || !has("channel") | finish | endif
+
+set cscopetag
+set cscopetagorder =1 " tags file, then cscope
+set cscopequickfix =s-,c-,d-,i-,t-,e-
+
+"" gutentags_plus bundle takes care of db load and switch
+""
+" only be verbose about it on the initial load
+"set nocscopeverbose
+"	if filereadable("cscope.out")
+"		cscope add cscope.out
+"	elseif $CSCOPE_DB != ""
+"		cscope add $CSCOPE_DB
+"	endif
+"set cscopeverbose
 
 " todo: this is almost identical to cscope.vim, but with g* instead of c*,
 " would be good to find some way to merge them
 "
-nnoremap gsa :GscopeFind a <C-R><C-W><cr>
-nnoremap gsc :GscopeFind c <C-R><C-W><cr>
-nnoremap gsd :GscopeFind d <C-R><C-W><cr>
-nnoremap gse :GscopeFind e <C-R><C-W><cr>
-nnoremap gsf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
-nnoremap gsg :GscopeFind g <C-R><C-W><cr>
-nnoremap gsi :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
-nnoremap gss :GscopeFind s <C-R><C-W><cr>
-nnoremap gst :GscopeFind t <C-R><C-W><cr>
+nnoremap csa :GscopeFind a <C-R><C-W><cr>
+nnoremap csc :GscopeFind c <C-R><C-W><cr>
+nnoremap csd :GscopeFind d <C-R><C-W><cr>
+nnoremap cse :GscopeFind e <C-R><C-W><cr>
+nnoremap csf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
+nnoremap csg :GscopeFind g <C-R><C-W><cr>
+nnoremap csi :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
+nnoremap css :GscopeFind s <C-R><C-W><cr>
+nnoremap cst :GscopeFind t <C-R><C-W><cr>
 
 function! Gscope_menu ()
 	echo
@@ -34,6 +47,6 @@ function! Gscope_menu ()
 	\"  (t)o        find assignments to\n"
 	\"? "
 	let gotchar = getchar()
-	execute "normal gs" . nr2char(gotchar)
+	execute "normal cs" . nr2char(gotchar)
 endf
-nnoremap gsh :call Gscope_menu()<return>
+nnoremap csh :call Gscope_menu()<return>
