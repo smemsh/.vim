@@ -106,6 +106,7 @@ let datadirs =[
 	\['directory',  'swaps',    '//,.',             ''          ],
 	\['undodir',    'undo',     '',                 'undofile'  ],
 	\['spellfile',  'spell',    '/en.latin1.add',   ''          ],
+	\['',           'tags',     '',                 ''          ],
 \]
 
 for dir in datadirs
@@ -119,11 +120,13 @@ for dir in datadirs
 	" feature name; only make the path if dne, set the variable
 	" thereto, and set any supplied auxiliary boolean
 	"
-	if (exists('&' . vimvar) && exists("*mkdir"))
+	if (exists("*mkdir"))
 		if ! isdirectory(path)
 			call mkdir(path, "p")
 		endif
-		execute "set " . vimvar . '=' . path . append
+		if (exists('&' . vimvar))
+			execute "set " . vimvar . '=' . path . append
+		endif
 		if ! empty(setflag)
 			if (exists('&' . setflag))
 				execute "set " . setflag

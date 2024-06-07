@@ -9,6 +9,10 @@ let g:gutentags_generate_on_empty_buffer = 1
 " ctags should not follow symbolic links (ie installx dirs)
 let g:gutentags_ctags_extra_args = ['--links=no']
 
+" avoid keeping db files in project root, rarely used outside vim
+" note: corresponding mkdir -p in rc.vim datadirs loop
+let g:gutentags_cache_dir = expand('~/var/vim/tags')
+
 " neither should gtags, but is set via environment in update_gtags.sh
 let $GTAGS_ARGS = '--skip-symlink'
 
