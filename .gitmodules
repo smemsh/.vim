@@ -16,6 +16,12 @@
 	url = https://github.com/smemsh/vim-gutentags
 
 # build and switch cscope db transparently and integrate with gutentags
+# note: cscope db using either gnu global or unix cscope does not
+# support spaces in its full absolute path, this is both a vim
+# limitation (:cs add -> cs_add() break apart args based on spaces) and
+# cscope (fscanf uses spaces to delimit filename in first line of cscope
+# db) limitation, but notably, not a gtags limitation
+#
 [submodule "bundle/gutentags_plus"]
 	path = pack/bundle/start/gutentags_plus
 	url = https://github.com/skywind3000/gutentags_plus
