@@ -26,6 +26,11 @@
 	path = pack/bundle/start/gutentags_plus
 	url = https://github.com/skywind3000/gutentags_plus
 
+# better browsing for tags and tag results when many matches
+[submodule "bundle/taglist"]
+	path = pack/bundle/start/taglist
+	url = https://github.com/yegappan/taglist
+
 ### EDITING ##################################################################
 
 # columnar alignment based on regexes, with helpful default maps
