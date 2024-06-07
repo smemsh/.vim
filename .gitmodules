@@ -13,7 +13,7 @@
 # run ctags/gtags/cscope automatically in git repos
 [submodule "bundle/vim-gutentags"]
 	path = pack/bundle/start/vim-gutentags
-	url = https://github.com/ludovicchabant/vim-gutentags
+	url = https://github.com/smemsh/vim-gutentags
 
 # build and switch cscope db transparently and integrate with gutentags
 [submodule "bundle/gutentags_plus"]
