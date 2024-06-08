@@ -11,7 +11,7 @@ function s:FuncnameAbbrev() abort
 	if getcmdtype() == ":" && getcmdline() =~ '^funcname'
 		return 'Funcname'
 	else
-		return ''
+		return 'funcname'
 	endif
 endfunction
 cnoreabbrev <expr> funcname <SID>FuncnameAbbrev()
