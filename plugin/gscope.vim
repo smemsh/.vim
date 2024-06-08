@@ -32,6 +32,7 @@ nnoremap csg <plug>GscopeFindDefinition     <C-R><C-W><cr>
 nnoremap csi <plug>GscopeFindInclude        <C-R>=expand("<cfile>")<cr><cr>
 nnoremap css <plug>GscopeFindSymbol         <C-R><C-W><cr>
 nnoremap cst <plug>GscopeFindText           <C-R><C-W><cr>
+nnoremap csz <plug>GscopeFindCtag           <C-R><C-W><cr>
 
 function! Gscope_menu ()
 	echo
@@ -45,6 +46,7 @@ function! Gscope_menu ()
 	\"  (i)nclude   find files #including this file\n"
 	\"  (s)ymbol    find this C symbol\n"
 	\"  (t)o        find assignments to\n"
+	\"  (z)tags     find matching ctags\n"
 	\"? "
 	let gotchar = getchar()
 	execute "normal cs" . nr2char(gotchar)
