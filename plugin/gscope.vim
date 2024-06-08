@@ -35,11 +35,11 @@ nnoremap cst <plug>GscopeFindText           <C-R><C-W><cr>
 nnoremap csz <plug>GscopeFindCtag           <C-R><C-W><cr>
 
 function s:GsgAbbrev(cstype) abort
-	return (((getcmdtype() == ":" && (getcmdline() =~ ('^gs' . a:cstype)))
-		\ ?  'GscopeFind ' : 'gs') . a:cstype)
+	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cstype)))
+		\ ?  'GscopeFind ' : 'cs') . a:cstype)
 endfunction
 for s:abb in ['a', 'c', 'd', 'e', 'f', 'g', 'i', 's', 't', 'z']
-	exec 'cnoreabbrev <expr> gs' .  s:abb .
+	exec 'cnoreabbrev <expr> cs' .  s:abb .
 	\ ' <SID>GsgAbbrev("' .  s:abb .  '")'
 endfor
 
