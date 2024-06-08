@@ -68,7 +68,7 @@
 
 # shows a trace of syntax highlighting stack, useful for debugging colors
 [submodule "bundle/vim-hilinks"]
-	path = pack/bundle/start/vim-hilinks
+	path = pack/bundle/opt/vim-hilinks
 	url = https://github.com/kergoth/vim-hilinks
 
 # enhanced buffer list/select dialog (colors, keys, features)
