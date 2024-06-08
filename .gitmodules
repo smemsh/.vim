@@ -85,7 +85,7 @@
 
 # use a scratch buffer for output of vim commands like :messages
 [submodule "bundle/bufferize"]
-	path = pack/bundle/start/bufferize
+	path = pack/bundle/opt/bufferize
 	url = https://github.com/AndrewRadev/bufferize.vim
 
 ### COMPLETION ###############################################################
