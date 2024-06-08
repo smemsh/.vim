@@ -23,15 +23,15 @@ set cscopequickfix =s-,c-,d-,i-,t-,e-
 " todo: this is almost identical to cscope.vim, but with g* instead of c*,
 " would be good to find some way to merge them
 "
-nnoremap csa :GscopeFind a <C-R><C-W><cr>
-nnoremap csc :GscopeFind c <C-R><C-W><cr>
-nnoremap csd :GscopeFind d <C-R><C-W><cr>
-nnoremap cse :GscopeFind e <C-R><C-W><cr>
-nnoremap csf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
-nnoremap csg :GscopeFind g <C-R><C-W><cr>
-nnoremap csi :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
-nnoremap css :GscopeFind s <C-R><C-W><cr>
-nnoremap cst :GscopeFind t <C-R><C-W><cr>
+nnoremap csa <plug>GscopeFindAssign         <C-R><C-W><cr>
+nnoremap csc <plug>GscopeFindCallingFunc    <C-R><C-W><cr>
+nnoremap csd <plug>GscopeFindCalledFunc     <C-R><C-W><cr>
+nnoremap cse <plug>GscopeFindEgrep          <C-R><C-W><cr>
+nnoremap csf <plug>GscopeFindFile           <C-R>=expand("<cfile>")<cr><cr>
+nnoremap csg <plug>GscopeFindDefinition     <C-R><C-W><cr>
+nnoremap csi <plug>GscopeFindInclude        <C-R>=expand("<cfile>")<cr><cr>
+nnoremap css <plug>GscopeFindSymbol         <C-R><C-W><cr>
+nnoremap cst <plug>GscopeFindText           <C-R><C-W><cr>
 
 function! Gscope_menu ()
 	echo
