@@ -83,6 +83,11 @@
 	path = pack/bundle/start/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc
 
+# use a scratch buffer for output of vim commands like :messages
+[submodule "bundle/bufferize"]
+	path = pack/bundle/start/bufferize
+	url = https://github.com/AndrewRadev/bufferize.vim
+
 ### COMPLETION ###############################################################
 
 # TODO we do not use any of these yet, just did project research
