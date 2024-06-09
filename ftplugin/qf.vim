@@ -4,3 +4,6 @@
 "
 execute max([min([line("$"), 10]), 1]) . "wincmd _"
 setlocal nowrap
+
+" whether status line is rendered for quickfix windows, default enabled
+let g:qf_disable_statusline = 0
