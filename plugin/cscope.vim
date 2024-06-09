@@ -1,9 +1,4 @@
 "
-" scott@smemsh.net
-" https://github.com/smemsh/.vim/
-" https://spdx.org/licenses/GPL-2.0
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " see gscope.vim instead, cscope is older, does not handle spaces in filenames,
 " not developed any longer, so we use gnu global with cscope mode
