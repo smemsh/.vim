@@ -30,7 +30,8 @@ let g:qf_disable_statusline = 1
 let s:hipairs =	[
 	\ [ 'filename',   226 ],
 	\ [ 'bracket',    114 ],
-	\ [ 'modified',   213 ],
+	\ [ 'modified',   212 ],
+	\ [ 'unmodified', 196 ],
 	\ [ 'flags',       35 ],
 	\ [ 'filetype',    75 ],
 	\ [ 'qftitle',     81 ],
@@ -139,7 +140,7 @@ function StatusLine()
 	if l:fullstatus
 		let l:status .=
 		\ l:lbracket .
-		\ l:hi_modified .
+		\ (l:bufinfo.changed ? l:hi_modified : l:hi_unmodified) .
 		\ (l:bufinfo.changed ? "+" : "-") .
 		\ l:rbracket .
 		\''
