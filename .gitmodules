@@ -111,10 +111,8 @@
 ### HIGHLIGHTING #############################################################
 
 # converts gui-only colors to have cterms (realtime or statically)
-# note: not enabled by default in plugrc/csapprox
-#
 [submodule "bundle/csapprox"]
-	path = pack/bundle/start/csapprox
+	path = pack/bundle/opt/csapprox
 	url = https://github.com/godlygeek/csapprox
 
 # configurable balanced-colorize for each nested level of parens
