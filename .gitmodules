@@ -78,8 +78,8 @@
 
 # conceal embedded ansi escape sequences in the file being edited
 [submodule "bundle/Colorizer"]
-       path = pack/bundle/start/Colorizer
-       url = https://github.com/chrisbra/Colorizer
+	path = pack/bundle/opt/Colorizer
+	url = https://github.com/chrisbra/Colorizer
 
 # use a scratch buffer for output of vim commands like :messages
 [submodule "bundle/bufferize"]
