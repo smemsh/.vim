@@ -123,22 +123,22 @@
 ### COLORSCHEMES #############################################################
 
 [submodule "colors/jellybeans"]
-	path = pack/colors/opt/jellybeans
+	path = colors/jellybeans
 	url = https://github.com/nanotech/jellybeans.vim
 [submodule "colors/grb256"]
-	path = pack/colors/opt/grb256
+	path = colors/grb256
 	url = https://github.com/quanganhdo/grb256
 [submodule "colors/vim-distinguished"]
-	path = pack/colors/opt/vim-distinguished
+	path = colors/vim-distinguished
 	url = https://github.com/Lokaltog/vim-distinguished
 [submodule "colors/vim-railscast-theme"]
-	path = pack/colors/opt/vim-railscast-theme
+	path = colors/vim-railscast-theme
 	url = https://github.com/jpo/vim-railscasts-theme
 [submodule "colors/colorsbox"]
-	path = pack/colors/opt/colorsbox
+	path = colors/colorsbox
 	url = https://github.com/mkarmona/colorsbox
 [submodule "colors/vim-colors-solarized"]
-	path = pack/colors/opt/vim-colors-solarized
+	path = colors/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
 
 ### TODO #####################################################################
