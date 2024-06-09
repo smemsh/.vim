@@ -7,6 +7,7 @@ execute max([min([line("$"), 10]), 1]) . "wincmd _"
 
 " the buffer contents are usually either tags or cscope output
 setlocal nowrap
+setlocal cursorline
 
 " whether status line is rendered for quickfix windows, default enabled
 let g:qf_disable_statusline = 0
