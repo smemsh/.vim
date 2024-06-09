@@ -92,7 +92,11 @@
 
 # the big one, uses jedi, many languages, probably the others would not be
 # needed if this is used.  has a server, interacts with LSP (optionally),
-# implemented in python
+# implemented in python.
+#
+# NOTE: this has recursive submodule requirements, or even :packadd will not
+# work right.  also requires a compiled component (install.py), have *not*
+# done that part yet TODO
 #
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
