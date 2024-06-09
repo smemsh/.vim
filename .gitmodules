@@ -135,26 +135,31 @@
 
 ### TODO #####################################################################
 #
-## editing
+# still interesting refreshed 20240609
+#
+## vim
+#
+# [target point by successive area targeting shortcuts]
 # https://github.com/Lokaltog/vim-easymotion
-# https://github.com/tomtom/tcomment_vim
+#
+# [replace taglist, looks better]
+# https://github.com/majutsushi/tagbar
+#
+# [lightweight :ls, overrides tab line]
+# https://github.com/ap/vim-buftabline
 #
 ## git
+#
+# [use sign column for diffs / git / interactive rebase picker]
 # https://github.com/airblade/vim-gitgutter
 # https://github.com/mhinz/vim-signify
 #
-## syntax
-# https://github.com/artoj/pgn-syntax-vim
-#
 ## completion
+#
+# [full completion framework and daemon]
+# # NOTE: this has recursive submodule requirements, and a compiled component,
+# #  or even :packadd will not work, tries to start a server
 # https://github.com/ycm-core/YouCompleteMe
-#  NOTE: this has recursive submodule requirements, and a compiled component,
-#   or even :packadd will not work, tries to start a server
 #
-### LATER ####################################################################
-#
-# https://github.com/majutsushi/tagbar
-# https://github.com/tpope/vim-fugitive
-# https://github.com/scrooloose/syntastic
-# https://github.com/ap/vim-buftabline
-#
+# [asynchronous lint engine]
+# https://github.com/dense-analysis/ale
