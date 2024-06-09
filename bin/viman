@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+MANPAGER="vim +MANPAGER --not-a-term -" man "$@"
