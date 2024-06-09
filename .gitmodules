@@ -76,13 +76,6 @@
 	path = pack/bundle/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer
 
-# conceal embedded ansi escape sequences in the file being edited and
-# duplicate intended colorization in viml over the intended region
-#
-[submodule "bundle/vim-plugin-AnsiEsc"]
-	path = pack/bundle/start/vim-plugin-AnsiEsc
-	url = https://github.com/powerman/vim-plugin-AnsiEsc
-
 # use a scratch buffer for output of vim commands like :messages
 [submodule "bundle/bufferize"]
 	path = pack/bundle/opt/bufferize
