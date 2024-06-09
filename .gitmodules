@@ -88,19 +88,7 @@
 
 ### COMPLETION ###############################################################
 
-# TODO we do not use any of these yet, just did project research
-
-# the big one, uses jedi, many languages, probably the others would not be
-# needed if this is used.  has a server, interacts with LSP (optionally),
-# implemented in python.
-#
-# NOTE: this has recursive submodule requirements, or even :packadd will not
-# work right.  also requires a compiled component (install.py), have *not*
-# done that part yet TODO
-#
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/ycm-core/YouCompleteMe
+# YouCompleteMe: is large, see TODO section
 
 # supposedly more performant and easier than clang_complete
 [submodule "bundle/vim-clang"]
@@ -157,6 +145,11 @@
 #
 ## syntax
 # https://github.com/artoj/pgn-syntax-vim
+#
+## completion
+# https://github.com/ycm-core/YouCompleteMe
+#  NOTE: this has recursive submodule requirements, and a compiled component,
+#   or even :packadd will not work, tries to start a server
 #
 ### LATER ####################################################################
 #
