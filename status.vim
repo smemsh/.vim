@@ -217,7 +217,7 @@ function StatusLine()
 	" paste mode is active
 	if l:fullstatus
 		let l:status .= " "
-		if getbufvar(l:bufn, &paste) && l:our_win_current
+		if getbufvar(l:bufn, '&paste') && l:our_win_current
 			let l:status .= l:hi_paste . "*"
 		endif
 	else
