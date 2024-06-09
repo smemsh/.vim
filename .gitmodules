@@ -7,12 +7,12 @@
 
 # bundled upstream repos with enhanced lang/syntax/hi for many languages
 [submodule "bundle/vim-polyglot"]
-	path = pack/bundle/start/vim-polyglot
+	path = bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
 
 # run ctags/gtags/cscope automatically in git repos
 [submodule "bundle/vim-gutentags"]
-	path = pack/bundle/start/vim-gutentags
+	path = bundle/vim-gutentags
 	url = https://github.com/smemsh/vim-gutentags
 
 # build and switch cscope db transparently and integrate with gutentags
@@ -23,29 +23,29 @@
 # db) limitation, but notably, not a gtags limitation
 #
 [submodule "bundle/gutentags_plus"]
-	path = pack/bundle/start/gutentags_plus
+	path = bundle/gutentags_plus
 	url = https://github.com/skywind3000/gutentags_plus
 
 # better browsing for tags and tag results when many matches
 [submodule "bundle/taglist"]
-	path = pack/bundle/start/taglist
+	path = bundle/taglist
 	url = https://github.com/yegappan/taglist
 
 ### EDITING ##################################################################
 
 # columnar alignment based on regexes, with helpful default maps
 [submodule "bundle/vim-easy-align"]
-	path = pack/bundle/start/vim-easy-align
+	path = bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
 
 # leading indent shifts will use tabs, later shifts for alignment use spaces
 [submodule "bundle/vim-stabs"]
-	path = pack/bundle/start/vim-stabs
+	path = bundle/vim-stabs
 	url = https://github.com/smemsh/vim-stabs
 
 # easily draw ascii/utf8 line symbols, boxes, etc
 [submodule "bundle/DrawIt"]
-	path = pack/bundle/opt/DrawIt
+	path = bundle/DrawIt
 	url = https://github.com/smemsh/DrawIt
 
 ### TOOLS ####################################################################
@@ -56,34 +56,34 @@
 # invoke with bin/dirdiff wrapper, or via :DirDiff
 #
 [submodule "bundle/vim-dirdiff"]
-	path = pack/bundle/opt/vim-dirdiff
+	path = bundle/vim-dirdiff
 	url = https://github.com/will133/vim-dirdiff
 
 # translate vim buffer xml to yaml and reverse
 [submodule "bundle/vimxy"]
-	path = pack/bundle/opt/vimxy
+	path = bundle/vimxy
 	url = https://github.com/smemsh/vimxy
 
 ### VIM ######################################################################
 
 # shows a trace of syntax highlighting stack, useful for debugging colors
 [submodule "bundle/vim-hilinks"]
-	path = pack/bundle/opt/vim-hilinks
+	path = bundle/vim-hilinks
 	url = https://github.com/kergoth/vim-hilinks
 
 # enhanced buffer list/select dialog (colors, keys, features)
 [submodule "bundle/bufexplorer"]
-	path = pack/bundle/start/bufexplorer
+	path = bundle/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer
 
 # conceal embedded ansi escape sequences in the file being edited
 [submodule "bundle/Colorizer"]
-	path = pack/bundle/opt/Colorizer
+	path = bundle/Colorizer
 	url = https://github.com/chrisbra/Colorizer
 
 # use a scratch buffer for output of vim commands like :messages
 [submodule "bundle/bufferize"]
-	path = pack/bundle/opt/bufferize
+	path = bundle/bufferize
 	url = https://github.com/AndrewRadev/bufferize.vim
 
 ### COMPLETION ###############################################################
@@ -95,29 +95,29 @@
 # implemented in python
 #
 [submodule "bundle/YouCompleteMe"]
-	path = pack/bundle/opt/YouCompleteMe
+	path = bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe
 
 # supposedly more performant and easier than clang_complete
 [submodule "bundle/vim-clang"]
-	path = pack/bundle/opt/vim-clang
+	path = bundle/vim-clang
 	url = https://github.com/justmao945/vim-clang
 
 # the "original" that started from vim.org collection, uses libclang
 [submodule "bundle/clang_complete"]
-	path = pack/bundle/opt/clang_complete
+	path = bundle/clang_complete
 	url = https://github.com/xavierd/clang_complete
 
 ### HIGHLIGHTING #############################################################
 
 # converts gui-only colors to have cterms (realtime or statically)
 [submodule "bundle/csapprox"]
-	path = pack/bundle/opt/csapprox
+	path = bundle/csapprox
 	url = https://github.com/godlygeek/csapprox
 
 # configurable balanced-colorize for each nested level of parens
 [submodule "bundle/rainbow"]
-	path = pack/bundle/start/rainbow
+	path = bundle/rainbow
 	url = https://github.com/luochen1990/rainbow
 
 ### COLORSCHEMES #############################################################
