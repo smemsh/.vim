@@ -17,4 +17,4 @@ let g:gutentags_cache_dir = expand('~/var/vim/tags')
 let $GTAGS_ARGS = '--skip-symlink'
 
 " DEBUG
-"let g:gutentags_trace = 1
+let g:gutentags_trace = 0
