@@ -103,6 +103,7 @@
 ### HIGHLIGHTING #############################################################
 
 # converts gui-only colors to have cterms (realtime or statically)
+# todo: superseded by vim builtin 'termguicolors' ?
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = https://github.com/godlygeek/csapprox
