@@ -120,11 +120,6 @@
 	path = pack/bundle/start/rainbow
 	url = https://github.com/luochen1990/rainbow
 
-# needed for vimdeck to do syntax highlighting of code blocks
-[submodule "bundle/SyntaxRange"]
-	path = pack/bundle/start/SyntaxRange
-	url = https://github.com/vim-scripts/SyntaxRange
-
 ### COLORSCHEMES #############################################################
 
 [submodule "colors/jellybeans"]
