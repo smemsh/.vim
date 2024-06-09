@@ -160,11 +160,6 @@
 # https://github.com/airblade/vim-gitgutter
 # https://github.com/mhinz/vim-signify
 #
-## statline
-# https://github.com/bling/vim-airline
-# https://github.com/itchyny/lightline.vim
-# https://github.com/something/powerline
-#
 ## syntax
 # https://github.com/artoj/pgn-syntax-vim
 #
