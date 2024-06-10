@@ -46,8 +46,9 @@ function s:CsrAbbrev() abort
 endfunction
 cnoreabbrev <expr> csr <SID>CsrAbbrev()
 
-" csh
+" cs[hu]
 nnoremap csh :call Gscope_menu()<return>
+nnoremap csu :GutentagsUpdate<return>
 
 function! Gscope_menu ()
 	echo
