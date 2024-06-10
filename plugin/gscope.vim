@@ -29,6 +29,7 @@ nnoremap css <plug>GscopeFindSymbol
 nnoremap cst <plug>GscopeFindText
 nnoremap csz <plug>GscopeFindCtag
 
+" csX/:csX
 function s:GsgAbbrev(cstype) abort
 	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cstype)))
 		\ ?  'GscopeFind ' : 'cs') . a:cstype)
@@ -44,6 +45,9 @@ function s:CsrAbbrev() abort
 		\ ? 'call gutentags#rescan()' : 'csr')
 endfunction
 cnoreabbrev <expr> csr <SID>CsrAbbrev()
+
+" csh
+nnoremap csh :call Gscope_menu()<return>
 
 function! Gscope_menu ()
 	echo
@@ -62,4 +66,3 @@ function! Gscope_menu ()
 	let gotchar = getchar()
 	execute "normal cs" . nr2char(gotchar)
 endf
-nnoremap csh :call Gscope_menu()<return>
