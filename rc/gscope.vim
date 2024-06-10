@@ -9,4 +9,4 @@ set cscopequickfix =s-,c-,d-,i-,t-,e-
 let g:gutentags_plus_nomap = 1
 
 " switch to the quickfix window after a gscope command
-let g:gutentags_plus_switch = 0
+let g:gutentags_plus_switch = 1
