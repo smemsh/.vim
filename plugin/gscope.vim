@@ -18,16 +18,16 @@ if !has("cscope") || !has("channel") | finish | endif
 " todo: this is almost identical to cscope.vim, but with g* instead of c*,
 " would be good to find some way to merge them
 "
-nnoremap csa <plug>GscopeFindAssign         <C-R><C-W><cr>
-nnoremap csc <plug>GscopeFindCallingFunc    <C-R><C-W><cr>
-nnoremap csd <plug>GscopeFindCalledFunc     <C-R><C-W><cr>
-nnoremap cse <plug>GscopeFindEgrep          <C-R><C-W><cr>
-nnoremap csf <plug>GscopeFindFile           <C-R>=expand("<cfile>")<cr><cr>
-nnoremap csg <plug>GscopeFindDefinition     <C-R><C-W><cr>
-nnoremap csi <plug>GscopeFindInclude        <C-R>=expand("<cfile>")<cr><cr>
-nnoremap css <plug>GscopeFindSymbol         <C-R><C-W><cr>
-nnoremap cst <plug>GscopeFindText           <C-R><C-W><cr>
-nnoremap csz <plug>GscopeFindCtag           <C-R><C-W><cr>
+nnoremap csa <plug>GscopeFindAssign
+nnoremap csc <plug>GscopeFindCallingFunc
+nnoremap csd <plug>GscopeFindCalledFunc
+nnoremap cse <plug>GscopeFindEgrep
+nnoremap csf <plug>GscopeFindFile
+nnoremap csg <plug>GscopeFindDefinition
+nnoremap csi <plug>GscopeFindInclude
+nnoremap css <plug>GscopeFindSymbol
+nnoremap cst <plug>GscopeFindText
+nnoremap csz <plug>GscopeFindCtag
 
 function s:GsgAbbrev(cstype) abort
 	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cstype)))
