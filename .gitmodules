@@ -7,12 +7,12 @@
 
 # bundled upstream repos with enhanced lang/syntax/hi for many languages
 [submodule "bundle/vim-polyglot"]
-	path = bundle/vim-polyglot
+	path = bundle/polyglot
 	url = https://github.com/sheerun/vim-polyglot
 
 # run ctags/gtags/cscope automatically in git repos
 [submodule "bundle/vim-gutentags"]
-	path = bundle/vim-gutentags
+	path = bundle/gutentags
 	url = https://github.com/smemsh/vim-gutentags
 
 # build and switch cscope db transparently and integrate with gutentags
@@ -23,7 +23,7 @@
 # db) limitation, but notably, not a gtags limitation
 #
 [submodule "bundle/gutentags_plus"]
-	path = bundle/gutentags_plus
+	path = bundle/gscope
 	url = https://github.com/skywind3000/gutentags_plus
 
 # better browsing for tags and tag results when many matches
@@ -35,17 +35,17 @@
 
 # columnar alignment based on regexes, with helpful default maps
 [submodule "bundle/vim-easy-align"]
-	path = bundle/vim-easy-align
+	path = bundle/easyalign
 	url = https://github.com/junegunn/vim-easy-align.git
 
 # leading indent shifts will use tabs, later shifts for alignment use spaces
 [submodule "bundle/vim-stabs"]
-	path = bundle/vim-stabs
+	path = bundle/stabs
 	url = https://github.com/smemsh/vim-stabs
 
 # easily draw ascii/utf8 line symbols, boxes, etc
 [submodule "bundle/DrawIt"]
-	path = bundle/DrawIt
+	path = bundle/drawit
 	url = https://github.com/smemsh/DrawIt
 
 ### TOOLS ####################################################################
@@ -56,7 +56,7 @@
 # invoke with bin/dirdiff wrapper, or via :DirDiff
 #
 [submodule "bundle/vim-dirdiff"]
-	path = bundle/vim-dirdiff
+	path = bundle/dirdiff
 	url = https://github.com/will133/vim-dirdiff
 
 # translate vim buffer xml to yaml and reverse
@@ -68,7 +68,7 @@
 
 # shows a trace of syntax highlighting stack, useful for debugging colors
 [submodule "bundle/vim-hilinks"]
-	path = bundle/vim-hilinks
+	path = bundle/hilinks
 	url = https://github.com/kergoth/vim-hilinks
 
 # enhanced buffer list/select dialog (colors, keys, features)
@@ -78,7 +78,7 @@
 
 # conceal embedded ansi escape sequences in the file being edited
 [submodule "bundle/Colorizer"]
-	path = bundle/Colorizer
+	path = bundle/colorize
 	url = https://github.com/chrisbra/Colorizer
 
 # use a scratch buffer for output of vim commands like :messages
@@ -92,12 +92,12 @@
 
 # supposedly more performant and easier than clang_complete
 [submodule "bundle/vim-clang"]
-	path = bundle/vim-clang
+	path = bundle/clang
 	url = https://github.com/justmao945/vim-clang
 
 # the "original" that started from vim.org collection, uses libclang
 [submodule "bundle/clang_complete"]
-	path = bundle/clang_complete
+	path = bundle/clangc
 	url = https://github.com/xavierd/clang_complete
 
 ### HIGHLIGHTING #############################################################
