@@ -16,5 +16,10 @@ let g:gutentags_cache_dir = expand('~/var/vim/tags')
 " neither should gtags, but is set via environment in update_gtags.sh
 let $GTAGS_ARGS = '--skip-symlink'
 
+" we want gscope, ie gutentags_plus, to manage cscope for us
+let g:gutentags_auto_add_gtags_cscope = 0
+let g:gutentags_auto_add_cscope = 0
+let g:gutentags_auto_add_pycscope = 0
+
 " DEBUG
 let g:gutentags_trace = 0
