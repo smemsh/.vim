@@ -4,11 +4,6 @@
 
 if !has("cscope") || !has("channel") | finish | endif
 
-set cscopetag
-"set cscopetagorder =1 " tags file, then cscope
-set cscopetagorder =0 " cscope, then tags file
-set cscopequickfix =s-,c-,d-,i-,t-,e-
-
 "" gutentags_plus bundle takes care of db load and switch
 ""
 " only be verbose about it on the initial load
