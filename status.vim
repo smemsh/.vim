@@ -40,6 +40,7 @@ let s:hipairs =	[
 	\ [ 'offset',      44 ],
 	\ [ 'letter',     142 ],
 	\ [ 'coord',      116 ],
+	\ [ 'mktags',     137 ],
 	\ [ 'percent',    112 ],
 	\ [ 'bufnum',      82 ],
 	\ [ 'comma',       71 ],
@@ -211,9 +212,15 @@ function StatusLine()
 	else
 		let l:status .= '%y'
 	endif
+	let l:status .= ' '
+
+	let l:stcb = exists('*gutentags#inprogress')
+		\ ? "%{gutentags#statusline_cb(function('StatusLineChars'))}"
+		\ : ''
+	let l:status .= l:hi_mktags . l:stcb
 
 	" buffer number represented by this window
-	let l:status .= l:hi_letter .  ' b' .  l:hi_bufnum .  '%n'
+	let l:status .= l:hi_letter .  'b' .  l:hi_bufnum .  '%n'
 
 	" paste mode is active
 	if l:fullstatus
@@ -246,5 +253,18 @@ function StatusLine()
 	"
 	return l:status
 endfunc
+
+" chars for any tags in process of being generated
+function! StatusLineChars(mods) abort
+	let l:chars = ''
+	let l:modmap = {
+		\ 'ctags': 'T',
+		\ 'cscope': 'S',
+		\ 'pycscope': 'P',
+		\ 'gtags_cscope': 'G',
+	\ }
+	for mod in a:mods | let l:chars .= l:modmap[mod] | endfor
+	return l:chars
+endfunction
 
 set statusline=%!StatusLine()
