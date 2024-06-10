@@ -33,9 +33,8 @@ function s:GsgAbbrev(cstype) abort
 	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cstype)))
 		\ ?  'GscopeFind ' : 'cs') . a:cstype)
 endfunction
-for s:abb in ['a', 'c', 'd', 'e', 'f', 'g', 'i', 's', 't', 'z']
-	exec 'cnoreabbrev <expr> cs' .  s:abb .
-	\ ' <SID>GsgAbbrev("' .  s:abb .  '")'
+for s:abb in "acdefgistz"
+exec 'cnoreabbrev <expr> cs' . s:abb . ' <SID>GsgAbbrev("' . s:abb . '")'
 endfor
 
 function! Gscope_menu ()
