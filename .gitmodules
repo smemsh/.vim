@@ -62,7 +62,7 @@
 # translate vim buffer xml to yaml and reverse
 [submodule "bundle/vimxy"]
 	path = bundle/vimxy
-	url = https://github.com/smemsh/vimxy
+	url = https://github.com/ericcong/vimxy
 
 ### VIM ######################################################################
 
