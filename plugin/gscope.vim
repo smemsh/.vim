@@ -37,6 +37,14 @@ for s:abb in "acdefgistz"
 exec 'cnoreabbrev <expr> cs' . s:abb . ' <SID>GsgAbbrev("' . s:abb . '")'
 endfor
 
+" csr/:csr
+nnoremap csr :call gutentags#rescan()<return>
+function s:CsrAbbrev() abort
+	return ((getcmdtype() == ":" && (getcmdline() =~ '^csr'))
+		\ ? 'call gutentags#rescan()' : 'csr')
+endfunction
+cnoreabbrev <expr> csr <SID>CsrAbbrev()
+
 function! Gscope_menu ()
 	echo
 	\"gscope find:\n"
