@@ -43,10 +43,29 @@ function s:CsrAbbrev() abort
 endfunction
 cnoreabbrev <expr> csr <SID>CsrAbbrev()
 
-" cs[huk]
+" csh/:csh
 nnoremap csh :call Gscope_menu()<return>
+function s:CshAbbrev() abort
+	return ((getcmdtype() == ":" && (getcmdline() =~ '^csh'))
+		\ ? 'call Gscope_menu()' : 'csh')
+endfunction
+cnoreabbrev <expr> csh <SID>CshAbbrev()
+
+" csu/:csu
 nnoremap csu :GutentagsUpdate<return>
+function s:CsuAbbrev() abort
+	return ((getcmdtype() == ":" && (getcmdline() =~ '^csu'))
+		\ ? 'GutentagsUpdate' : 'csu')
+endfunction
+cnoreabbrev <expr> csu <SID>CsuAbbrev()
+
+" csk/:csk
 nnoremap csk :GscopeKill<return>
+function s:CskAbbrev() abort
+	return ((getcmdtype() == ":" && (getcmdline() =~ '^csk'))
+		\ ? 'GscopeKill' : 'csk')
+endfunction
+cnoreabbrev <expr> csk <SID>CskAbbrev()
 
 function! Gscope_menu ()
 	echo
