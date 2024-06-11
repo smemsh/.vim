@@ -15,9 +15,6 @@ if !has("cscope") || !has("channel") | finish | endif
 "	endif
 "set cscopeverbose
 
-" todo: this is almost identical to cscope.vim, but with g* instead of c*,
-" would be good to find some way to merge them
-"
 nnoremap csa <plug>GscopeFindAssign
 nnoremap csc <plug>GscopeFindCallingFunc
 nnoremap csd <plug>GscopeFindCalledFunc
