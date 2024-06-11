@@ -84,3 +84,10 @@ function! Gscope_menu ()
 	let gotchar = getchar()
 	execute "normal cs" . nr2char(gotchar)
 endf
+
+if !has('patch-8.0.1459') | finish | endif
+augroup DirChangedGroup
+	au!
+	autocmd DirChanged global
+	\ if exists('*gutentags#rescan') | call gutentags#rescan() | endif
+augroup END
