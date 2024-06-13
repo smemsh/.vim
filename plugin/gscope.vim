@@ -2,6 +2,7 @@
 " like the cscope interface, but uses gutentags-generated db
 "
 
+if !exists("g:gscope_done") | let g:gscope_done = 1 | else | finish | endif
 if !has("cscope") || !has("channel") | finish | endif
 
 "" gutentags_plus bundle takes care of db load and switch
