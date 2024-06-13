@@ -17,9 +17,9 @@ nnoremap cst <plug>GscopeFindText
 nnoremap csz <plug>GscopeFindCtag
 
 " csX/:csX
-function s:GsgAbbrev(cstype) abort
-	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cstype)))
-		\ ?  'GscopeFind ' : 'cs') . a:cstype)
+function s:GsgAbbrev(cschar) abort
+	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cschar)))
+		\ ?  'GscopeFind ' : 'cs') . a:cschar)
 endfunction
 for s:abb in "acdefgistz"
 exec 'cnoreabbrev <expr> cs' . s:abb . ' <SID>GsgAbbrev("' . s:abb . '")'
