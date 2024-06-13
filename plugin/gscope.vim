@@ -16,7 +16,8 @@ nnoremap css <plug>GscopeFindSymbol
 nnoremap cst <plug>GscopeFindText
 nnoremap csz <plug>GscopeFindCtag
 
-" csX/:csX
+" cs[acdefgistz]/:
+"
 function s:GsgAbbrev(cschar) abort
 	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cschar)))
 		\ ?  'GscopeFind ' : 'cs') . a:cschar)
@@ -25,38 +26,27 @@ for s:abb in "acdefgistz"
 exec 'cnoreabbrev <expr> cs' . s:abb . ' <SID>GsgAbbrev("' . s:abb . '")'
 endfor
 
-" csr/:csr
-nnoremap csr :call gutentags#rescan()<return>
-function s:CsrAbbrev() abort
-	return ((getcmdtype() == ":" && (getcmdline() =~ '^csr'))
-		\ ? 'call gutentags#rescan()' : 'csr')
+" cs[rhuk]/:
+"
+function s:GsAbbrev(cschar, cmd) abort
+	return ((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cschar)))
+		\ ? a:cmd : ('cs' . a:cschar))
 endfunction
-cnoreabbrev <expr> csr <SID>CsrAbbrev()
+for [cschar, cmd] in [
+	\ ['r', 'call gutentags#rescan()'],
+	\ ['h', 'call Gscope_menu()'],
+	\ ['u', 'GutentagsUpdate'],
+	\ ['k', 'GscopeKill'],
+\ ]
+	let s:abb = 'cs' . cschar
+	let s:abbfunc = 'GsAbbrev(' . s:abb . ", '" . cmd . "')"
+	let s:gsfunc = expand('<SID>') . s:abbfunc
+	exec 'nnoremap ' . s:abb . ' :' . cmd . '<return>'
+	exec 'cnoreabbrev <expr> ' . s:abb . ' ' . s:gsfunc
+endfor
 
-" csh/:csh
-nnoremap csh :call Gscope_menu()<return>
-function s:CshAbbrev() abort
-	return ((getcmdtype() == ":" && (getcmdline() =~ '^csh'))
-		\ ? 'call Gscope_menu()' : 'csh')
-endfunction
-cnoreabbrev <expr> csh <SID>CshAbbrev()
-
-" csu/:csu
-nnoremap csu :GutentagsUpdate<return>
-function s:CsuAbbrev() abort
-	return ((getcmdtype() == ":" && (getcmdline() =~ '^csu'))
-		\ ? 'GutentagsUpdate' : 'csu')
-endfunction
-cnoreabbrev <expr> csu <SID>CsuAbbrev()
-
-" csk/:csk
-nnoremap csk :GscopeKill<return>
-function s:CskAbbrev() abort
-	return ((getcmdtype() == ":" && (getcmdline() =~ '^csk'))
-		\ ? 'GscopeKill' : 'csk')
-endfunction
-cnoreabbrev <expr> csk <SID>CskAbbrev()
-
+" menu for csh
+"
 function! Gscope_menu ()
 	echo
 	\"gscope find:\n"
