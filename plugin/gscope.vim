@@ -5,17 +5,6 @@
 if !exists("g:gscope_done") | let g:gscope_done = 1 | else | finish | endif
 if !has("cscope") || !has("channel") | finish | endif
 
-"" gutentags_plus bundle takes care of db load and switch
-""
-" only be verbose about it on the initial load
-"set nocscopeverbose
-"	if filereadable("cscope.out")
-"		cscope add cscope.out
-"	elseif $CSCOPE_DB != ""
-"		cscope add $CSCOPE_DB
-"	endif
-"set cscopeverbose
-
 nnoremap csa <plug>GscopeFindAssign
 nnoremap csc <plug>GscopeFindCallingFunc
 nnoremap csd <plug>GscopeFindCalledFunc
@@ -86,6 +75,9 @@ function! Gscope_menu ()
 	execute "normal cs" . nr2char(gotchar)
 endf
 
+" gutentags_plus takes care of 'cscope add' and db management.  restart every
+" time we change working directory.  this lets us start with an empty buffer
+"
 if !has('patch-8.0.1459') | finish | endif
 augroup DirChangedGroup
 	au!
