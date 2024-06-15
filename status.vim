@@ -176,26 +176,46 @@ function StatusLine()
 		let l:status .= '%w'
 	endif
 
+	" new quickfix
 	" quickfix window is active
 	" todo: can distinguish location and quickfix with
 	"  getwininfo() -> ['loclist'] == 1, ['quickfix'] == 1
 	"
-	if l:fullstatus
-		if getbufvar(l:bufn, '&buftype') == 'quickfix'
-			let l:title = (
-				\ exists('w:quickfix_title')
-				\ && strlen(w:quickfix_title)
-			\ )
-			let l:qfstr = l:title ? w:quickfix_title : 'Fix'
-			let l:status .=
-			\ l:lbracket .
-			\ l:hi_qftitle .
-			\ l:qfstr .
-			\ l:rbracket .
-			\''
+	if (l:fullstatus && getbufvar(l:bufn, '&buftype') == 'quickfix')
+		let l:title = get(w:, 'quickfix_title', '')
+		let l:this_qfnum = getqflist({'changedtick' : 0}).changedtick
+		let l:qfchanged = l:this_qfnum == get(s:, 'last_qfnum', '')
+			\ ? 0
+			\ : 1
+		let s:last_qfnum = l:this_qfnum
+		if !exists('s:last_title') || s:last_title != l:title
+			let l:newt = substitute(l:title, "\t", "\x20", "g")
+			let l:newt = substitute(l:newt, "\x20+", "\x20", "g")
+			let l:newt = substitute(l:newt, "^:\x20*", ":", "")
+			if empty(l:title)
+				if l:qfchanged
+					let l:newt = 'Fix'
+				else
+					" qf list has not changed even if title
+					" has; restore last title
+					let l:newt = get(s:, 'last_title', '')
+				endif
+			endif
+		else
+			let l:newt = l:title
 		endif
+		if l:title != l:newt | let w:quickfix_title = l:newt | endif
+		let s:last_title = l:newt
+		let l:status .=
+		\ l:lbracket .
+		\ l:hi_qftitle .
+		\ w:quickfix_title .
+		\ l:rbracket .
+		\''
 	else
-		let l:status .= '%q'
+		if !l:fullstatus
+			let l:status .= '%q'
+		endif
 	endif
 
 	" ftdetected syntax type if known
