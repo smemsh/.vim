@@ -125,8 +125,8 @@ function StatusLine()
 	" multiple exec calls
 	"
 	let l:execstr = ""
-	let l:statindex = l:fullstatus ? (l:our_win_current ? 0 : 1) : 2
-	for key in s:hikeys | let l:execstr .= s:hlstrs[l:statindex][key] . '| '
+	let l:statidx = l:fullstatus ? (l:our_win_current ? 0 : 1) : 2
+	for key in s:hikeys | let l:execstr .= s:hlstrs[l:statidx][key] . '| '
 	endfor | exec l:execstr
 
 	" we use a lot of brackets
