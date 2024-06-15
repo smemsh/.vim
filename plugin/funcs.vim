@@ -17,6 +17,7 @@ function s:Qfuncs() abort
 	\''
 	cexpr system(l:qfcommand)
 	cwindow
+	let w:quickfix_title = 'funcs'
 endfunc
 cnoreabbrev funcs call <SID>Qfuncs()
 cnoreabbrev qfuncs call <SID>Qfuncs()
