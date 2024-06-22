@@ -18,7 +18,7 @@ nnoremap csz <plug>GscopeFindCtag
 
 " cs[acdefgistz]/:
 "
-function s:GsgAbbrev(cschar) abort
+function! s:GsgAbbrev(cschar) abort
 	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cschar)))
 		\ ?  'GscopeFind ' : 'cs') . a:cschar)
 endfunction
@@ -28,7 +28,7 @@ endfor
 
 " cs[rhuk]/:
 "
-function s:GsAbbrev(cschar, cmd) abort
+function! s:GsAbbrev(cschar, cmd) abort
 	return ((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cschar)))
 		\ ? a:cmd : ('cs' . a:cschar))
 endfunction
