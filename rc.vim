@@ -49,6 +49,7 @@ set cpoptions           -=ae
 set cpoptions           +=Er$
 set cpoptions           +=d " tags file relative to cwd, not the file we edit
 set diffopt             =filler,vertical,foldcolumn:0
+set display             =lastline
 set fileformats         =unix,dos,mac
 set history             =1000
 set laststatus          =2
@@ -66,6 +67,8 @@ set ttyscroll           =999
 set viminfo             ='999,f1
 set whichwrap           =b,s,h,l,<,>,[,]
 set wildmode            =list,full
+set winminwidth         =0
+set winwidth            =1
 
 """
 
