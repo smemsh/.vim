@@ -30,6 +30,7 @@ set nocursorcolumn
 set nocursorline
 set nocindent
 set noesckeys
+set nofixendofline
 set nofoldenable
 set norestorescreen
 set nostartofline
