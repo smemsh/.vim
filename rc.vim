@@ -30,10 +30,11 @@ set nocursorcolumn
 set nocursorline
 set nocindent
 set noesckeys
-set nofixendofline
 set nofoldenable
 set norestorescreen
 set nostartofline
+
+if exists('&nofixendofline') | set nofixendofline | endif
 
 " irritating menace
 set nodigraph
