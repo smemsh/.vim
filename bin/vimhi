@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# scott@smemsh.net
+# https://github.com/smemsh/.vim/
+# https://spdx.org/licenses/GPL-2.0
+
+tmpfile=`mktemp`
+tty -s && arg=$1 || arg=$tmpfile
+
+# consider "-T $TERM" instead of "set t_Co", but then we'd have to test 256
+# colors
+vim -E -s \
+-c "let g:html_no_progress=1" \
+-c "set t_Co=256" \
+-c "set noswapfile" \
+-c "set runtimepath +=~/.vim/colors/vim-smemsh256" \
+-c "syntax on" -c "colorscheme smemsh256" \
+-c "runtime syntax/2html.vim" \
+-c "file $tmpfile.html" \
+-c "w!" \
+-c "qa!" \
+${arg:--} \
+&>/dev/null
+
+elinks -dump -dump-color-mode 3 -no-references $tmpfile.html \
+| less
