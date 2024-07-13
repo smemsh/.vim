@@ -4,12 +4,13 @@
 "
 
 if !has('patch-7.4.2204') | finish | endif " getwininfo()
+"if !has('patch-7.4.1154') | finish | endif " v:true/v:false
 command -nargs=? -complete=help Help call s:Help(<q-args>)
-command -nargs=? Helpgrep call s:Help(<q-args>, v:true)
+command -nargs=? Helpgrep call s:Help(<q-args>, 1)
 function s:Helpgrep(arg) abort
-	call s:Help(a:arg, v:true)
+	call s:Help(a:arg, 1)
 endfunction
-function s:Help(subject, grep = v:false) abort
+function s:Help(subject, grep = 0) abort
 
 	let l:helpbufs = []
 
@@ -106,13 +107,13 @@ endfunction
 "
 if !has('patch-7.4.2011') | finish | endif " getcompletion()
 command -nargs=? -complete=help Help execute s:Help(<q-args>)
-let s:did_open_help = v:false
+let s:did_open_help = 0
 function s:Help(subject) abort
 	let mods = 'silent noautocmd keepalt'
 	if !s:did_open_help
 		execute mods . ' help'
 		execute mods . ' helpclose'
-		let s:did_open_help = v:true
+		let s:did_open_help = 1
 	endif
 	if !getcompletion(a:subject, 'help')->empty()
 		execute mods . ' edit ' . &helpfile
