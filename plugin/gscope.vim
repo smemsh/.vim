@@ -22,7 +22,10 @@ function! s:GsgAbbrev(cschar) abort
 	return (((getcmdtype() == ":" && (getcmdline() =~ ('^cs' . a:cschar)))
 		\ ?  'GscopeFind ' : 'cs') . a:cschar)
 endfunction
-for s:abb in "acdefgistz"
+let s:chars = "acdefgistz"
+"if !has('patch-8.2.2658') | finish | endif " :for x in String
+"for s:abb in s:chars
+for s:abb in split(s:chars, '\zs')
 exec 'cnoreabbrev <expr> cs' . s:abb . ' <SID>GsgAbbrev("' . s:abb . '")'
 endfor
 
