@@ -5,12 +5,13 @@
 
 if !has('patch-7.4.2204') | finish | endif " getwininfo()
 "if !has('patch-7.4.1154') | finish | endif " v:true/v:false
-command -nargs=? -complete=help Help call s:Help(<q-args>)
+"if !has('patch-8.1.1310') | finish | endif " default function args
+command -nargs=? -complete=help Help call s:Help(<q-args>, 0)
 command -nargs=? Helpgrep call s:Help(<q-args>, 1)
 function s:Helpgrep(arg) abort
 	call s:Help(a:arg, 1)
 endfunction
-function s:Help(subject, grep = 0) abort
+function s:Help(subject, grep) abort
 
 	let l:helpbufs = []
 
