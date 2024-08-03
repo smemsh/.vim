@@ -6,7 +6,7 @@ function! s:Funcname() abort
 	echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bWn'))
 endfunction
 
-command -nargs=? Funcname call s:Funcname()
+command -nargs=0 Funcname call s:Funcname()
 function s:FuncnameAbbrev() abort
 	if getcmdtype() == ":" && getcmdline() =~ '^funcname'
 		return 'Funcname'
