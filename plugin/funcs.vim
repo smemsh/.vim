@@ -19,4 +19,13 @@ function s:Funcs() abort
 	cwindow
 	let w:quickfix_title = 'funcs'
 endfunc
-cnoreabbrev funcs call <SID>Funcs()
+
+command -nargs=0 Funcs call s:Funcs()
+function s:FuncsAbbrev() abort
+	if getcmdtype() == ":" && getcmdline() =~ '^funcs'
+		return 'Funcs'
+	else
+		return 'funcs'
+	endif
+endfunction
+cnoreabbrev <expr> funcs <SID>FuncsAbbrev()
