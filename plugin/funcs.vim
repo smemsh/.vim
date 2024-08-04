@@ -2,7 +2,7 @@
 " generate a quickfix window with all the functions in the current file
 " https://stackoverflow.com/a/5638891/5616796
 "
-function s:Qfuncs() abort
+function s:Funcs() abort
 	let l:qfcommand =
 	\ "ctags -x " .
 	\ "\"" . bufname('%') . "\" " .
@@ -19,5 +19,4 @@ function s:Qfuncs() abort
 	cwindow
 	let w:quickfix_title = 'funcs'
 endfunc
-cnoreabbrev funcs call <SID>Qfuncs()
-cnoreabbrev qfuncs call <SID>Qfuncs()
+cnoreabbrev funcs call <SID>Funcs()
