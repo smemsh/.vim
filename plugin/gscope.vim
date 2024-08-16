@@ -42,7 +42,7 @@ for [cschar, cmd] in [
 	\ ['k', 'GscopeKill'],
 \ ]
 	let s:abb = 'cs' . cschar
-	let s:abbfunc = 'GsAbbrev("' . cschar . ", '" . cmd . "')"
+	let s:abbfunc = 'GsAbbrev("' . cschar . '", "' . cmd . '")'
 	let s:gsfunc = expand('<SID>') . s:abbfunc
 	exec 'nnoremap ' . s:abb . ' :' . cmd . '<return>'
 	exec 'cnoreabbrev <expr> ' . s:abb . ' ' . s:gsfunc
