@@ -1,7 +1,9 @@
 "
 
 " we don't use the old cscope, gtags is better and has a cscope interface
-let g:gutentags_modules = ['ctags', 'gtags_cscope']
+let g:gutentags_modules = []
+if executable('ctags') | g:gutentags_modules += ['ctags'] | endif
+if executable('gtags') | g:gutentags_modules += ['gtags_cscope'] | endif
 
 " always try to make a tags file in a project, even without a file yet
 let g:gutentags_generate_on_empty_buffer = 1
