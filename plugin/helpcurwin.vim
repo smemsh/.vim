@@ -15,6 +15,17 @@ function s:Help(subject, grep) abort
 
 	let l:helpbufs = []
 
+	" upstream patch 28f7e701b seems to cause a problem: if we start with
+	" two vertical panes that are less than 80 columns and try to open
+	" help in one of them, it results in horizontal windows if we have set
+	" the 'splitbelow' option.  unsetting this option (or using windows
+	" above 80 columns) makes it work correctly.  the proper solution is
+	" probably to save and restore the layout, but let's see if it really
+	" needs a deeper fix than this in practice.
+	"
+	let l:savedsb = &splitbelow
+	set nosplitbelow
+
 	" before opening new help window, temporarily change buftype for all
 	" extant 'help' buffers, or vim will re-use that window for new help
 	"
@@ -38,6 +49,8 @@ function s:Help(subject, grep) abort
 	for n in l:helpbufs
 		call setbufvar(n, '&buftype', 'help')
 	endfor
+
+	let &splitbelow = l:savedsb
 
 endfunction
 
