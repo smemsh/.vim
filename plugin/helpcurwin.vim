@@ -13,6 +13,7 @@ function s:Helpgrep(arg) abort
 endfunction
 function s:Help(subject, grep) abort
 
+	let l:is_help = (getbufvar("", '&buftype') == 'help' ? 1 : 0)
 	let l:helpbufs = []
 
 	" upstream patch 28f7e701b seems to cause a problem: if we start with
@@ -27,20 +28,29 @@ function s:Help(subject, grep) abort
 	set nosplitbelow
 
 	" before opening new help window, temporarily change buftype for all
-	" extant 'help' buffers, or vim will re-use that window for new help
+	" extant 'help' buffers, or vim will re-use that window for new help.
+	" however, if the current buffer is already help, we will reuse it,
+	" which is necessary to change cursor to new location if help target
+	" is inside the same helpfile that is already open.
 	"
-	for w in getwininfo()
-		if getbufvar(w.bufnr, '&buftype') == 'help'
-			call setbufvar(w.bufnr, '&buftype', 'nowrite')
-			call add(l:helpbufs, w.bufnr)
-		endif
-	endfor
+	if ! l:is_help
+		for w in getwininfo()
+			if getbufvar(w.bufnr, '&buftype') == 'help'
+				call setbufvar(w.bufnr, '&buftype', 'nowrite')
+				call add(l:helpbufs, w.bufnr)
+			endif
+		endfor
+	endif
 
 	" always case-insensitive helpgrep, vim uses a strange postfix escape
 	let l:subject = a:subject . (a:grep ? '\c' : '')
 
 	" open new help, close, becomes unlisted, change original to that buf
 	execute 'help' . (a:grep ? 'grep' : '') . ' ' l:subject
+
+	" we're only re-using existing window
+	if l:is_help | return | endif
+
 	let l:helpbufnum = bufnr()
 	execute 'helpclose'
 	execute 'buffer ' . l:helpbufnum
