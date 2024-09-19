@@ -28,9 +28,13 @@ function s:Help(subject, grep) abort
 	" extant 'help' buffers, or vim will re-use that window for new help.
 	" however, if the current buffer is already help, we will reuse it,
 	" which is necessary to change cursor to new location if help target
-	" is inside the same helpfile that is already open.
+	" is inside the same helpfile that's already open.  if we make a new
+	" window, we have to recreate the tagstack, so we'll have to save it
 	"
 	if getbufvar("", '&buftype') != 'help'
+		if has('patch-8.1.0519')
+			let l:tagstack = gettagstack()
+		endif
 		let l:is_help = 0
 		let l:helpbufs = []
 		for w in getwininfo()
@@ -53,17 +57,27 @@ function s:Help(subject, grep) abort
 	else
 		" new window was created:
 		"
+		" - save newly created tagstack (depth 1)
 		" - note buffer number
 		" - close window (becomes unlisted, back to orig win)
 		" - switch to the now-unlisted buffer
 		" - restore 'help' buftypes on those we saved earlier
+		" - restore original tag stack
+		" - append the depth 1 tagstack from tmp help window
 		"
+		if has('patch-8.1.0519')
+			let l:newstack = gettagstack()
+		endif
 		let l:helpbufnum = bufnr()
 		execute 'helpclose'
 		execute 'buffer ' . l:helpbufnum
 		for n in l:helpbufs
 			call setbufvar(n, '&buftype', 'help')
 		endfor
+		if has('patch-8.1.0519')
+			call settagstack(winnr(), l:tagstack, 'r')
+			call settagstack(winnr(), l:newstack, 'a')
+		endif
 	endif
 
 	let &splitbelow = l:savedsb
