@@ -13,9 +13,6 @@ function s:Helpgrep(arg) abort
 endfunction
 function s:Help(subject, grep) abort
 
-	let l:is_help = (getbufvar("", '&buftype') == 'help' ? 1 : 0)
-	let l:helpbufs = []
-
 	" upstream patch 28f7e701b seems to cause a problem: if we start with
 	" two vertical panes that are less than 80 columns and try to open
 	" help in one of them, it results in horizontal windows if we have set
@@ -33,32 +30,41 @@ function s:Help(subject, grep) abort
 	" which is necessary to change cursor to new location if help target
 	" is inside the same helpfile that is already open.
 	"
-	if ! l:is_help
+	if getbufvar("", '&buftype') != 'help'
+		let l:is_help = 0
+		let l:helpbufs = []
 		for w in getwininfo()
 			if getbufvar(w.bufnr, '&buftype') == 'help'
 				call setbufvar(w.bufnr, '&buftype', 'nowrite')
 				call add(l:helpbufs, w.bufnr)
 			endif
 		endfor
+	else
+		let l:is_help = 1
 	endif
 
-	" always case-insensitive helpgrep, vim uses a strange postfix escape
+	" run help, or case-insensitive helpgrep (depending on invocation)
 	let l:subject = a:subject . (a:grep ? '\c' : '')
-
-	" open new help, close, becomes unlisted, change original to that buf
 	execute 'help' . (a:grep ? 'grep' : '') . ' ' l:subject
 
-	" we're only re-using existing window
-	if l:is_help | return | endif
-
-	let l:helpbufnum = bufnr()
-	execute 'helpclose'
-	execute 'buffer ' . l:helpbufnum
-
-	" restore original 'help' buftype on all we temporarily made 'nowrite'
-	for n in l:helpbufs
-		call setbufvar(n, '&buftype', 'help')
-	endfor
+	if l:is_help
+		" re-use existing window, vim handles everything (no-op)
+		execute
+	else
+		" new window was created:
+		"
+		" - note buffer number
+		" - close window (becomes unlisted, back to orig win)
+		" - switch to the now-unlisted buffer
+		" - restore 'help' buftypes on those we saved earlier
+		"
+		let l:helpbufnum = bufnr()
+		execute 'helpclose'
+		execute 'buffer ' . l:helpbufnum
+		for n in l:helpbufs
+			call setbufvar(n, '&buftype', 'help')
+		endfor
+	endif
 
 	let &splitbelow = l:savedsb
 
