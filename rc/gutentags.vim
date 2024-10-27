@@ -26,5 +26,12 @@ let g:gutentags_auto_add_gtags_cscope = 0
 let g:gutentags_auto_add_cscope = 0
 let g:gutentags_auto_add_pycscope = 0
 
+" no need for gtags to run when we're working with the scm metadata
+let g:gutentags_exclude_filteypes = []
+let g:gutentags_exclude_filteypes += ['gitcommit']
+let g:gutentags_exclude_filteypes += ['gitrebase']
+let g:gutentags_exclude_filteypes += ['gitattributes']
+let g:gutentags_exclude_filteypes += ['gitignore']
+
 " DEBUG
 let g:gutentags_trace = 0
