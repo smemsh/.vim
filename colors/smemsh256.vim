@@ -25,7 +25,7 @@
 "     alone not sufficient to affect changes during edit-test cycle)
 "
 " scott@smemsh.net
-" http://smemsh.net/src/vim-smemsh256/
+" https://github.com/smemsh/vim-smemsh256/
 " http://spdx.org/licenses/GPL-2.0
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
