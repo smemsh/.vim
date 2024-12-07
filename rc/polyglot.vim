@@ -12,3 +12,7 @@ let g:polyglot_disabled += ['sleuth']
 " like.  the one included with polyglot basically sucks (TODO: was 2017, retry)
 "
 let g:polyglot_disabled += ['yaml']
+
+" system provided one recently and now seems to be maintained
+"
+let g:polyglot_disabled += ['jinja', 'jinja2']
