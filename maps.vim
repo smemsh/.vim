@@ -64,10 +64,9 @@ nmap         <leader>p  :set paste!<return>
 nmap         <leader>w  :set wrap!<return>
 nmap         <leader>L  :set list!<return>
 nmap         <leader>h  :set hlsearch!<return>
-nmap         <leader>R  :set wrap nolist showbreak=
-                        \ breakindent linebreak<return>
-nmap <leader><leader>R  :set nowrap list showbreak="> "
-                        \ nobreakindent nolinebreak<return>
+
+nmap         <leader>R  :set wrap nolist breakindent linebreak <return>
+nmap <leader><leader>R  :set nowrap list nobreakindent nolinebreak <return>
 
 " for outlines and similar
 "

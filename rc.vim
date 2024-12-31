@@ -45,6 +45,7 @@ set nomodeline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set backspace           =2
+set breakindentopt      =shift:4,sbr
 set complete            =t,.,i,w,b,k
 set cpoptions           -=ae
 set cpoptions           +=Er$
@@ -60,7 +61,6 @@ set report              =1
 set scrolloff           =999
 set selection           =old
 set shortmess           +=aI
-set showbreak           =<
 set sidescroll          =1
 set textwidth           =78
 set timeoutlen          =650
@@ -87,6 +87,8 @@ let &fillchars =
 	\"diff:\u2591," .
 	\""
 "	\"vert:\u2502," .
+
+let &showbreak = "\u2574" " useful for ,R mode
 
 """
 
