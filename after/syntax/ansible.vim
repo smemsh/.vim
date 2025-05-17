@@ -5,10 +5,13 @@
 " to '{# ' (maybe others would not use a space, but this author
 " always would with this type of comment)
 "
-syn clear jinjaComment
-syn region jinjaComment matchgroup=jinjaCommentDelim
+if hlexists('jinjaComment')
+	syn clear jinjaComment
+	syn region jinjaComment
+	\ matchgroup=jinjaCommentDelim
 	\ start="{#\s" end="\s#}"
 	\ containedin=ALLBUT,jinjaTagBlock,jinjaVarBlock,jinjaString
+endif
 
 "syn region yamlComment display oneline
 "	\ start='\%\(^\|\s\)#\s'
