@@ -15,7 +15,6 @@ set list
 set ruler
 set showcmd
 set showfulltag
-set showmatch
 set smartcase
 set smartindent
 set splitbelow
