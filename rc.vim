@@ -17,6 +17,7 @@ set showcmd
 set showfulltag
 set smartcase
 set smartindent
+set smoothscroll
 set splitbelow
 set ttyfast
 set visualbell
