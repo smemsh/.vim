@@ -25,7 +25,6 @@ set wildmenu
 
 """
 
-set nocompatible
 set nocursorcolumn
 set nocursorline
 set nocindent
