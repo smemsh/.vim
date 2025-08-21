@@ -9,7 +9,17 @@ elseif executable('cscope') | let g:gutentags_modules += ['cscope'] | endif
 if empty(g:gutentags_modules) | let g:gutentags_dont_load = 1 | endif
 
 " always try to make a tags file in a project, even without a file yet
-let g:gutentags_generate_on_empty_buffer = 1
+"let g:gutentags_generate_on_empty_buffer = 1
+
+" XXX gutentags is giving us problems, require it to be run explicitly
+" see task b9efdc9d
+"
+let g:gutentags_generate_on_empty_buffer = 0
+let g:gutentags_generate_on_new = 0
+let g:gutentags_generate_on_missing = 0
+
+" let the user toggle
+let g_gutentags_define_advanced_commands = 1
 
 " ctags should not follow symbolic links (ie installx dirs)
 let g:gutentags_ctags_extra_args = ['--links=no']
