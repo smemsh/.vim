@@ -17,6 +17,7 @@ if empty(g:gutentags_modules) | let g:gutentags_dont_load = 1 | endif
 let g:gutentags_generate_on_empty_buffer = 0
 let g:gutentags_generate_on_new = 0
 let g:gutentags_generate_on_missing = 0
+let g:gutentags_generate_on_write = 0
 
 " let the user toggle
 let g_gutentags_define_advanced_commands = 1
