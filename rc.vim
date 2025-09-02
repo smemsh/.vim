@@ -17,11 +17,12 @@ set showcmd
 set showfulltag
 set smartcase
 set smartindent
-set smoothscroll
 set splitbelow
 set ttyfast
 set visualbell
 set wildmenu
+
+if has('patch-9.0.0640') | set smoothscroll | endif
 
 """
 
