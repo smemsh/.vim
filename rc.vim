@@ -5,6 +5,8 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set nocompatible  " should be presumed if .vimrc exists, but vim.nox doesn't
+
 set autoindent
 set hlsearch
 set hidden
