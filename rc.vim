@@ -57,6 +57,7 @@ set display             =lastline
 set fileformats         =unix,dos,mac
 set history             =1000
 set laststatus          =2
+set maxmempattern       =100000
 set matchtime           =15
 set redrawtime          =10000 " netrw.vim takes ~7 seconds!
 set report              =1
