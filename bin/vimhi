@@ -22,5 +22,9 @@ vim -E -s \
 ${arg:-/dev/stdin} \
 &>/dev/null
 
-elinks -dump -dump-color-mode 3 -no-references $tmpfile.html \
+elinks \
+-dump \
+-dump-color-mode 3 \
+-no-references \
+$tmpfile.html \
 | less
