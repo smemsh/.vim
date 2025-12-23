@@ -5,7 +5,7 @@
 # https://spdx.org/licenses/GPL-2.0
 
 tmpfile=`mktemp`
-tty -s && arg=$1 || arg=$tmpfile
+tty -s && arg=$1
 
 # consider "-T $TERM" instead of "set t_Co", but then we'd have to test 256
 # colors
@@ -19,7 +19,7 @@ vim -E -s \
 -c "file $tmpfile.html" \
 -c "w!" \
 -c "qa!" \
-${arg:--} \
+${arg:-/dev/stdin} \
 &>/dev/null
 
 elinks -dump -dump-color-mode 3 -no-references $tmpfile.html \
