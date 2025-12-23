@@ -26,5 +26,6 @@ elinks \
 -dump \
 -dump-color-mode 3 \
 -no-references \
+-eval 'set document.browse.margin_width = 0' \
 $tmpfile.html \
 | less
