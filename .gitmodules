@@ -8,7 +8,7 @@
 # bundled upstream repos with enhanced lang/syntax/hi for many languages
 [submodule "bundle/vim-polyglot"]
 	path = bundle/polyglot
-	url = https://github.com/sheerun/vim-polyglot
+	url = https://github.com/smemsh/vim-polyglot
 
 # run ctags/gtags/cscope automatically in git repos
 [submodule "bundle/vim-gutentags"]
