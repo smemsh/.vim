@@ -45,7 +45,7 @@ qa!
 %
 
 # vim exe
-vim -E -s -S $tmprc $arg
+vim -E -s -S $tmprc $arg >/dev/null
 
 elinks \
 -dump \
